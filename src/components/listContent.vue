@@ -1,8 +1,10 @@
 <template>
     <div id="listContent">
         <img v-if="emoji==='true'" src="@/assets/pushpin.png"/>
-        <div :class="[emoji==='true' ? 'bottom12' : '']">
-            <slot/>
+        <div class="box" :style="{ width:width+'px', height:height+'px' }" :class="{ emoji }">
+            <div :style="{ width:width-50+'px', textAlign:textAlign }">
+                <slot/>
+            </div>
         </div>
     </div>
 </template>
@@ -12,6 +14,18 @@ export default {
   name: 'listContent',
   props: {
     emoji: Boolean,
+    width: {
+        type: Number,
+        default: 250
+    },
+    height: {
+        type: Number,
+        default: 130
+    },
+    textAlign: {
+        type:String,
+        default: "left"
+    }
   }
 }
 </script>
@@ -26,7 +40,7 @@ export default {
     width: 15px;
 }
 
-#listContent div {
+.box {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     width: 250px;
     height: 130px;
@@ -37,8 +51,9 @@ export default {
     align-items : center;
 }
 
-.bottom12 {
+.emoji {
     position: relative;
     bottom: 12px;
+    margin-bottom: -12px;
 }
 </style>

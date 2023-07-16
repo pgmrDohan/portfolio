@@ -1,24 +1,35 @@
 <template>
   <div class="max"><a href="/"><typingTitle title="소프트웨어 개발자<br>권도한입니다."/></a></div>
-  <titleContent title="print(“Hello, World!”)" msg="안녕하세요. 학생 개발자 권도한입니다.<br />다양한 언어를 다루면서 느리지만 확실하고 넓게 전진하고 있습니다.<br />프로그래밍 뿐만 아니라 보안이나 디자인에도 관심을 가지고 있어요." align="left">
-    <listContent emoji="true" style="float: left;">
-      <div style="width:200px;">
-        <p class="leftA"><strong>Age</strong>16</p>
-        <p class="leftA"><strong>Email</strong><a class="aAnimation" href="mailto:me@dohan.bio?subject=[Inquiry] ">me@dohan.bio</a></p>
-        <p class="leftA"><strong>Github</strong><a class="aAnimation" href="https://github.com/pgmrDohan" target='_blank'>@pgmrDohan</a></p>
-        <p class="leftA"><strong>Insta</strong><a class="aAnimation" href="https://www.instagram.com/i70h4n/" target='_blank'>@i70h4n</a></p>
-      </div>
-    </listContent>
-    <listContent emoji="true">
-      <div style="width:200px; text-align: center;">
-        <p><strong>Working at</strong></p><br>
-        <p>Software Development<br>UX/UI Design<br>Computer Security</p>
-      </div>
-    </listContent>
-  </titleContent>
+  <titleContent title="print(“Hello, World!”)" msg="안녕하세요. 학생 개발자 권도한입니다.<br />다양한 언어를 다루면서 느리지만 확실하고 넓게 전진하고 있습니다.<br />프로그래밍 뿐만 아니라 보안이나 디자인에도 관심을 가지고 있어요." align="left"/>
+  <listContent emoji="true" style="float: left; margin-left: 194px;">
+    <p class="leftA"><strong>Age</strong>16</p>
+    <p class="leftA"><strong>Email</strong><a class="aAnimation" href="mailto:me@dohan.bio?subject=[Inquiry] ">me@dohan.bio</a></p>
+    <p class="leftA"><strong>Github</strong><a class="aAnimation" href="https://github.com/pgmrDohan" target='_blank'>@pgmrDohan</a></p>
+    <p class="leftA"><strong>Insta</strong><a class="aAnimation" href="https://www.instagram.com/i70h4n/" target='_blank'>@i70h4n</a></p>
+  </listContent>
+  <listContent emoji="true" textAlign="center">
+    <p><strong>Working at</strong></p><br>
+    <p>Software Development<br>UX/UI Design<br>Computer Security</p>
+  </listContent>
   <titleContent title="편리와 도움. 능력향상과 최초." msg="다른 누군가에게 편리와 도움을 주는 것들을 만듭니다.<br />그러면서도 저 자신의 능력 향상과 최초라는 업적을 얻기 위해 노력합니다.<br />1석 4조인 셈이죠." align="right"/>
   <titleContent title="느리지만 꾸준히 성실하게 그리고 확실히" msg="CTF, 해커톤, 공모전 등 대회에 참여하고 실적을 쌓아갑니다.<br />여러 자격증도 하나 씩 얻고자 합니다.<br />착실히 앞으로 나아갑니다." align="left"/>
-  <titleContent title="상상을 현실로 바꾸는 기술스택들" msg="필요한 여러 기술들을 배워갑니다.<br />많은 우물이지만 깊게 파내어 마스터하기 위해 노력합니다.<br />넘치는 생각들을 현실로 옮길 수 있도록 또 다른 우물을 파고 있습니다." align="right"/>
+  <div style="margin-left: 194px;">
+    <listContent emoji="true" height="40" width="1517">
+      <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
+    </listContent>
+    <listContent height="40" width="1517">
+      <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
+    </listContent>
+    <listContent height="40" width="1517">
+      <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
+    </listContent>
+    <listContent height="40" width="1517" style="margin-bottom: 150px;">
+      <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
+    </listContent>
+  </div>
+  <titleContent title="상상을 현실로 바꾸는 기술스택들" msg="필요한 여러 기술들을 배워갑니다.<br />많은 우물이지만 깊게 파내어 마스터하기 위해 노력합니다.<br />넘치는 생각들을 현실로 옮길 수 있도록 또 다른 우물을 파고 있습니다." align="right">
+
+  </titleContent>
 </template>
 
 <script>

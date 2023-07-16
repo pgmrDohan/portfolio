@@ -1,8 +1,7 @@
 <template>
-  <div id="titleContent">
-    <h1 :style="cssVars">{{ title }}</h1>
-    <p :style="cssVars" v-html="msg"></p>
-    <slot/>
+  <div id="titleContent" :style="{ textAlign:align }">
+    <h1>{{ title }}</h1>
+    <p v-html="msg"></p>
   </div>
 </template>
 
@@ -14,20 +13,13 @@ export default {
     title: String,
     align: String,
   },
-  computed: {
-    cssVars () {
-      return{
-        '--align':this.align
-      }
-    }
-  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #titleContent {
-  margin: 150px 194px 150px 194px;
+  position: relative;
+  margin: 150px 194px 0px 194px;
 }
 
 h1 {
@@ -35,7 +27,6 @@ h1 {
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 7px;
-  text-align: var(--align);
 }
 
 p {
@@ -43,6 +34,5 @@ p {
   font-size: 17px;
   font-weight: 400;
   margin-top: 7px;
-  text-align: var(--align);
 }
 </style>
