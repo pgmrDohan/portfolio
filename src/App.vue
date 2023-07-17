@@ -1,6 +1,6 @@
 <template>
   <div class="max"><a href="/"><typingTitle
-    title="소프트웨어 개발자<br>권도한입니다."
+    title="소프트웨어 개발자<br />권도한입니다."
   /></a></div>
 
   <titleContent 
@@ -102,7 +102,7 @@ a {text-decoration: none; color: inherit;}
   position: absolute;
   width: 100%;
   transform: scaleX(0);
-  height: 2px;
+  height: 1px;
   bottom: 0;
   left: 0;
   background-color: #555555;

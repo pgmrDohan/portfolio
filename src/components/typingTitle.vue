@@ -1,6 +1,6 @@
 <template>
   <div id="typingTitle">
-    <p id="typing" v-html="titleT"></p>
+    <p id="typing" v-html=renderTitle />
   </div>
 </template>
 
@@ -8,65 +8,71 @@
 export default {
   name: 'typingTitle',
   props: {
-    title: String,
+    title: {
+      type: String,
+      validator: (prop) => prop.match(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g).every(e =>  e === "<br />"),
+    }
   },
   data (){
     return {
-      typing:0,
-      titleT: "",
-      n:0,
-      j:0,
-      titleD: this.koreanD(this.title)
+      render:setInterval(this.rendering,100),
+      typingSteps: this.typingStep(this.title),
+      renderTitle: "",
+      renderLoop:0,
+      rendered:0,
     }
   },
   methods: {
-    typingM () {
-      if(this.n+1>=this.titleD.length) {
-        clearInterval(this.typing);
-      }
-      if (this.titleD[this.n]!="/"){
-        this.titleT = this.titleT.slice(0, -1);
-        this.titleT += this.titleD[this.n++]
+    rendering () {
+      if(this.renderLoop+1 >= this.typingSteps.length)
+        clearInterval(this.render);
+      
+      this.renderTitle = this.renderTitle.slice(0, -1);
+
+      if (this.typingSteps[this.renderLoop] !== "�"){
+        this.renderTitle += this.typingSteps[this.renderLoop++]
       } else {
-        this.titleT = this.titleT.slice(0, -1);
-        this.titleT += this.title[this.j++];
-        this.titleT += " ";
-        this.n++
+        this.renderTitle += this.title[this.rendered++];
+        this.renderTitle += " ";
+        this.renderLoop++
       }
     },
-    koreanD (title){
+    typingStep (title){
+      let typingSteps  = [];
+
       const Hangul = require('hangul-js');
-      let titleD = Hangul.disassemble(title);
-      let disassembled = [];
-      for (let i = 0; i < titleD.length; i++){
-        //disassembled.push(i);
-        if (Hangul.isVowel(titleD[i]) && Hangul.isJong(titleD[i+1])) {
-          disassembled.push(Hangul.assemble(titleD[i-1]+titleD[i]));
-          disassembled.push(Hangul.assemble(titleD[i-1]+titleD[i]+titleD[i+1]));
+      let disasmTitle = Hangul.disassemble(title);
+
+      for (let i = 0; i < disasmTitle.length; i++){
+        if (disasmTitle.slice(i,i+6).join('') === "<br />") {
+          typingSteps.push("<br/>");
+          typingSteps.push("�");
+          i++;
+        }
+        if (Hangul.isVowel(disasmTitle[i]) && Hangul.isJong(disasmTitle[i+1])) {
+          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]));
+          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]+disasmTitle[i+1]));
           i++
-          disassembled.push("/");
-        } else if (Hangul.isVowel(titleD[i]) && Hangul.isVowel(titleD[i+1])) {
-          disassembled.push(Hangul.assemble(titleD[i-1]+titleD[i]));
-          disassembled.push(Hangul.assemble(titleD[i-1]+titleD[i]+titleD[i+1]));
+          typingSteps.push("�");
+        } else if (Hangul.isVowel(disasmTitle[i]) && Hangul.isVowel(disasmTitle[i+1])) {
+          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]));
+          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]+disasmTitle[i+1]));
           i++
-          if (Hangul.isJong(titleD[i+1])) {
-            disassembled.push(Hangul.assemble(titleD[i-2]+titleD[i-1]+titleD[i]+titleD[i+1]));
+          if (Hangul.isJong(disasmTitle[i+1])) {
+            typingSteps.push(Hangul.assemble(disasmTitle[i-2]+disasmTitle[i-1]+disasmTitle[i]+disasmTitle[i+1]));
             i++
           }
-          disassembled.push("/");
-        } else if (Hangul.isVowel(titleD[i])){
-          disassembled.push(Hangul.assemble(titleD[i-1]+titleD[i]));
-          disassembled.push("/");
+          typingSteps.push("�");
+        } else if (Hangul.isVowel(disasmTitle[i])){
+          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]));
+          typingSteps.push("�");
         } else {
-          disassembled.push(titleD[i]);
-          if(!Hangul.isCho(titleD[i])) {disassembled.push("/")}
+          typingSteps.push(disasmTitle[i]);
+          if(!Hangul.isCho(disasmTitle[i])) {typingSteps.push("�")}
         }
       }
-      return disassembled
+      return typingSteps
     }
-  },
-  mounted () {
-    this.typing=setInterval(this.typingM,200);
   }
 }
 </script>
@@ -76,15 +82,10 @@ p {
   font-family: Pretendard Variable, sans-serif;
   font-size: 43px;
   font-weight:850;
-  display: table-cell;
-  border-right: 0.05em solid #000000; 
-  animation: 
-    cursor 0.5s ease infinite;
 }
 
-@keyframes cursor {
-    to {
-        border-color: transparent;
-    }
+p::before {
+  background-color: #555555;
+  transform-origin: bottom right;
 }
 </style>
