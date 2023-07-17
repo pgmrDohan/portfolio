@@ -1,6 +1,6 @@
 <template>
     <div id="listContent">
-        <img v-if="emoji==='true'" src="@/assets/pushpin.png"/>
+        <img v-if="emoji" src="@/assets/pushpin.png"/>
         <div class="box" :style="{ width:width+'px', height:height+'px' }" :class="{ emoji }">
             <div :style="{ width:width-50+'px', textAlign:textAlign }">
                 <slot/>
@@ -42,8 +42,6 @@ export default {
 
 .box {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
-    width: 250px;
-    height: 130px;
     border-radius: 10px;
     position: relative;
     display : flex;

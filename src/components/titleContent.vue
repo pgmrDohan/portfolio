@@ -2,6 +2,9 @@
   <div id="titleContent" :style="{ textAlign:align }">
     <h1>{{ title }}</h1>
     <p v-html="msg"></p>
+    <div>
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -12,7 +15,7 @@ export default {
     msg: String,
     title: String,
     align: String,
-  },
+  }
 }
 </script>
 
