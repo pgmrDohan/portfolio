@@ -10,7 +10,7 @@ export default {
   props: {
     title: {
       type: String,
-      validator: (prop) => prop.match(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g).every(e =>  e === "<br />"),
+      validator: (prop) => prop.match(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g)===null,
     }
   },
   data (){

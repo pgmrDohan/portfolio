@@ -1,6 +1,6 @@
 <template>
   <div class="max"><a href="/"><typingTitle
-    title="소프트웨어 개발자<br />권도한입니다."
+    title="소프트웨어 개발자 권도한입니다."
   /></a></div>
 
   <titleContent 
@@ -81,7 +81,6 @@ export default {
 }
 
 .max {
-  width: 97vw;
   height: 100vh;
   position: relative;
   display : flex;
