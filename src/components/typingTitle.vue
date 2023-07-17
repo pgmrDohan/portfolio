@@ -15,63 +15,61 @@ export default {
   },
   data (){
     return {
-      render:setInterval(this.rendering,100),
-      typingSteps: this.typingStep(this.title),
+      render:setInterval(this.rendering,120),
+      typingProcess: this.processing(this.title),
       renderTitle: "",
-      renderLoop:0,
-      rendered:0,
+      idxRun:0,
+      idxType:0,
+      lastType: '',
     }
   },
   methods: {
     rendering () {
-      if(this.renderLoop+1 >= this.typingSteps.length)
-        clearInterval(this.render);
-      
-      this.renderTitle = this.renderTitle.slice(0, -1);
-
-      if (this.typingSteps[this.renderLoop] !== "�"){
-        this.renderTitle += this.typingSteps[this.renderLoop++]
-      } else {
-        this.renderTitle += this.title[this.rendered++];
-        this.renderTitle += " ";
-        this.renderLoop++
-      }
-    },
-    typingStep (title){
-      let typingSteps  = [];
-
       const Hangul = require('hangul-js');
-      let disasmTitle = Hangul.disassemble(title);
 
-      for (let i = 0; i < disasmTitle.length; i++){
-        if (disasmTitle.slice(i,i+6).join('') === "<br />") {
-          typingSteps.push("<br/>");
-          typingSteps.push("�");
-          i++;
-        }
-        if (Hangul.isVowel(disasmTitle[i]) && Hangul.isJong(disasmTitle[i+1])) {
-          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]));
-          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]+disasmTitle[i+1]));
-          i++
-          typingSteps.push("�");
-        } else if (Hangul.isVowel(disasmTitle[i]) && Hangul.isVowel(disasmTitle[i+1])) {
-          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]));
-          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]+disasmTitle[i+1]));
-          i++
-          if (Hangul.isJong(disasmTitle[i+1])) {
-            typingSteps.push(Hangul.assemble(disasmTitle[i-2]+disasmTitle[i-1]+disasmTitle[i]+disasmTitle[i+1]));
-            i++
+      let run = this.typingProcess[this.idxRun];
+
+      if (this.idxType >= run.length) {
+          this.idxRun += 1;
+          this.idxType = 0;
+          this.lastType = this.renderTitle;
+
+          if (this.idxRun >= this.typingProcess.length) {
+            clearInterval(this.render);
           }
-          typingSteps.push("�");
-        } else if (Hangul.isVowel(disasmTitle[i])){
-          typingSteps.push(Hangul.assemble(disasmTitle[i-1]+disasmTitle[i]));
-          typingSteps.push("�");
-        } else {
-          typingSteps.push(disasmTitle[i]);
-          if(!Hangul.isCho(disasmTitle[i])) {typingSteps.push("�")}
-        }
+
+          return;
       }
-      return typingSteps
+
+      let typing = Hangul.assemble(run.slice(0, this.idxType + 1));
+
+      this.renderTitle = this.lastType + typing;
+      this.idxType += 1;
+    },
+
+    processing (title){
+      const Hangul = require('hangul-js');
+      let disassembled = Hangul.disassemble(title, true);
+
+      let textProcess = [];
+      let run = [];
+      for (let i in disassembled) {
+          let charProcess = disassembled[i];
+          if (charProcess.length > 1) {
+              run = run.concat(charProcess);
+          } else {
+              if (run.length > 0) {
+                  textProcess.push(run);
+                  run = [];
+              }
+              textProcess.push(charProcess);
+          }
+      }
+      if (run.length > 0) {
+          textProcess.push(run);
+      }
+
+      return textProcess;
     }
   }
 }
@@ -84,8 +82,15 @@ p {
   font-weight:850;
 }
 
-p::before {
-  background-color: #555555;
-  transform-origin: bottom right;
+p::after {
+  content: "_";
+  animation: 
+    cursor 0.5s ease infinite;
+}
+
+@keyframes cursor {
+    to {
+        color: transparent;
+    }
 }
 </style>
