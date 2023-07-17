@@ -34,6 +34,7 @@ export default {
 #listContent {
     margin-top: 7px;
     margin-right: 10px;
+    display: inline-table;
 }
 
 #listContent img {

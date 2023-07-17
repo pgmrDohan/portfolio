@@ -2,7 +2,7 @@
   <div class="max"><a href="/"><typingTitle title="소프트웨어 개발자<br>권도한입니다."/></a></div>
 
   <titleContent title="print(“Hello, World!”)" msg="안녕하세요. 학생 개발자 권도한입니다.<br />다양한 언어를 다루면서 느리지만 확실하고 넓게 전진하고 있습니다.<br />프로그래밍 뿐만 아니라 보안이나 디자인에도 관심을 가지고 있어요." align="left">
-    <listContent emoji style="float: left;">
+    <listContent emoji>
       <p class="leftA"><strong>Age</strong>16</p>
       <p class="leftA"><strong>Email</strong><a class="aAnimation" href="mailto:me@dohan.bio?subject=[Inquiry] ">me@dohan.bio</a></p>
       <p class="leftA"><strong>Github</strong><a class="aAnimation" href="https://github.com/pgmrDohan" target='_blank'>@pgmrDohan</a></p>
@@ -106,5 +106,4 @@ div {
   float: left;
 }
 
-#listContent {float: left;}
 </style>
