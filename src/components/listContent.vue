@@ -1,9 +1,10 @@
 <template>
     <div id="listContent">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
-        <div class="box" :style="{ width:width+'px', height:height+'px' }" :class="{ emoji }">
-            <div :style="{ width:width-50+'px', textAlign:textAlign }">
-                <slot/>
+        <div class="box" :style="{ width:width+'px', height:height+'px' }" :class="{ emoji, rounded:height<=40 }">
+            <div :style="{ width:width-50+'px', textAlign:textAlign }" >
+                <div :style="{ display:expand?'inline-block':'', verticalAlign:expand?'middle':'' }"><slot/></div>
+                <p v-if="expand" style="float: right;" class="material-symbols-outlined">expand_more</p>
             </div>
         </div>
     </div>
@@ -25,6 +26,10 @@ export default {
     textAlign: {
         type:String,
         default: "left"
+    },
+    expand: {
+        type: Boolean,
+        default: false
     }
   }
 }
@@ -54,5 +59,14 @@ export default {
     position: relative;
     bottom: 12px;
     margin-bottom: -12px;
+}
+
+.rounded {
+    border-radius: 100px;
+}
+
+.emoji.rounded {
+    bottom: 15px;
+    margin-bottom: -15px;
 }
 </style>

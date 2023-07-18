@@ -1,5 +1,5 @@
 <template>
-  <div class="max"><a href="/"><typingTitle
+  <div class="max"><a href="/" id="inner"><typingTitle
     title="소프트웨어 개발자 권도한입니다."
   /></a></div>
 
@@ -32,16 +32,16 @@
     msg="CTF, 해커톤, 공모전 등 대회에 참여하고 실적을 쌓아갑니다.<br />여러 자격증도 하나 씩 얻고자 합니다.<br />착실히 앞으로 나아갑니다."
     align="left"
   >
-    <listContent emoji :height=40 :width=1517>
+    <listContent emoji expand :height=40 :width=1517>
       <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
     </listContent>
-    <listContent :height=40 :width=1517>
+    <listContent expand :height=40 :width=1517>
       <p><strong style="margin-right: 20px;">한국산업인력공단 정보처리기능사 자격증 취득</strong>2022</p>
     </listContent>
-    <listContent :height=40 :width=1517>
+    <listContent expand :height=40 :width=1517>
       <p><strong style="margin-right: 20px;">한국과학창의재단 대학부설 과학영재 교육원 사사과정 연구 성과 발표대회 수상</strong>2022</p>
     </listContent>
-    <listContent :height=40 :width=1517>
+    <listContent expand :height=40 :width=1517>
       <p><strong style="margin-right: 20px;">J2KB 전국연합코딩동아리 수료 및 인터뷰</strong>2021</p>
     </listContent>
   </titleContent>
@@ -82,10 +82,14 @@ export default {
 
 .max {
   height: 100vh;
-  position: relative;
-  display : flex;
-  justify-content: center;
-  align-items : center;
+  width: 100%;
+  display: table;
+}
+
+#inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 a {text-decoration: none; color: inherit;}
