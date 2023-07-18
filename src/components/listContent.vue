@@ -1,8 +1,8 @@
 <template>
-    <div id="listContent">
+    <div id="listContent" :style="{ width:width<=100?width+'%':width+'px'}">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
-        <div class="box" :style="{ width:width+'px', height:height+'px' }" :class="{ emoji, rounded:height<=40 }">
-            <div :style="{ width:width-50+'px', textAlign:textAlign }" >
+        <div class="box" :style="{ width:width<=100?width+'%':width+'px', height:height+'px' }" :class="{ emoji, rounded:height<=40 }">
+            <div :style="{ width:width<=100?'98%':width-50+'px', textAlign:textAlign }" >
                 <div :style="{ display:expand?'inline-block':'', verticalAlign:expand?'middle':'' }"><slot/></div>
                 <p v-if="expand" style="float: right;" class="material-symbols-outlined">expand_more</p>
             </div>

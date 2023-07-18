@@ -2,7 +2,7 @@
   <div id="titleContent" :style="{ textAlign:align }">
     <h1>{{ title }}</h1>
     <p v-html="msg"></p>
-    <div>
+    <div style="width: 100%;">
       <slot/>
     </div>
   </div>
@@ -22,7 +22,7 @@ export default {
 <style scoped>
 #titleContent {
   position: relative;
-  margin: 150px 194px 0px 194px;
+  margin: 150px 5% 0px 5%;
 }
 
 h1 {
