@@ -44,6 +44,12 @@
     <listContent expand :height=40 :width=100>
       <p><strong style="margin-right: 20px;">J2KB 전국연합코딩동아리 수료 및 인터뷰</strong>2021</p>
     </listContent>
+    <listContent :height=40 :width=100 textAlign="center" button>
+      <div style="display: inline-flex; align-items: center;">
+        <svg-icon type="mdi" :path=link width="18px" style="margin-right: 5px;"></svg-icon>
+        <span>dohanspace.notion.site</span>
+      </div>
+    </listContent>
   </titleContent>
   
   <titleContent 
@@ -60,6 +66,9 @@
 </template>
 
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiLinkVariant } from '@mdi/js';
+
 import titleContent from './components/titleContent.vue'
 import typingTitle from './components/typingTitle.vue'
 import listContent from './components/listContent.vue';
@@ -69,7 +78,13 @@ export default {
   components: {
     titleContent,
     typingTitle,
-    listContent
+    listContent,
+    SvgIcon
+  },
+  data () {
+    return {
+      link: mdiLinkVariant
+    }
   }
 }
 </script>

@@ -1,18 +1,33 @@
 <template>
-    <div id="listContent" :style="{ width:width<=100?width+'%':width+'px'}">
+    <div id="listContent" :style="{ width:width<=100?width+'%':width+'px', color:button?'#0000FF':'' }">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
-        <div class="box" :style="{ width:width<=100?width+'%':width+'px', height:height+'px' }" :class="{ emoji, rounded:height<=40 }">
+        <div class="box" 
+        :style="{ width:width<=100?width+'%':width+'px', height:height+'px', backgroundColor:button?'#EDEDED':'' }"
+        :class="{ emoji, rounded:height<=40 }"
+        onclick="window.open(href,'_blank');"
+        >
             <div :style="{ width:width<=100?'98%':width-50+'px', textAlign:textAlign }" >
                 <div :style="{ display:expand?'inline-block':'', verticalAlign:expand?'middle':'' }"><slot/></div>
-                <p v-if="expand" style="float: right;" class="material-symbols-outlined">expand_more</p>
+                <svg-icon type="mdi" :path=down style="float: right;" v-if="expand"></svg-icon>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiChevronDown } from '@mdi/js';
+
 export default {
   name: 'listContent',
+  components: {
+    SvgIcon
+  },
+  data () {
+    return {
+        down: mdiChevronDown
+    }
+  },
   props: {
     emoji: Boolean,
     width: {
@@ -30,7 +45,9 @@ export default {
     expand: {
         type: Boolean,
         default: false
-    }
+    },
+    button: Boolean,
+    href: Text
   }
 }
 </script>
