@@ -44,7 +44,7 @@
     <listContent expand :height=40 :width=100>
       <p><strong style="margin-right: 20px;">J2KB 전국연합코딩동아리 수료 및 인터뷰</strong>2021</p>
     </listContent>
-    <listContent :height=40 :width=100 textAlign="center" button>
+    <listContent :height=40 :width=100 textAlign="center" button href="https://dohanspace.notion.site/Kwon-DoHan-34f1bf3d841c4a70ba7c8bcbf941c443">
       <div style="display: inline-flex; align-items: center;">
         <svg-icon type="mdi" :path=link width="18px" style="margin-right: 5px;"></svg-icon>
         <span>dohanspace.notion.site</span>
@@ -145,6 +145,7 @@ div {
   font-weight:600;
   text-align: left;
   float: left;
+  margin-right: 20px;
 }
 
 #footer {

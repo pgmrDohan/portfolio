@@ -2,14 +2,14 @@
     <div id="listContent" :style="{ width:width<=100?width+'%':width+'px', color:button?'#0000FF':'' }">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
         <div class="box" 
-        :style="{ width:width<=100?width+'%':width+'px', height:height+'px', backgroundColor:button?'#EDEDED':'' }"
-        :class="{ emoji, rounded:height<=40 }"
-        onclick="window.open(href,'_blank');"
-        >
-            <div :style="{ width:width<=100?'98%':width-50+'px', textAlign:textAlign }" >
+        :style="{ width:width<=100?width+'%':width+'px', height:height+'px', justifyContent:expand?'space-between':'' }"
+        :class="{ emoji, rounded:height<=40, button }"
+        @click="button?onClick(href):''"
+        >   
+            <div :style="{ textAlign:textAlign, marginLeft:expand?'20px':'' }" >
                 <div :style="{ display:expand?'inline-block':'', verticalAlign:expand?'middle':'' }"><slot/></div>
-                <svg-icon type="mdi" :path=down style="float: right;" v-if="expand"></svg-icon>
             </div>
+            <svg-icon type="mdi" :path=down style="margin-right: 20px;" v-if="expand"/>
         </div>
     </div>
 </template>
@@ -48,6 +48,11 @@ export default {
     },
     button: Boolean,
     href: Text
+  },
+  methods: {
+    onClick (uri) {
+        window.open(uri,'_blank');
+    }
   }
 }
 </script>
@@ -85,5 +90,13 @@ export default {
 .emoji.rounded {
     bottom: 15px;
     margin-bottom: -15px;
+}
+
+.button {
+    background-color: #ededed;
+}
+
+.button:hover {
+    background-color: #dddddd;
 }
 </style>
