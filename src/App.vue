@@ -12,7 +12,7 @@
       <p class="leftA"><strong>Age</strong>16</p>
       <p class="leftA"><strong>Email</strong><a class="aAnimation" href="mailto:me@dohan.bio?subject=[Inquiry] ">me@dohan.bio</a></p>
       <p class="leftA"><strong>Github</strong><a class="aAnimation" href="https://github.com/pgmrDohan" target='_blank'>@pgmrDohan</a></p>
-      <p class="leftA"><strong>Insta</strong><a class="aAnimation" href="https://www.instagram.com/i70h4n/" target='_blank'>@i70h4n</a></p>
+      <p class="leftA"><strong>Discord</strong><a class="aAnimation" href="https://discordapp.com/users/795869602566635540" target='_blank'>@i70h4n</a></p>
     </listContent>
     <listContent emoji textAlign="center">
       <p><strong>Working at</strong></p><br>

@@ -2,21 +2,21 @@
     <div id="listContent" :style="{ width:width<=100?width+'%':width+'px', color:button?'#0000FF':'' }">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
         <div class="box" 
-        :style="{ width:width<=100?width+'%':width+'px', height:height+'px', justifyContent:expand?'space-between':'' }"
-        :class="{ emoji, rounded:height<=40, button }"
-        @click="button?onClick(href):''"
+        :style="{ width:width<=100?width+'%':width+'px', height:expanded?'200px':height+'px', justifyContent:expand?'space-between':'center', alignItems:expanded?'start':'center' }"
+        :class="{ emoji, rounded:expanded?false:height<=40, button }"
+        @click="button?onClick(href):expanded?expanded=false:expand?expanded=true:''"
         >   
-            <div :style="{ textAlign:textAlign, marginLeft:expand?'20px':'' }" >
-                <div :style="{ display:expand?'inline-block':'', verticalAlign:expand?'middle':'' }"><slot/></div>
+            <div :style="{ textAlign:textAlign, marginLeft:expand?'20px':'', marginTop:expanded?'10px':'' }" >
+                <slot/>
             </div>
-            <svg-icon type="mdi" :path=down style="margin-right: 20px;" v-if="expand"/>
+            <svg-icon type="mdi" :path=expanded?up:down style="margin-right: 20px;" :style="{ marginTop:expanded?'10px':'' }" v-if="expand"/>
         </div>
     </div>
 </template>
 
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiChevronDown } from '@mdi/js';
+import { mdiChevronDown, mdiChevronUp } from '@mdi/js';
 
 export default {
   name: 'listContent',
@@ -25,7 +25,9 @@ export default {
   },
   data () {
     return {
-        down: mdiChevronDown
+        expanded: false,
+        down:mdiChevronDown,
+        up:mdiChevronUp
     }
   },
   props: {
@@ -72,9 +74,7 @@ export default {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     position: relative;
-    display : flex;
-    justify-content: center;
-    align-items : center;
+    display: flex;
 }
 
 .emoji {
@@ -94,6 +94,7 @@ export default {
 
 .button {
     background-color: #ededed;
+    cursor: pointer;
 }
 
 .button:hover {
