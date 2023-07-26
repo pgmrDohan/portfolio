@@ -2,14 +2,18 @@
     <div id="listContent" :style="{ width:width<=100?width+'%':width+'px', color:button?'#0000FF':'' }">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
         <div class="box" 
-        :style="{ width:width<=100?width+'%':width+'px', height:expanded?'200px':height+'px', justifyContent:expand?'space-between':'center', alignItems:expanded?'start':'center' }"
+        :style="{ width:width<=100?width+'%':width+'px', height:expanded?'200px':height+'px' }"
         :class="{ emoji, rounded:expanded?false:height<=40, button }"
         @click="button?onClick(href):expanded?expanded=false:expand?expanded=true:''"
-        >   
-            <div :style="{ textAlign:textAlign, marginLeft:expand?'20px':'', marginTop:expanded?'10px':'' }" >
-                <slot/>
+        >
+            <div :style="{ width:width<=100?width+'%':width+'px', height:height+'px', justifyContent:expand?'space-between':'center', alignItems:expanded?'start':'center' }" style="display: flex;">
+                <div :style="{ textAlign:textAlign, marginLeft:expand?'20px':'', marginTop:expanded?'10px':'' }" >
+                    <slot/>
+                </div>
+                <svg-icon type="mdi" :path=expanded?up:down style="margin-right: 20px;" :style="{ marginTop:expanded?'10px':'' }" v-if="expand"/>
             </div>
-            <svg-icon type="mdi" :path=expanded?up:down style="margin-right: 20px;" :style="{ marginTop:expanded?'10px':'' }" v-if="expand"/>
+            <div v-if="expanded" class="hr-line-bottom"/>
+            <p style="margin-top: 5px; margin-left: 20px;" v-if="expanded">{{ content }}</p>
         </div>
     </div>
 </template>
@@ -49,7 +53,8 @@ export default {
         default: false
     },
     button: Boolean,
-    href: Text
+    href: Text,
+    content: Text
   },
   methods: {
     onClick (uri) {
@@ -74,7 +79,6 @@ export default {
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     position: relative;
-    display: flex;
 }
 
 .emoji {
@@ -99,5 +103,17 @@ export default {
 
 .button:hover {
     background-color: #dddddd;
+}
+
+.hr-line-bottom {
+    border-top: 1px solid #dddddd;
+    margin: 3px 0px;
+    width: 800px;
+}
+
+p {
+    font-family: Pretendard Variable, sans-serif;
+    font-size: 14px;
+    font-weight:300;
 }
 </style>

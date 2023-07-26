@@ -32,7 +32,9 @@
     msg="CTF, 해커톤, 공모전 등 대회에 참여하고 실적을 쌓아갑니다.<br />여러 자격증도 하나 씩 얻고자 합니다.<br />착실히 앞으로 나아갑니다."
     align="left"
   >
-    <listContent emoji expand :height=40 :width=100>
+    <listContent emoji expand :height=40 :width=100 content="
+    
+    ">
       <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
     </listContent>
     <listContent expand :height=40 :width=100>
