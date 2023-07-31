@@ -78,7 +78,7 @@ export default {
 <style scoped>
 p {
   font-family: Pretendard Variable, sans-serif;
-  font-size: 43px;
+  font-size: var(--font-size-exlg);
   font-weight:850;
 }
 

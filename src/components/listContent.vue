@@ -2,7 +2,7 @@
     <div id="listContent" :style="{ width:width<=100?width+'%':width+'px', color:button?'#0000FF':'' }">
         <img v-if="emoji" src="@/assets/pushpin.png"/>
         <div class="box" 
-        :style="{ width:width<=100?width+'%':width+'px', height:expanded?'200px':height+'px' }"
+        :style="{ width:width<=100?width+'%':width+'px', height:expanded?'100%':height+'px' }"
         :class="{ emoji, rounded:expanded?false:height<=40, button }"
         @click="button?onClick(href):expanded?expanded=false:expand?expanded=true:''"
         >
@@ -13,7 +13,7 @@
                 <svg-icon type="mdi" :path=expanded?up:down style="margin-right: 20px;" :style="{ marginTop:expanded?'10px':'' }" v-if="expand"/>
             </div>
             <div v-if="expanded" class="hr-line-bottom"/>
-            <p style="margin-top: 5px; margin-left: 20px;" v-if="expanded">{{ content }}</p>
+            <p style="margin-top: 5px; margin-left: 20px; padding-right: 20px; padding-bottom: 10px;" v-if="expanded"><slot name="content"/></p>
         </div>
     </div>
 </template>
@@ -108,12 +108,12 @@ export default {
 .hr-line-bottom {
     border-top: 1px solid #dddddd;
     margin: 3px 0px;
-    width: 800px;
+    width: 90%;
 }
 
 p {
     font-family: Pretendard Variable, sans-serif;
-    font-size: 14px;
-    font-weight:300;
+    font-size: var(--font-size-sm);
+    font-weight:400;
 }
 </style>

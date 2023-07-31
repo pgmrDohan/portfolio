@@ -32,13 +32,18 @@
     msg="CTF, 해커톤, 공모전 등 대회에 참여하고 실적을 쌓아갑니다.<br />여러 자격증도 하나 씩 얻고자 합니다.<br />착실히 앞으로 나아갑니다."
     align="left"
   >
-    <listContent emoji expand :height=40 :width=100 content="
-    
-    ">
+    <listContent emoji expand :height=40 :width=100>
       <p><strong style="margin-right: 20px;">뭐지 뉴스래터 아티클 기고</strong>2023</p>
+      <template v-slot:content>
+        <a class="aAnimation" href="https://moji.or.kr/" target='_blank'>https://moji.or.kr/</a> 에서 매주 IT에 관한 내용을 정리하여 쉽게 이해할 수 있도록 뉴스래터를 작성, 기고하고 있습니다.<br>
+        보안 관련 소식 및 신제품 출시나 관련 루머 등의 내용을 전반적으로 다루고 있으며 관련 정보 습득을 위해 다양한 뉴스래터를 구독하고 있습니다.
+      </template>
     </listContent>
     <listContent expand :height=40 :width=100>
       <p><strong style="margin-right: 20px;">한국산업인력공단 정보처리기능사 자격증 취득</strong>2022</p>
+      <template v-slot:content>
+        <a class="aAnimation" href="http://www.q-net.or.kr/crf005.do?id=crf00503&jmCd=6921" target="_blank">한국산업인력공단</a>에서 시행하는 정보처리기능사 자격증을 취득하였습니다.<br>
+      </template>
     </listContent>
     <listContent expand :height=40 :width=100>
       <p><strong style="margin-right: 20px;">한국과학창의재단 대학부설 과학영재 교육원 사사과정 연구 성과 발표대회 수상</strong>2022</p>
@@ -115,7 +120,7 @@ a {text-decoration: none; color: inherit;}
   display: inline-block;
   position: relative;
   text-decoration: none;
-  color: inherit;
+  color: #000040;
 }
 .aAnimation::after{
   content: '';
@@ -137,7 +142,7 @@ a {text-decoration: none; color: inherit;}
 
 div {
   font-family: Pretendard Variable, sans-serif;
-  font-size: 17px;
+  font-size: var(--font-size-md);
   font-weight:400;
 }
 
@@ -155,7 +160,7 @@ div {
   margin-top: 150px;
   margin-bottom: 30px;
   font-family: Pretendard Variable, sans-serif;
-  font-size: 13px;
+  font-size: var(--font-size-exsm);
   font-weight:300;
 }
 </style>

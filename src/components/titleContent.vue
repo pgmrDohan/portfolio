@@ -27,14 +27,14 @@ export default {
 
 h1 {
   font-family: Pretendard Variable, sans-serif;
-  font-size: 32px;
+  font-size: var(--font-size-lg);
   font-weight: 800;
   margin-bottom: 7px;
 }
 
 p {
   font-family: Pretendard Variable, sans-serif;
-  font-size: 17px;
+  font-size: var(--font-size-md);
   font-weight: 400;
   margin-top: 7px;
 }
