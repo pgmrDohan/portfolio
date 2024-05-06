@@ -11155,6 +11155,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "react-icons@npm:5.2.0"
+  peerDependencies:
+    react: "*"
+  checksum: 10c0/bd9176b1aa6ddaa99b2abea2cecb523443b39a470912725e12da0b478697312fdefb55daaee921cf28bd9d76f580f0fa879d127c8f63fa1ca4516d44817eb6f4
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1, react-is@npm:^16.8.4":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -11265,10 +11274,12 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     eslint: "npm:8.57.0"
     eslint-config-prettier: "npm:^9.1.0"
+    eslint-config-react-app: "npm:^7.0.1"
     eslint-plugin-react: "npm:^7.34.1"
     globals: "npm:^15.1.0"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
+    react-icons: "npm:^5.2.0"
     react-scripts: "npm:5.0.1"
     typescript: "npm:^4.9.5"
     typescript-eslint: "npm:^7.8.0"
