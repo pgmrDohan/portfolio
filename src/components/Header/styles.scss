@@ -1,18 +1,115 @@
+@import "./mixin";
+
+@include mobile {
+
+	.silinder {
+		width: 340px;
+	}
+
+	#silinderBgBlur {
+		width: 325px;
+		height: calc(325px * 74.41px / 880px);
+		top: 146px;
+	}
+
+	.content {
+		height: 115px;
+		top: 45px;
+
+		#logo {
+			width: 140px;
+		}
+
+		.sns {
+			width: 110px;
+
+			svg {
+				height: 18px;
+				width: 18px;
+			}
+		}
+	}
+}
+
+@include tablet {
+
+	.silinder {
+		width: 550px;
+		bottom: 90px;
+	}
+
+	#silinderBgBlur {
+		width: 525px;
+		height: calc(525px * 74.41px / 880px);
+		top: 145px;
+	}
+
+	.content {
+		height: 140px;
+		top: 35px;
+
+		#logo {
+			width: 180px;
+		}
+
+		.sns {
+			width: 130px;
+
+			svg {
+				height: 20px;
+				width: 20px;
+			}
+		}
+	}
+}
+
+@include desktop {
+
+	.silinder {
+		width: 860px;
+		bottom: 145px;
+	}
+
+	#silinderBgBlur {
+		width: 820px;
+		height: calc(820px * 74.41px / 880px);
+		top: 225px;
+	}
+
+	.content {
+		height: 195px;
+		top: 80px;
+
+		#logo {
+			width: 190px;
+		}
+
+		.sns {
+			width: 170px;
+
+			svg {
+				height: 26px;
+				width: 26px;
+			}
+		}
+	}
+}
+
 .silinder {
 	position: relative;
-	bottom: 15px;
-	width: 50vw;
+}
+
+.Header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #silinderBgBlur {
-	width: 48vw;
-	height: calc(48vw * 74.4px / 880px);
 	border-radius: 50%;
 	backdrop-filter: blur(10px);
 	z-index: -1;
-	background-color: black;
-	position: relative;
-	bottom: calc(75px * 100% / 1020px);
+	position: absolute;
 }
 
 .content {
@@ -20,14 +117,16 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
-	height: 240px;
-	position: relative;
-	bottom: 380px;
+	position: absolute;
+
+	#logo {
+		position: relative;
+		left: 20px;
+	}
 
 	.sns {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		width: 200px;
 	}
 }

@@ -8,18 +8,16 @@ import './styles.scss';
 export default function Header() {
 	return (
 		<div className="Header">
-			<center>
-				<img src={silinder} alt="" className='silinder' />
-				<div id='silinderBgBlur'></div>
-				<div className='content'>
-					<img src={logo} alt="" />
-					<div className='sns'>
-						<MdEmail size={30} style={{ color: "white" }} />
-						<VscGithubInverted size={25} style={{ color: "white" }} />
-						<BsInstagram size={23} style={{ color: "white" }} />
-					</div>
-				</div >
-			</center>
+			<img src={silinder} alt="" className='silinder' />
+			<div id='silinderBgBlur'></div>
+			<div className='content'>
+				<img id='logo' src={logo} alt="" />
+				<div className='sns'>
+					<MdEmail style={{ color: "white" }} />
+					<VscGithubInverted style={{ color: "white" }} />
+					<BsInstagram style={{ color: "white" }} />
+				</div>
+			</div >
 		</div >
 	);
 }
