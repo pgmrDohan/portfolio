@@ -1,4 +1,4 @@
-@import "./mixin";
+@import "../../mixin";
 
 @include mobile {
 
@@ -107,7 +107,7 @@
 
 #silinderBgBlur {
 	border-radius: 50%;
-	backdrop-filter: blur(10px);
+	backdrop-filter: blur(5px);
 	z-index: -1;
 	position: absolute;
 }
