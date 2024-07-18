@@ -66,19 +66,19 @@
 @include desktop {
 
 	.silinder {
-		width: 860px;
-		bottom: 145px;
+		width: 700px;
+		bottom: 140px;
 	}
 
 	#silinderBgBlur {
-		width: 820px;
-		height: calc(820px * 74.41px / 880px);
-		top: 225px;
+		width: 670px;
+		height: calc(670px * 74.41px / 880px);
+		top: 159px;
 	}
 
 	.content {
 		height: 195px;
-		top: 80px;
+		top: 10px;
 
 		#logo {
 			width: 190px;
@@ -88,8 +88,8 @@
 			width: 170px;
 
 			svg {
-				height: 26px;
-				width: 26px;
+				height: 24px;
+				width: 24px;
 			}
 		}
 	}
