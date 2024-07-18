@@ -14,7 +14,6 @@ Make repository using this template and Clone.
 After Clone, EDIT `package.json`.
 ### 🧪 Using
 ```shell
-yarn dev
-yarn build
 yarn start
+yarn build
 ```
