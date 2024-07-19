@@ -20,9 +20,9 @@ export default function Header(props: Props) {
 			<div className='content'>
 				<img id='logo' src={logo} alt="" />
 				<div className='sns'>
-					<a href={"mailto:" + props.mail}><MdEmail style={{ color: "white" }} /></a>
-					<a href={"https://github.com/" + props.github} target="_blank" rel="noreferrer"><VscGithubInverted style={{ color: "white" }} /></a>
-					<a href={"https://instagram.com/" + props.insta} target="_blank" rel="noreferrer"><BsInstagram style={{ color: "white" }} /></a>
+					<MdEmail style={{ color: "white" }} onClick={() => window.open("mailto:" + props.mail)} />
+					<VscGithubInverted style={{ color: "white" }} onClick={() => window.open("https://github.com/" + props.github)} />
+					<BsInstagram style={{ color: "white" }} onClick={() => window.open("https://instagram.com/" + props.insta)} />
 				</div>
 			</div >
 		</div >

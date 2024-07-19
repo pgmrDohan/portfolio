@@ -1,23 +1,43 @@
 import React from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import './App.scss';
 import Header from './components/Header';
 import { Triangle, Circle } from './components/Shapes';
 import Tag from './components/Tag';
 
 function App() {
+	const [width, setWidth] = useState(document.documentElement.clientWidth);
+
+	const redirectCleanpage = useMemo(() => {
+		if (width < 335) {
+			//window.location.href = "small than mobile"
+		}
+	}, [width]);
+
+	const handleResize = () => {
+		setWidth(document.documentElement.clientWidth);
+	};
+
+	useEffect(() => {
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
 	return (
 		<div className="App">
 			<Header mail='me@dohan.in' github='pgmrdohan' insta='i70h4n' />
 			{/* <Triangle size={150} color="#3894FF" style={{ rotate: "8.71deg", zIndex: "-10" }} /> */}
-			<Tag content="Portfolio" style={{ rotate: "10.62deg", zIndex: "-10", right: "180px", bottom: "500px" }} />
-			<Tag content="LowLevel" style={{ rotate: "-8.58deg", zIndex: "-10", bottom: "300px", left: "80px" }} />
+			{/* <Tag content="Portfolio" style={{}} /> */}
+			{/* <Tag content="LowLevel" style={{}} /> */}
 			{/* <Circle size={100} color="#38FF70" style={{ position: "absolute", left: "1010px", top: "500px", zIndex: "-10" }} /> */}
-			<Tag content="TechBlog" style={{ rotate: "8.48deg", zIndex: "-10", right: "6px", bottom: "250px" }} />
+			{/* <Tag content="TechBlog" style={{}} /> */}
 			{/* <Circle size={100} color="#FFF738" style={{ position: "absolute", left: "270px", top: "740px" }} /> */}
-			<Tag content="UI/UX" style={{ rotate: "-16.67deg", zIndex: "-11", left: "1px", bottom: "150px" }} />
-			<Tag content="Web Fullstack" style={{ rotate: "21.06deg", zIndex: "-11", right: "1px", bottom: "120px" }} />
+			{/* <Tag content="UI/UX" style={{}} /> */}
+			{/* <Tag content="Web Fullstack" style={{}} /> */}
 			{/* <Circle size={100} color="#FF3838" style={{ position: "absolute", left: "770px", top: "790px" }} /> */}
-			<Tag content="Dohan Kwon" style={{ zIndex: "-12", bottom: "50px", left: "15%" }} />
+			{/* <Tag content="Dohan Kwon" style={{}} /> */}
 		</div>
 	);
 }
