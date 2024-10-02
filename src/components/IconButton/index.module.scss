@@ -1,0 +1,15 @@
+.IconButton {
+	background-color: transparent;
+	border-radius: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		background-color: #333333;
+	}
+}
+
+.Icon {
+	color: #66686A;
+}
