@@ -1,12 +1,8 @@
-import { IconButton } from "../../components";
+import styles from './index.module.scss';
 
-
-function Home() {
+export function Home() {
 	return (
 		<div className="Home">
-
-		</div>
+		</div >
 	);
-}
-
-export default Home;
+};

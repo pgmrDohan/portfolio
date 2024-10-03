@@ -87,15 +87,10 @@ video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	height: 100%;
-	width: 100%;
-	position: fixed;
 	top: 0px;
 	bottom: 0;
-	margin-right: -10px;
 	overflow: hidden;
 }
 
