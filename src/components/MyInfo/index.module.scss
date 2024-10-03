@@ -1,32 +1,33 @@
 .Info {
-    display: flex;
-    flex-direction: row;
-    gap: 25px;
-    align-items: flex-end;
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	align-items: flex-end;
 
-    img {
-        width: 105px;
-        height: 105px;
-    }
+	img {
+		width: 105px;
+		height: 105px;
+	}
 
-    div {
-        p {
-            margin-top: 7px;
-            color: #66686A;
-            font-size: 0.7rem;
-            font-weight: 400;
-        }
+	div {
+		p {
+			margin-top: 7px;
+			color: #66686A;
+			font-size: 0.8rem;
+			font-weight: 400;
+			cursor: pointer;
+		}
 
-        span {
-            color: #E0E0E6;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-    }
+		span {
+			color: #E0E0E6;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+	}
 }
 
 .speekerIcon {
-    position: relative;
-    top: 4px;
-    margin-left: 7px;
+	position: relative;
+	top: 4px;
+	margin-left: 7px;
 }

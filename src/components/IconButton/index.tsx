@@ -1,15 +1,15 @@
 import { useIcon } from '@/hooks';
 import styles from './index.module.scss';
 
-type Props = {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
 	size: number,
 	icon: string
 }
 
-export const IconButton = ({ size, icon }: Props) => {
+export const IconButton = ({ size, icon, ...rest }: Props) => {
 	const Icon = useIcon(icon);
 	return (
-		<div className={styles.IconButton} style={{
+		<div {...rest} className={styles.IconButton} style={{
 			width: `${size}px`,
 			height: `${size}px`,
 		}}>

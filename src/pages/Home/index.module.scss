@@ -1,3 +1,14 @@
-.Header {
-    margin-top: 20px;
+.typo {
+	p {
+		color: #9CA2A7;
+		font-size: 0.8rem;
+		font-weight: 300;
+		line-height: 20px;
+		margin-bottom: 10px;
+
+		strong {
+			color: #E0E0E6;
+			font-weight: 400;
+		}
+	}
 }

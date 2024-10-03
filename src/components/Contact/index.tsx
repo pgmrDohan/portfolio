@@ -3,34 +3,34 @@ import { useIcon } from '@/hooks';
 import styles from './index.module.scss';
 
 type Props = {
-    info: { [key: string]: { link: string, text: string } }
+	info: { [key: string]: { link: string, text: string } }
 };
 
 export const Contact = ({ info }: Props) => {
-    const Mail = useIcon("Mail");
+	const Mail = useIcon("Mail");
 
-    const iconMap: { [key: string]: React.ElementType } = {
-        Mail,
-        Github,
-        Instagram,
-        Discord
-    };
+	const iconMap: { [key: string]: React.ElementType } = {
+		Mail,
+		Github,
+		Instagram,
+		Discord
+	};
 
-    const handleClick = (link: string) => {
-        window.open(link, '_blank')?.focus();
-    };
+	const handleClick = (link: string) => {
+		window.open(link, '_blank')?.focus();
+	};
 
-    return (
-        <ul>
-            {Object.entries(info).map(([key, { link, text }], i) => {
-                const Icon = iconMap[key] || (() => null);
-                return (
-                    <li key={i} onClick={() => handleClick(link)}>
-                        <Icon strokeWidth={2} className={styles.Icon} />
-                        {text}
-                    </li>
-                );
-            })}
-        </ul>
-    );
+	return (
+		<ul>
+			{Object.entries(info).map(([key, { link, text }], i) => {
+				const Icon = iconMap[key] || (() => null);
+				return (
+					<li key={i} onClick={() => handleClick(link)}>
+						<Icon strokeWidth={2} className={styles.Icon} />
+						{text}
+					</li>
+				);
+			})}
+		</ul>
+	);
 };
