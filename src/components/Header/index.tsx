@@ -10,12 +10,12 @@ export const Header = (props: Props) => {
 	return (
 		<div className={`${styles.Header} ${props.className}`}>
 			<div className={styles.flexGap5}>
-				<IconButton size={45} icon="House"></IconButton>
-				<IconButton size={45} icon="BookText"></IconButton>
+				<IconButton size={40} icon="House"></IconButton>
+				<IconButton size={40} icon="BookText"></IconButton>
 			</div>
 			<div className={styles.flexGap5}>
-				<IconButton size={45} icon="Moon"></IconButton>
-				<IconButton size={45} icon="Command"></IconButton>
+				<IconButton size={40} icon="Moon"></IconButton>
+				<IconButton size={40} icon="Command"></IconButton>
 			</div>
 		</div >
 	)

@@ -1,6 +1,5 @@
+import { useIcon } from '@/hooks';
 import styles from './index.module.scss';
-import { icons, LucideProps } from 'lucide-react';
-import { ForwardRefExoticComponent, RefAttributes } from 'react'
 
 type Props = {
 	size: number,
@@ -8,7 +7,7 @@ type Props = {
 }
 
 export const IconButton = ({ size, icon }: Props) => {
-	const Icon = (icons as { [key: string]: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>> })[icon];
+	const Icon = useIcon(icon);
 	return (
 		<div className={styles.IconButton} style={{
 			width: `${size}px`,
