@@ -2,13 +2,9 @@ import { DetailedHTMLProps, HTMLAttributes, HTMLProps } from "react";
 import { IconButton } from "../IconButton"
 import styles from './index.module.scss';
 
-type Props = {
-	className: CSSModuleClasses[string]
-}
-
-export const Header = (props: Props) => {
+export const Header: React.FunctionComponent<React.HTMLAttributes<HTMLDivElement>> = ({ className }) => {
 	return (
-		<div className={`${styles.Header} ${props.className}`}>
+		<div className={`${styles.Header} ${className}`}>
 			<div className={styles.flexGap5}>
 				<IconButton size={40} icon="House"></IconButton>
 				<IconButton size={40} icon="BookText"></IconButton>

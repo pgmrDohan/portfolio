@@ -13,11 +13,11 @@ export const MyInfo = ({ profileImage, name, pronounce }: Props) => {
     return (
         <div className={styles.Info}>
             <img src={profileImage} />
-            <div onClick={() => {
-                speechSynthesis.speak(Object.assign(new SpeechSynthesisUtterance(name), { lang: 'ko-KR', pitch: 1, rate: 1 }));
-            }}>
+            <div>
                 <span>{name}</span>
-                <p>{pronounce}<SpeekerIcon size={16} className={styles.speekerIcon} /></p>
+                <p onClick={() => {
+                    speechSynthesis.speak(Object.assign(new SpeechSynthesisUtterance(name), { lang: 'ko-KR', pitch: 1, rate: 1 }));
+                }}>{pronounce}<SpeekerIcon size={16} className={styles.speekerIcon} /></p>
             </div>
         </div>
     )
