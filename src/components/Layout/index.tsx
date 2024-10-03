@@ -1,14 +1,18 @@
 import { Outlet } from "react-router-dom";
+import { Footer } from "../Footer";
 import { Header } from "../Header"
-import styles from './index.module.scss';
 
 export const Layout = () => {
 	return (
 		<>
-			<Header className={styles.Header} />
-			<div className={styles.container}>
+			<Header className="mt-20" />
+			<div className="mt-50">
 				<Outlet />
 			</div>
+			<Footer className="mt-40 mb-40" drawDuration={5}
+				maintainDuration={1}
+				fadeDuration={1}
+				delay={3} />
 		</>
 	)
 }

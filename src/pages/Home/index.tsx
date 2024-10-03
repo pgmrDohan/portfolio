@@ -33,7 +33,13 @@ export function Home() {
 			</Content>
 			<Content title="프로젝트 💿">
 			</Content>
-			<Content title="핵심 기술 🖥">
+			<Content title="핵심 기술 🖥" className={styles.typo}>
+				<p><strong>저수준 프로그래밍 부터 고수준을 오가는</strong> 소프트웨어 개발</p>
+				<p>C언어와 C++ 및 어셈블리어를 활용한 <strong>운영체제(커널)</strong> 개발</p>
+				<p>버전 관리 시스템 <strong>GIT을 활용한 협업</strong> 프로젝트</p>
+				<p>NodeJS와 Python 등 프레임워크를 활용한 <strong>웹 서버단</strong> 개발</p>
+				<p>JS 프론트엔드 프레임워크를 통한 <strong>웹 디자인 퍼블리싱</strong></p>
+				<p>Figma를 통한 <strong>UI/UX 디자인</strong></p>
 			</Content>
 			<Content title="최신 게시글 🔖">
 			</Content>
