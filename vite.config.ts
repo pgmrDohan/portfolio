@@ -14,4 +14,11 @@ export default defineConfig({
 		alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
 		extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.css.ts'],
 	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				silenceDeprecations: ['legacy-js-api'],
+			},
+		},
+	},
 });
