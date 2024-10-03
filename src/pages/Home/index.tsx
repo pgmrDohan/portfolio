@@ -25,7 +25,7 @@ export function Home() {
 						text: "/dbqcFRdtHX"
 					},
 				}
-			}></Contact>
+			} />
 		</div >
 	);
 };
