@@ -1,10 +1,10 @@
 import styles from './index.module.scss';
 import { MyInfo, Contact, Content, Projects } from '@/components';
-import { portfolioProject, profileImage } from '@/assets';
+import { mazeProject, portfolioProject, profileImage, reactTsProject } from '@/assets';
 
 export function Home() {
 	return (
-		<div className={styles.Home}>
+		<div>
 			<MyInfo profileImage={profileImage} name="권도한" pronounce='/kwʌn·do·ɑn/' />
 			<Contact info={
 				{
@@ -40,6 +40,18 @@ export function Home() {
 							link: "https://www.dohan.in",
 							github: "https://www.github.com/pgmrDohan/portfolio",
 							desc: "Astro와 React를 사용하여 현 포트폴리오 웹 사이트를 제작함. 컨텐츠를 수정하는 용도의 관리자 대시보드와 함께 블로그 기능을 포함하고 있음."
+						},
+						"React.TS": {
+							icon: reactTsProject,
+							year: 2024,
+							github: "https://www.github.com/pgmrDohan/react.ts",
+							desc: "React + Typescript + Yarn berry 를 적용시켜 리엑트 새 프로젝트용 탬플릿을 제작함. 프로젝트 시 사용하고 있음."
+						},
+						"Framework of Operating System Development": {
+							icon: mazeProject,
+							year: 2024,
+							github: "https://github.com/fosd-project/FOSD",
+							desc: "운영체제 개발의 프레임워크를 개발하였음. 다양한 추가 라이브러리를 통해 자원 관리 알고리즘을 커스텀 할 수 있으며, OS에 맞는 드라이버를 추가 개발 할 수 있음."
 						},
 					}
 				} />
