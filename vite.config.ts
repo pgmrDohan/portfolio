@@ -10,7 +10,7 @@ export default defineConfig({
 		devTarget: "esnext"
 	}),
 	svgr(), sassDts({
-		enabledMode: ['development', 'production'],
+		enabledMode: ['production'],
 		sourceDir: path.resolve(__dirname, './src'),
 		outputDir: path.resolve(__dirname, './dist'),
 	})],
