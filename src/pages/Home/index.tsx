@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { MyInfo, Contact, Content, Projects } from '@/components';
+import { MyInfo, Contact, Content, Projects, Posts } from '@/components';
 import { mazeProject, portfolioProject, profileImage, reactTsProject } from '@/assets';
 
 export function Home() {
@@ -65,6 +65,11 @@ export function Home() {
 				<p>Figma를 통한 <strong>UI/UX 디자인</strong></p>
 			</Content>
 			<Content title="최신 게시글 🔖">
+				<Posts info={{
+					"HELLO, WORLD!": { date: 1728048263 },
+					"VM Migraition 이란?": { date: 1728028263 },
+					"[TLD] 2023.01.16": { date: 1727848263 }
+				}} />
 			</Content>
 			<Content title="대외 활동 📜">
 			</Content>
