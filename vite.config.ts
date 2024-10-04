@@ -5,6 +5,7 @@ import sassDts from 'vite-plugin-sass-dts';
 import path from 'path';
 
 export default defineConfig({
+	base: './',
 	plugins: [react({
 		devTarget: "esnext"
 	}),
