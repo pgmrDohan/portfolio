@@ -21,11 +21,11 @@ export const Contact = ({ info }: Props) => {
 	};
 
 	return (
-		<ul>
+		<ul className={styles.list}>
 			{Object.entries(info).map(([key, { link, text }], i) => {
 				const Icon = iconMap[key] || (() => null);
 				return (
-					<li key={i} onClick={() => handleClick(link)}>
+					<li key={i} onClick={() => handleClick(link)} className={styles.listElement}>
 						<Icon strokeWidth={2} className={styles.Icon} />
 						{text}
 					</li>

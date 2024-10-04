@@ -3,3 +3,4 @@ export { default as Github } from "./icons/Github.svg?react";
 export { default as Instagram } from "./icons/Instagram.svg?react";
 
 export { default as profileImage } from "./images/profileImage.png";
+export { default as portfolioProject } from "./images/portfolioProject.png";

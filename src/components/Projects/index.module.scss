@@ -1,0 +1,61 @@
+.listElement {
+    font-size: 0.8rem;
+    color: #9CA2A7;
+    font-weight: 400;
+    overflow: hidden;
+    line-height: 16px;
+
+    * {
+        overflow: hidden;
+    }
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: 0fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+            font-size: 0.9rem;
+            color: #E0E0E6;
+
+            span {
+                color: #66686A;
+                font-size: 0.8rem;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            color: #9CA2A7;
+        }
+    }
+}
+
+.icon {
+    position: relative;
+    top: 2.5px;
+}
