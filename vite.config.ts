@@ -32,5 +32,6 @@ export default defineConfig({
 	},
 	build: {
 		cssCodeSplit: true,
+		emptyOutDir: false,
 	},
 });
