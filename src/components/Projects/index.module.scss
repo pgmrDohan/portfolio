@@ -1,5 +1,5 @@
 .listElement {
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	color: #9CA2A7;
 	font-weight: 400;
 	overflow: hidden;
@@ -57,8 +57,16 @@
 }
 
 .moreIcon {
-	position: relative;
-	top: 2.5px;
+	svg {
+		position: relative;
+		top: 2.5px;
+	}
+
+	font-size: 0.8rem;
+	color: #9CA2A7;
+	font-weight: 400;
+	overflow: hidden;
+	line-height: 16px;
 }
 
 .Icon {

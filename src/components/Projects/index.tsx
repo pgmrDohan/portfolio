@@ -36,8 +36,8 @@ export const Projects = ({ info }: Props) => {
 					</li>
 				);
 			})}
-			<li className={styles.listElement}>
-				<ArrowRight size={15} strokeWidth={2} className={`${styles.moreIcon} mr-5`} />
+			<li className={styles.moreIcon}>
+				<ArrowRight size={15} strokeWidth={2} className="mr-5" />
 				프로젝트 더보기
 			</li>
 		</ul>
