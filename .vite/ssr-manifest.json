@@ -9575,7 +9575,7 @@
     "./assets/reactTsProject-1Px-XouB.png",
     "./assets/mazeProject-CTOugviF.png"
   ],
-  "src/index.tsx": [
+  "src/index.ts": [
     "./assets/profileImage-CtFutK97.png",
     "./assets/portfolioProject-DEjDXCSs.png",
     "./assets/reactTsProject-1Px-XouB.png",
@@ -9588,12 +9588,6 @@
     "./assets/mazeProject-CTOugviF.png"
   ],
   "src/pages/Home/index.tsx": [
-    "./assets/profileImage-CtFutK97.png",
-    "./assets/portfolioProject-DEjDXCSs.png",
-    "./assets/reactTsProject-1Px-XouB.png",
-    "./assets/mazeProject-CTOugviF.png"
-  ],
-  "src/pages/NotFound/index.tsx": [
     "./assets/profileImage-CtFutK97.png",
     "./assets/portfolioProject-DEjDXCSs.png",
     "./assets/reactTsProject-1Px-XouB.png",
