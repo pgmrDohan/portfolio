@@ -1,14 +1,13 @@
-.typo {
-	p {
-		color: #9CA2A7;
-		font-size: 0.7rem;
-		font-weight: 400;
-		line-height: 20px;
-		margin-bottom: 10px;
+@include for-size(mobile) {
+	.typo {
+		p {
+			@include text;
+			margin-bottom: 10px;
 
-		strong {
-			color: #E0E0E6;
-			font-weight: 500;
+			strong {
+				color: $emphaze-color;
+				font-weight: 500;
+			}
 		}
 	}
 }

@@ -11,9 +11,7 @@
 
 	div {
 		p {
-			color: #66686A;
-			font-size: min(3rem, 13px);
-			font-weight: 400;
+			@include text;
 			cursor: pointer;
 			overflow: hidden;
 			display: flex;
@@ -21,9 +19,7 @@
 		}
 
 		span {
-			color: #E0E0E6;
-			font-size: min(4.5rem, 20px);
-			font-weight: 600;
+			@include header-1;
 		}
 	}
 }

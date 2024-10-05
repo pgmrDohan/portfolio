@@ -20,11 +20,11 @@ export const Footer = ({ drawDuration, maintainDuration, fadeDuration, delay, cl
 			<span className="mr-10">Experiences</span>
 			<span className="mr-10">Bookshelf</span>
 			<hr />
-			<p>
-				<span><Rss className={`${styles.Icon} mr-5`} />RSS</span>
+			<div>
+				<p><Rss className={`${styles.Icon} mr-5`} />RSS</p>
 				<span>PDF Version CV</span>
 				<span>CC BY 4.0</span>
-			</p>
+			</div>
 			<center>
 				<svg className={styles.Signiture} width="1332" height="524" viewBox="0 0 1332 524" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path

@@ -1,7 +1,5 @@
 .listElement {
-	font-size: 0.9rem;
-	color: #E0E0E6;
-	font-weight: 400;
+	@include header-1;
 
 	display: flex;
 	justify-content: space-between;
@@ -9,8 +7,8 @@
 
 	p {
 		overflow: hidden;
-		font-size: 0.7rem;
-		color: #66686A;
+		@include text;
+		margin-top: 5px;
 	}
 
 	svg {
@@ -26,14 +24,14 @@
 }
 
 .moreIcon {
+	display: flex;
+	align-items: center;
+
 	svg {
-		position: relative;
-		top: 2.5px;
+		margin-right: 5px;
 	}
 
-	font-size: 0.8rem;
-	color: #9CA2A7;
-	font-weight: 400;
+	@include text;
 	overflow: hidden;
 	line-height: 16px;
 }

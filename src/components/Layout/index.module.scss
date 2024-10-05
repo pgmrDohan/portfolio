@@ -1,0 +1,18 @@
+@include for-size(mobile) {
+	.Header {
+		@include center-align;
+		margin-top: 20px;
+	}
+
+	.Content {
+		@include center-align;
+		margin-top: 50px;
+
+	}
+
+	.Footer {
+		@include center-align;
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+}

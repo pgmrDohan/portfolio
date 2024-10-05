@@ -1,9 +1,6 @@
 .listElement {
-	font-size: 0.7rem;
-	color: #9CA2A7;
-	font-weight: 400;
+	@include text;
 	overflow: hidden;
-	line-height: 16px;
 
 	* {
 		overflow: hidden;
@@ -35,12 +32,10 @@
 		align-items: center;
 
 		p {
-			font-size: 0.9rem;
-			color: #E0E0E6;
+			@include header-1;
 
 			span {
-				color: #66686A;
-				font-size: 0.8rem;
+				@include text;
 				display: block;
 				margin-bottom: 5px;
 			}
@@ -51,20 +46,19 @@
 			flex-direction: row;
 			gap: 10px;
 			align-items: center;
-			color: #9CA2A7;
 		}
 	}
 }
 
 .moreIcon {
+	display: flex;
+	align-items: center;
+
 	svg {
-		position: relative;
-		top: 2.5px;
+		margin-right: 5px;
 	}
 
-	font-size: 0.8rem;
-	color: #9CA2A7;
-	font-weight: 400;
+	@include text;
 	overflow: hidden;
 	line-height: 16px;
 }
@@ -76,7 +70,7 @@
 	flex-shrink: 0;
 
 	svg {
-		width: 18px;
-		height: 18px;
+		width: 20px;
+		height: 20px;
 	}
 }

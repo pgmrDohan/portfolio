@@ -1,15 +1,13 @@
 .Footer {
-	color: #9CA2A7;
+	@include text;
 	overflow: hidden;
 
 	* {
 		overflow: hidden;
 	}
 
-	span,
-	p {
-		font-size: 0.7rem;
-		font-weight: 400;
+	span {
+		margin-right: 10px;
 	}
 
 	hr {
@@ -17,29 +15,32 @@
 		margin-right: 5px;
 		height: 1px;
 		border: 0px;
-		background-color: #9CA2A7;
+		background-color: $text-color;
 		border-radius: 100px;
 	}
 
-	p {
+	div {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: nowrap;
+
+		p {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+		}
 	}
 }
 
 .Icon {
-	width: 12px;
-	height: 12px;
-	position: relative;
-	top: 2px;
+	width: $header-3;
 }
 
 .Signiture {
-	width: 50%;
-	height: 50%;
+	width: 40%;
+	height: 40%;
 	margin: 0 auto;
 	margin-top: 10px;
 }

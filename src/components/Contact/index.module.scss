@@ -1,10 +1,10 @@
 .listElement {
-	font-size: 0.8rem;
-	color: #66686A;
-	font-weight: 400;
+	@include text;
 	margin-top: 15px;
 	cursor: pointer;
 	overflow: visible;
+	display: flex;
+	align-items: center;
 }
 
 .list {
@@ -13,10 +13,7 @@
 }
 
 .Icon {
-	width: 17px;
-	height: 17px;
+	width: $header-2;
 	margin-right: 13px;
-	color: #66686A;
-	position: relative;
-	top: 4px;
+	color: $text-color;
 }

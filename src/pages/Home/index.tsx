@@ -4,7 +4,7 @@ import { mazeProject, portfolioProject, profileImage, reactTsProject } from '@/a
 
 export function Home() {
 	return (
-		<div>
+		<>
 			<MyInfo profileImage={profileImage} name="권도한" pronounce='/kwʌn·do·ɑn/' />
 			<Contact info={
 				{
@@ -77,6 +77,6 @@ export function Home() {
 			</Content>
 			<Content title="읽고 있는 책 📚">
 			</Content>
-		</div >
+		</>
 	);
 };

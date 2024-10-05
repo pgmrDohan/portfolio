@@ -1,7 +1,5 @@
 .Title {
-	color: #E0E0E6;
-	font-size: 1.1rem;
-	font-weight: 500;
+	@include header-1;
 	margin-bottom: 20px;
 	display: block;
 	overflow: visible;

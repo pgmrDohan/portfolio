@@ -1,0 +1,31 @@
+@mixin for-size($size) {
+	@if $size ==mobile {
+		@media (max-width: 599px) {
+			@content;
+		}
+	}
+
+	@else if $size ==pc {
+		@media (min-width: 600px) {
+			@content;
+		}
+	}
+}
+
+@mixin center-align {
+	width: 85%;
+	margin: 0 auto;
+}
+
+@mixin header-1 {
+	color: $emphaze-color;
+	font-size: $header-1;
+	font-weight: 600;
+}
+
+@mixin text {
+	color: $text-color;
+	font-size: $header-3;
+	font-weight: 400;
+	line-height: 20px;
+}
