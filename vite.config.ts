@@ -13,6 +13,7 @@ export default defineConfig({
 	cacheDir: ".yarn/.vite",
 	ssgOptions: {
 		crittersOptions: false,
+		entry: "src/index.ts"
 	},
 	optimizeDeps: {
 		exclude: ['blip-ds/loader'],
