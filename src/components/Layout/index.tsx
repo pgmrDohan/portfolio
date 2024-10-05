@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { Footer } from "../Footer";
 import { Header } from "../Header"
-import { Head } from 'vite-react-ssg'
 import styles from './index.module.scss'
 import { MainEmbedImage } from "@/assets";
 import { useEffect, useState } from "react";
+import { Head } from "vite-react-ssg";
 
 export const Layout = () => {
 	const [location, setLocation] = useState<{ pathname: string, href: string }>({ pathname: "", href: "" });
