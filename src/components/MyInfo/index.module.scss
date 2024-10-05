@@ -11,24 +11,24 @@
 
 	div {
 		p {
-			margin-top: 7px;
 			color: #66686A;
-			font-size: 0.8rem;
+			font-size: min(3rem, 13px);
 			font-weight: 400;
 			cursor: pointer;
 			overflow: hidden;
+			display: flex;
+			align-items: center;
 		}
 
 		span {
 			color: #E0E0E6;
-			font-size: 1.3rem;
+			font-size: min(4.5rem, 20px);
 			font-weight: 600;
 		}
 	}
 }
 
 .speekerIcon {
-	position: relative;
-	top: 3.5px;
 	margin-left: 7px;
+	width: min(3rem, 13px);
 }

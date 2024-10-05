@@ -17,7 +17,7 @@ export const MyInfo = ({ profileImage, name, pronounce }: Props) => {
 				<span>{name}</span>
 				<p onClick={() => {
 					speechSynthesis.speak(Object.assign(new SpeechSynthesisUtterance(name), { lang: 'ko-KR', pitch: 1, rate: 1 }));
-				}}>{pronounce}<SpeekerIcon size={16} className={styles.speekerIcon} /></p>
+				}}>{pronounce}<SpeekerIcon className={styles.speekerIcon} strokeWidth={1.5} /></p>
 			</div>
 		</div>
 	)

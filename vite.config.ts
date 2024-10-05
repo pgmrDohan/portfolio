@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
-import sassDts from 'vite-plugin-sass-dts';
 import path from 'path';
 
 export default defineConfig({
@@ -9,11 +8,7 @@ export default defineConfig({
 	plugins: [react({
 		devTarget: "esnext"
 	}),
-	svgr(), sassDts({
-		enabledMode: ['production'],
-		sourceDir: path.resolve(__dirname, './src'),
-		outputDir: path.resolve(__dirname, './dist'),
-	})],
+	svgr()],
 	cacheDir: ".yarn/.vite",
 	optimizeDeps: {
 		exclude: ['blip-ds/loader'],
