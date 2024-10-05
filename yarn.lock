@@ -1738,9 +1738,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"critters@npm:0.0.19":
-  version: 0.0.19
-  resolution: "critters@npm:0.0.19"
+"critters@npm:0.0.20":
+  version: 0.0.20
+  resolution: "critters@npm:0.0.20"
   dependencies:
     chalk: "npm:^4.1.0"
     css-select: "npm:^5.1.0"
@@ -1749,7 +1749,7 @@ __metadata:
     htmlparser2: "npm:^8.0.2"
     postcss: "npm:^8.4.23"
     pretty-bytes: "npm:^5.3.0"
-  checksum: 10c0/facaed781d44aba3d55e92a6e280b397b4c393f8756fe8233afb5bf35ff1cb01562258eb4c910c534c8c7746a27b48a65ab111416733d9fb3f35fe50e65ac363
+  checksum: 10c0/d5769969f237c1a8af92ea88c0d224a2f46e8489fa0afe04d16f65937284ceb3f0ede75e16054c9b91c35c181f5d9dc71eaa4e153de0b7c46d3dd5e4689513b9
   languageName: node
   linkType: hard
 
@@ -4230,7 +4230,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     "@types/react-router-dom": "npm:^5.3.3"
     "@vitejs/plugin-react-swc": "npm:^3.7.1"
-    critters: "npm:0.0.19"
+    critters: "npm:0.0.20"
     eslint: "npm:8.57.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-react: "npm:^7.34.1"
