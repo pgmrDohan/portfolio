@@ -1,10 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { ViteReactSSG } from 'vite-react-ssg'
+import { routes } from './App.js'
 
-import App from './App';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-);
+export const createRoot = ViteReactSSG({ routes })

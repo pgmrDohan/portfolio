@@ -1,15 +1,21 @@
-import { RouterProvider } from 'react-router-dom';
+import type { RouteRecord } from 'vite-react-ssg'
 
-import { useRouter } from '@/hooks';
+import { Layout } from '@/components'
+import {
+	Home,
+	NotFound
+} from '@/pages'
 
-const App = () => {
-	const router = useRouter();
-
-	return (
-		<>
-			<RouterProvider router={router} />
-		</>
-	);
-}
-
-export default App;
+export const routes: RouteRecord[] = [
+	{
+		path: '/',
+		element: <Layout />,
+		errorElement: <NotFound />,
+		children: [
+			{
+				index: true,
+				element: <Home />,
+			},
+		],
+	},
+]

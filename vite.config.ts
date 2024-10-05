@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import svgr from "vite-plugin-svgr";
 import path from 'path';
+import { } from 'vite-react-ssg'
 
 export default defineConfig({
 	base: './',
@@ -10,6 +11,9 @@ export default defineConfig({
 	}),
 	svgr()],
 	cacheDir: ".yarn/.vite",
+	ssgOptions: {
+		crittersOptions: false,
+	},
 	optimizeDeps: {
 		exclude: ['blip-ds/loader'],
 	},
@@ -32,5 +36,12 @@ export default defineConfig({
 	build: {
 		cssCodeSplit: true,
 		emptyOutDir: false,
+	},
+	server: {
+		headers: {
+			'Cross-Origin-Opener-Policy': 'same-origin',
+			'Cross-Origin-Embedder-Policy': 'require-corp',
+			'This-Is-A-Custom-Header': 'yes',
+		},
 	},
 });
