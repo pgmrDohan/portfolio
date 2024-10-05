@@ -1,0 +1,33 @@
+{
+  "index.html": {
+    "file": "assets/app-Br6oAbjO.js",
+    "name": "app",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/app-Ik_t_0NJ.css"
+    ],
+    "assets": [
+      "assets/profileImage-CtFutK97.png",
+      "assets/portfolioProject-DEjDXCSs.png",
+      "assets/reactTsProject-1Px-XouB.png",
+      "assets/mazeProject-CTOugviF.png"
+    ]
+  },
+  "src/assets/images/mazeProject.png": {
+    "file": "assets/mazeProject-CTOugviF.png",
+    "src": "src/assets/images/mazeProject.png"
+  },
+  "src/assets/images/portfolioProject.png": {
+    "file": "assets/portfolioProject-DEjDXCSs.png",
+    "src": "src/assets/images/portfolioProject.png"
+  },
+  "src/assets/images/profileImage.png": {
+    "file": "assets/profileImage-CtFutK97.png",
+    "src": "src/assets/images/profileImage.png"
+  },
+  "src/assets/images/reactTsProject.png": {
+    "file": "assets/reactTsProject-1Px-XouB.png",
+    "src": "src/assets/images/reactTsProject.png"
+  }
+}
