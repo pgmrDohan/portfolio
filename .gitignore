@@ -219,3 +219,7 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/react,yarn,node,visualstudiocode,windows
 
 .vite-react-ssg-temp
+public/.git
+public/.gitignore
+public/404.html
+public/CNAME

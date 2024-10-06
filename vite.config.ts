@@ -36,7 +36,7 @@ export default defineConfig({
 	},
 	build: {
 		cssCodeSplit: true,
-		emptyOutDir: false,
+		emptyOutDir: true,
 	},
 	server: {
 		headers: {

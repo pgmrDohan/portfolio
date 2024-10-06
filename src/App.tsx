@@ -12,7 +12,11 @@ export const routes: RouteRecord[] = [
 		children: [
 			{
 				index: true,
-				element: <Home />,
+				element: <Home />
+			},
+			{
+				path: "/projects",
+				element: <Home />
 			},
 		],
 	},
