@@ -7,3 +7,6 @@ export * from './Content';
 export * from './Footer';
 export * from './Projects';
 export * from './Posts';
+export * from './Experiences';
+export * from './Careers';
+export * from './Books';

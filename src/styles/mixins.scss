@@ -23,6 +23,12 @@
 	font-weight: 600;
 }
 
+@mixin header-1 {
+	color: $emphaze-color;
+	font-size: $header-2;
+	font-weight: 600;
+}
+
 @mixin text {
 	color: $text-color;
 	font-size: $header-3;

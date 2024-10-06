@@ -1,0 +1,32 @@
+.Experiences {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.listElement {
+	p {
+		@include text;
+	}
+
+	.year {
+		margin-bottom: 3px;
+	}
+
+	span {
+		@include header-1;
+	}
+}
+
+.moreIcon {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 5px;
+	}
+
+	@include text;
+	overflow: hidden;
+	line-height: 16px;
+}

@@ -1,0 +1,63 @@
+.Careers {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.listElement {
+
+	p,
+	.year {
+		@include text;
+	}
+
+	.year {
+		display: flex;
+		align-items: center;
+		margin-bottom: 3px;
+	}
+
+	span {
+		@include header-1;
+	}
+}
+
+.moreIcon {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 5px;
+	}
+
+	@include text;
+	overflow: hidden;
+	line-height: 16px;
+}
+
+.pulseCircle {
+	background: $gree-color;
+	border-radius: 50%;
+	height: $header-4;
+	width: $header-4;
+	margin-right: 10px;
+
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+		box-shadow: 0 0 0 0 $gree-color-opacity-40;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 8px $gree-color-opacity-0;
+	}
+
+	100% {
+		transform: scale(0.9);
+		box-shadow: 0 0 0 0 $gree-color-opacity-0;
+	}
+}

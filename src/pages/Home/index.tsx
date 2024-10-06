@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
-import { MyInfo, Contact, Content, Projects, Posts } from '@/components';
-import { mazeProject, portfolioProject, profileImage, reactTsProject } from '@/assets';
+import { MyInfo, Contact, Content, Projects, Posts, Experiences, Careers, Books } from '@/components';
+import { coverImage, mazeProject, portfolioProject, profileImage, reactTsProject } from '@/assets';
 
 export function Home() {
 	return (
@@ -72,10 +72,26 @@ export function Home() {
 				}} />
 			</Content>
 			<Content title="대외 활동 📜">
+				<Experiences info={{
+					"Junction Asia 2024": { year: 2024, hosted: "Junction Platform" },
+					"정보처리기능사 자격증 취득": { year: 2022, hosted: "HRDK" },
+					"안동시 공공아이디어 공모전 최우수상": { year: 2019, hosted: "안동시" }
+				}} />
 			</Content>
 			<Content title="경력 🎞">
+				<Careers info={{
+					"개인 프리랜서": { desc: "웹 서비스 및 각종 소프트웨어, 하드웨어 개발 & 유지보수", now: true },
+					"Flow Makers": { desc: "웹 서비스 개발, UI/UX 디자인", now: true },
+					"슈퍼아이콘": { desc: "웹 서비스 유지보수", startYear: 2023, endYear: 2023 }
+				}} />
 			</Content>
 			<Content title="읽고 있는 책 📚">
+				<Books mode='Compact' info={[{
+					coverImage: coverImage,
+					bookName: "코딩 테스트를 위한 자료구조와 알고리즘",
+					author: "존 캐리, 셰리안 도시",
+					link: "https://github.com/DohanLibrary/979-11-6521-379-4"
+				}]} />
 			</Content>
 		</>
 	);

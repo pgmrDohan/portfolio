@@ -7,3 +7,4 @@ export { default as portfolioProject } from "./images/portfolioProject.png";
 export { default as reactTsProject } from "./images/reactTsProject.png";
 export { default as mazeProject } from "./images/mazeProject.png";
 export { default as MainEmbedImage } from "./images/MainEmbedImage.png";
+export { default as coverImage } from "./images/coverImage.png";
