@@ -1,8 +1,19 @@
 .Title {
 	@include header-1;
 	margin-bottom: 20px;
-	display: block;
 	overflow: visible;
+	display: flex;
+	align-items: center;
+	svg{
+		width: $header-2;
+		margin-left: 10px;
+		visibility: hidden;
+	}
+	&:hover {
+		svg {
+			visibility: inherit;
+		}
+	}
 }
 
 .content {

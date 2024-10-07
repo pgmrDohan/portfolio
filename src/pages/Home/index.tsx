@@ -26,12 +26,12 @@ export function Home() {
 					},
 				}
 			} />
-			<Content title="안녕하세요 👋" className={styles.typo}>
+			<Content id="introduce" title="안녕하세요 👋" className={styles.typo}>
 				<p><strong>사람과 사람, 사람과 사물을 연결하는</strong> 개발자, 권도한입니다.</p>
 				<p>2020년에 한국에서 소프트웨어 개발을 시작해 기술 스택을 키워나가며 다양한 서비스를 개발해왔습니다. 현재, 다양한 영역에서 개인 프리랜서 개발자로 활동하고 있습니다.</p>
 				<p>모든 서비스는 사람과 무언가를 연결하는 간단한 개념에서 출발한다고 생각합니다. 저는 이러한 연결을 통해 <strong>사회적, 기술적 발전에 기여하고자</strong> 합니다. <strong>사람 본연의 연결성을 보완</strong>하며 모두가 편리하고 즐겁게 사용할 수 있는 서비스를 만드는 것이 저의 목표입니다. 이를 위해 다양한 프로젝트를 통해 성장해왔으며, 모두가 함께 발전할 수 있는 미래를 위해 <strong>사람과 기술을 이어주는 혁신</strong>에 대해 끊임없이 고민하고 있습니다.</p>
 			</Content>
-			<Content title="프로젝트 💿">
+			<Content id="projects" title="프로젝트 💿">
 				<Projects info={
 					{
 						"포트폴리오 웹 사이트": {
@@ -56,7 +56,7 @@ export function Home() {
 					}
 				} />
 			</Content>
-			<Content title="핵심 기술 🖥" className={styles.typo}>
+			<Content id="skills" title="핵심 기술 🖥" className={styles.typo}>
 				<p><strong>저수준 프로그래밍 부터 고수준을 오가는</strong> 소프트웨어 개발</p>
 				<p>C언어와 C++ 및 어셈블리어를 활용한 <strong>운영체제(커널)</strong> 개발</p>
 				<p>버전 관리 시스템 <strong>GIT을 활용한 협업</strong> 프로젝트</p>
@@ -64,28 +64,28 @@ export function Home() {
 				<p>JS 프론트엔드 프레임워크를 통한 <strong>웹 디자인 퍼블리싱</strong></p>
 				<p>Figma를 통한 <strong>UI/UX 디자인</strong></p>
 			</Content>
-			<Content title="최신 게시글 🔖">
+			<Content id="posts" title="최신 게시글 🔖">
 				<Posts info={{
 					"HELLO, WORLD!": { date: 1728048263 },
 					"VM Migraition 이란?": { date: 1728028263 },
 					"[TLD] 2023.01.16": { date: 1727848263 }
 				}} />
 			</Content>
-			<Content title="대외 활동 📜">
+			<Content id="experiences" title="대외 활동 📜">
 				<Experiences info={{
 					"Junction Asia 2024": { year: 2024, hosted: "Junction Platform" },
 					"정보처리기능사 자격증 취득": { year: 2022, hosted: "HRDK" },
 					"안동시 공공아이디어 공모전 최우수상": { year: 2019, hosted: "안동시" }
 				}} />
 			</Content>
-			<Content title="경력 🎞">
+			<Content id="careers" title="경력 🎞">
 				<Careers info={{
 					"개인 프리랜서": { desc: "웹 서비스 및 각종 소프트웨어, 하드웨어 개발 & 유지보수", now: true },
 					"Flow Makers": { desc: "웹 서비스 개발, UI/UX 디자인", now: true },
 					"슈퍼아이콘": { desc: "웹 서비스 유지보수", startYear: 2023, endYear: 2023 }
 				}} />
 			</Content>
-			<Content title="읽고 있는 책 📚">
+			<Content id="books" title="읽고 있는 책 📚">
 				<Books mode='Compact' info={[{
 					coverImage: coverImage,
 					bookName: "코딩 테스트를 위한 자료구조와 알고리즘",

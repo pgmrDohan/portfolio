@@ -1,14 +1,15 @@
 import styles from './index.module.scss';
+import {Link} from 'lucide-react';
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
 	title: string;
 };
 
 
-export const Content: React.FunctionComponent<Props> = ({ children, title, className, ...rest }) => {
+export const Content: React.FunctionComponent<Props> = ({ id, children, title, className, ...rest }) => {
 	return (
-		<div {...rest} className={[styles.content, className].filter(Boolean).join(' ')}>
-			<span className={styles.Title}>{title}</span>
+		<div id={id} {...rest} className={[styles.content, className].filter(Boolean).join(' ')}>
+			<span className={styles.Title} onClick={()=>window.navigator.clipboard.writeText(`https://www.dohan.in/#${id}`)}>{title}<Link/></span>
 			{children}
 		</div>
 	)
