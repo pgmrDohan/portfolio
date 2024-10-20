@@ -15,7 +15,6 @@ export default defineConfig({
 		crittersOptions: false,
 		entry: "src/index.ts",
 		formatting: 'prettify',
-		dirStyle: 'nested'
 	},
 	optimizeDeps: {
 		exclude: ['blip-ds/loader'],
