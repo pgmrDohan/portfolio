@@ -1,1 +1,21 @@
-/* Layout Styling */
+@import "@/styles/mixins.scss";
+
+@include for-size(mobile) {
+	.Header {
+		margin-top: 20px;
+	}
+
+	.Content {
+		margin-top: 50px;
+	}
+
+	.Footer {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+    
+    .Root {
+        width: 85%;
+        margin: 0 auto;
+    }
+}

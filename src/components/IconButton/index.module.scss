@@ -1,0 +1,16 @@
+.IconButton {
+	background-color: transparent;
+	border-radius: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--color-neutral-dark);
+	}
+}
+
+.Icon {
+	color: var(--color-neutral);
+}

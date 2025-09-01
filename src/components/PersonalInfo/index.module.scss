@@ -1,0 +1,25 @@
+.Info {
+	display: flex;
+	flex-direction: row;
+	gap: 25px;
+	align-items: flex-end;
+
+	img {
+		width: 105px;
+		height: 105px;
+	}
+
+	div {
+		p {
+			cursor: pointer;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+.speekerIcon {
+	margin-left: 7px;
+	width: min(3rem, 13px);
+}

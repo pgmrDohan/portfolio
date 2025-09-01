@@ -1,3 +1,7 @@
 body {
     background-color: var(--theme-background);
 }
+
+body>* {
+    color: var(--theme-text);
+}
