@@ -1,1 +1,16 @@
-/* Home Page Styling */
+@import "@/styles/mixins.scss";
+@import "@/styles/typo.scss";
+
+@include for-size(mobile) {
+	.typo {
+		p {
+			@include typography('body');
+			margin-bottom: 10px;
+
+			strong {
+				color: var(--color-neutral-light);
+				font-weight: 500;
+			}
+		}
+	}
+}

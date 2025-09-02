@@ -1,0 +1,25 @@
+.Title {
+	margin-bottom: 20px;
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	.Link{
+		width: var(--font-size-h6);
+		margin-left: 10px;
+		visibility: hidden;
+	}
+	&:hover {
+		svg {
+			visibility: inherit;
+		}
+	}
+	.Icon {
+		width: var(--font-size-h4);
+	}
+}
+
+.content {
+	margin-top: 35px;
+	overflow: visible;
+}

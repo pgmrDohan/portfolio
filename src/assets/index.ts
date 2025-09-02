@@ -1,3 +1,10 @@
 export { default as Discord } from "./icons/Discord.svg?react";
 export { default as Github } from "./icons/Github.svg?react";
 export { default as Instagram } from "./icons/Instagram.svg?react";
+export { default as FloppyDisk } from "./icons/FloppyDisk.svg?react";
+export { default as WavingHand } from "./icons/WavingHand.svg?react";
+export { default as OpticalDisk } from "./icons/OpticalDisk.svg?react";
+export { default as Bookmark } from "./icons/Bookmark.svg?react";
+export { default as Scroll } from "./icons/Scroll.svg?react";
+export { default as FilmFrames } from "./icons/FilmFrames.svg?react";
+export { default as OpenBook } from "./icons/OpenBook.svg?react";
