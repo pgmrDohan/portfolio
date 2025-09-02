@@ -9,12 +9,17 @@
 		height: 105px;
 	}
 
+	span {
+		color: white;
+	}
+
 	div {
 		p {
 			cursor: pointer;
 			overflow: hidden;
 			display: flex;
 			align-items: center;
+			color: var(--color-neutral);
 		}
 	}
 }

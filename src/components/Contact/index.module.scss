@@ -1,0 +1,20 @@
+.listElement {
+	cursor: pointer;
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	height: var(--font-size-h3);
+	color: var(--color-neutral);
+}
+
+.list {
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+.Icon {
+	width: var(--font-size-h5);
+	margin-right: 13px;
+	position: relative;
+	top: 1px;
+}
