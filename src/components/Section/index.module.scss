@@ -1,3 +1,5 @@
+@import "@/styles/mixins.scss";
+
 .Title {
 	margin-bottom: 20px;
 	overflow: visible;
@@ -22,4 +24,10 @@
 .content {
 	margin-top: 35px;
 	overflow: visible;
+}
+
+@include for-size(mobile) {
+	.Link{
+		visibility: visible !important;
+	}
 }
