@@ -3,6 +3,7 @@
 
 	* {
 		overflow: hidden;
+		color: var(--color-neutral);
 	}
 
 	span {
@@ -14,7 +15,7 @@
 		margin-right: 5px;
 		height: 1px;
 		border: 0px;
-		background-color: var(--theme-text);
+		background-color: var(--color-neutral);
 		border-radius: 100px;
 	}
 

@@ -10,7 +10,7 @@ $colors: (
     "dark": #c66900,
   ),
   "neutral": (
-    "light": #E0E0E6,
+    "light": #9CA2A7,
     "default": #66686A,
     "dark": #333333,
   ),
@@ -22,12 +22,14 @@ $colors: (
 
 $themes: (
   "light": (
-		"background": #ffffff,
-  	"text": #000000,
+		"background": #f7f8f9,
+  	"text": #151719,
+    "hover": #dfdfdf,
 	),
   "dark": (
 		"background": #151719,
-  	"text": #9CA2A7,
+  	"text": #E0E0E6,
+    "hover": #333333,
 	),
 );
 
