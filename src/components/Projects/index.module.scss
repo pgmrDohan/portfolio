@@ -1,0 +1,71 @@
+.listElement {
+	overflow: hidden;
+
+	* {
+		overflow: hidden;
+	}
+}
+
+.projects {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.summary {
+	display: grid;
+	grid-template-columns: 0fr 1fr;
+	grid-gap: 10px;
+	align-items: center;
+	margin-bottom: 10px;
+
+	img {
+		width: 60px;
+		height: 60px;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		p {
+			span {
+				display: block;
+				margin-bottom: 5px;
+			}
+		}
+
+		div {
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+			align-items: center;
+		}
+	}
+}
+
+.moreIcon {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 5px;
+	}
+
+	overflow: hidden;
+	line-height: 16px;
+}
+
+.Icon {
+	width: fit-content;
+	height: fit-content;
+	flex-grow: 0;
+	flex-shrink: 0;
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+}

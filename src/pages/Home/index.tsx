@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { PersonalInfo, Contact, Section } from '@/components';
+import { PersonalInfo, Contact, Section, Projects } from '@/components';
 import { FloppyDisk, WavingHand, OpticalDisk, Bookmark, Scroll, FilmFrames, OpenBook } from '@/assets';
 
 export function Home() {
@@ -32,6 +32,17 @@ export function Home() {
 				<p>모든 서비스는 사람과 무언가를 연결하는 간단한 개념에서 출발한다고 생각합니다. 저는 이러한 연결을 통해 <strong>사회적, 기술적 발전에 기여하고자</strong> 합니다. <strong>사람 본연의 연결성을 보완</strong>하며 모두가 편리하고 즐겁게 사용할 수 있는 서비스를 만드는 것이 저의 목표입니다. 이를 위해 다양한 프로젝트를 통해 성장해왔으며, 모두가 함께 발전할 수 있는 미래를 위해 <strong>사람과 기술을 이어주는 혁신</strong>에 대해 끊임없이 고민하고 있습니다.</p>
 			</Section>
 			<Section id="projects" title="프로젝트" Icon={OpticalDisk}>
+				<Projects info={
+					{
+						"포트폴리오 웹 사이트": {
+							icon: 'portfolioProject.png',
+							year: 2024,
+							link: "https://www.dohan.in",
+							github: "https://www.github.com/pgmrDohan/portfolio",
+							desc: "Astro와 React를 사용하여 현 포트폴리오 웹 사이트를 제작함. 컨텐츠를 수정하는 용도의 관리자 대시보드와 함께 블로그 기능을 포함하고 있음."
+						},
+					}
+				} />
 			</Section>
 			<Section id="skills" title="핵심 기술" Icon={FloppyDisk} className={styles.typo}>
 				<p><strong>저수준 프로그래밍 부터 고수준을 오가는</strong> 소프트웨어 개발</p>

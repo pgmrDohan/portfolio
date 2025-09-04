@@ -20,7 +20,9 @@
 	},
 	"scripts": {
 		"start": "vite",
+		"prebuild": "cp -r dist/.git .dist_git_backup || true",
 		"build": "tsc && vite build",
+		"postbuild": "cp -r .dist_git_backup dist/.git || true && rm -rf .dist_git_backup",
 		"serve": "vite preview"
 	},
 	"eslintConfig": {
