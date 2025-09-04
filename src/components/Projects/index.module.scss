@@ -13,13 +13,13 @@
 }
 
 .summary {
-	display: grid;
-	grid-template-columns: 0fr 1fr;
-	grid-gap: 10px;
+	display: flex;
+	gap: 10px;
 	align-items: center;
 	margin-bottom: 10px;
 
 	img {
+		flex-shrink: 0;
 		width: 60px;
 		height: 60px;
 	}
@@ -29,6 +29,7 @@
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		width: 100%;
 
 		p {
 			span {
