@@ -1,0 +1,33 @@
+.listElement {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	p {
+		overflow: hidden;
+		margin-top: 5px;
+	}
+
+	svg {
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}
+
+.Posts {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.moreIcon {
+	display: flex;
+	align-items: center;
+
+	svg {
+		margin-right: 5px;
+	}
+
+	overflow: hidden;
+	line-height: 16px;
+}

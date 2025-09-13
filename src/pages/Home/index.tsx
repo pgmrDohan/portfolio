@@ -1,5 +1,5 @@
 import styles from './index.module.scss';
-import { PersonalInfo, Contact, Section, Projects } from '@/components';
+import { PersonalInfo, Contact, Section, Projects, Posts } from '@/components';
 import { FloppyDisk, WavingHand, OpticalDisk, Bookmark, Scroll, FilmFrames, OpenBook } from '@/assets';
 
 export function Home() {
@@ -39,7 +39,7 @@ export function Home() {
 							year: 2024,
 							link: "https://www.dohan.in",
 							github: "https://www.github.com/pgmrDohan/portfolio",
-							desc: "Astro와 React를 사용하여 현 포트폴리오 웹 사이트를 제작함. 컨텐츠를 수정하는 용도의 관리자 대시보드와 함께 블로그 기능을 포함하고 있음."
+							desc: "React를 사용하여 현 포트폴리오 웹 사이트를 제작함."
 						},
 					}
 				} />
@@ -53,6 +53,11 @@ export function Home() {
 				<p>Figma를 통한 <strong>UI/UX 디자인</strong></p>
 			</Section>
 			<Section id="posts" title="최신 게시글" Icon={Bookmark}>
+				<Posts info={{
+					"HELLO, WORLD!": { date: 1728048263 },
+					"VM Migraition 이란?": { date: 1728028263 },
+					"[TLD] 2023.01.16": { date: 1727848263 }
+				}} />
 			</Section>
 			<Section id="experiences" title="대외 활동" Icon={Scroll}>
 			</Section>
