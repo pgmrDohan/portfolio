@@ -1,0 +1,9 @@
+name: Pre-reder
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "posts/**"
+  workflow_dispatch:

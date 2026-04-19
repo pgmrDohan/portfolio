@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+      const bgColor = theme === "dark" ? "#0d0d0f" : "#fcfcfb";
+      document.write(`
+      <style id="theme-preloader">
+        html { background-color: ${bgColor} !important; }
+      </style>
+      `);
+    </script>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/spacings.css" />
+    <link rel="stylesheet" href="styles/typo.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/print.css" media="print" />
+    <link rel="alternate" hreflang="ko" href="?lang=ko" />
+    <link rel="alternate" hreflang="en" href="?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="/" />
+    <script src="/languages.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+    <title data-i18n="head.title">권도한 :: 컴퓨터 엔지니어</title>
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="권도한 :: 기록"
+      href="/ko/rss.xml"
+      hreflang="ko"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dohan Kwon :: Posts"
+      href="/en/rss.xml"
+      hreflang="en"
+    />
+  </head>
+  <body class="noscript">
+    <noscript>
+      <!-- TODO -->
+    </noscript>
+  </body>
+</html>

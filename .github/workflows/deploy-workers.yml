@@ -1,0 +1,23 @@
+name: Deploy Workers
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "workers/**"
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: "workers"
+          command: deploy

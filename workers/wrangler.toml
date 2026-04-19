@@ -1,0 +1,11 @@
+name = "portfolio"
+main = "index.js"
+compatibility_date = "2026-04-19"
+account_id = "5891b94abefee690e79258d1f0d402e8"
+
+[[routes]]
+pattern = "www.dohan.in/*"
+zone_name = "dohan.in"
+
+[observability]
+enabled = true
