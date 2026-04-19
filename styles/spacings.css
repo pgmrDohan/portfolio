@@ -1,15 +1,24 @@
 :root {
-  --space-xs: 4px;
-  --space-sm: 8px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 32px;
+  --space-xs: 0.6rem;
+  --space-s: 2rem;
+  --space-lg: 5rem;
 }
 
 /* Margin */
-.m-xs  { margin: var(--space-xs); }
-.mt-xs { margin-top: var(--space-xs); }
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+.mt-xs {
+  margin-top: var(--space-xs);
+}
+.mr-s {
+  margin-right: var(--space-s);
+}
 
-/* Padding */
-.p-xs  { padding: var(--space-xs); }
-.pt-xs { padding-top: var(--space-xs); }
+/* padding */
+.pt-xs {
+  padding-top: var(--space-xs);
+}
+.pb-xs {
+  padding-bottom: var(--space-xs);
+}
