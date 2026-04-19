@@ -72,6 +72,7 @@ a {
   background-size: 0.6rem 0.12rem;
   background-repeat: repeat-x;
   background-position: 0 2rem;
+  transition: color 0.3s;
 }
 
 button {
