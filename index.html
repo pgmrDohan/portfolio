@@ -54,7 +54,11 @@
     <main>
       <nav class="mt-lg">
         <div>
-          <button onclick="window.location.href = '/'">
+          <button
+            onclick="window.location.href = '/'"
+            data-i18n="footer.home@title"
+            title="홈"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -73,7 +77,11 @@
               />
             </svg>
           </button>
-          <button onclick="window.location.href = '/blog'">
+          <button
+            onclick="window.location.href = '/blog'"
+            data-i18n="footer.blog@title"
+            title="블로그"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -95,7 +103,11 @@
           </button>
         </div>
         <div>
-          <button onclick="toggleTheme()">
+          <button
+            onclick="toggleTheme()"
+            data-i18n="header.theme@title"
+            title="테마 변경"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -113,7 +125,7 @@
               />
             </svg>
           </button>
-          <button>
+          <button data-i18n="header.index@title" title="찾기">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -139,8 +151,8 @@
           <source srcset="images/profile.webp" type="image/webp" />
           <img
             src="images/profile.jpg"
-            data-i18n="body.profile@alt"
-            alt="프로필 사진"
+            data-i18n="body.profile@title"
+            title="프로필 사진"
           />
         </div>
         <div class="pt-xs pb-xs" id="profile-info">
@@ -156,6 +168,53 @@
           </p>
         </div>
       </header>
+      <footer class="mt-lg">
+        <div>
+          <p><a href="/" data-i18n="footer.home">홈</a></p>
+          <p><a href="/blog" data-i18n="footer.blog">블로그</a></p>
+        </div>
+        <hr />
+        <div>
+          <a data-i18n="footer.rss@href" href="/ko/rss.xml">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-rss-icon lucide-rss"
+            >
+              <path d="M4 11a9 9 0 0 1 9 9" />
+              <path d="M4 4a16 16 0 0 1 16 16" />
+              <circle cx="5" cy="19" r="1" />
+            </svg>
+            <p>RSS</p>
+          </a>
+          <p>
+            <button onclick="window.print()" data-i18n="footer.pdf">
+              PDF 버전
+            </button>
+          </p>
+          <p>CC BY 4.0</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1400 500"
+          class="mt-lg"
+        >
+          <path
+            id="signiture"
+            d="M691.989 21.2802C668.541 141.449 726.526 448.438 723.506 448.758C712.03 449.975 644.984 68.5471 757.725 54.928C902.664 37.4193 936.175 108.291 904.778 261.804C892.701 320.855 831.398 364.801 786.478 396.95C766.832 411.002 723.961 448.758 729.547 448.758L915.958 311.371C905.461 319.24 892.631 338.712 892.631 352.83C892.631 376.654 901.396 382.392 925.248 382.392C949.099 382.392 967.529 366.103 967.529 345.892C967.529 319.573 926 310 918 311.371C910 312.742 966.597 268.543 978.841 269.662C991.085 270.781 1033.37 365.074 1033.37 382.392C1033.37 399.71 1045 35.9246 1050.66 35.1049C1056.32 34.2851 1055.58 187.392 1059.94 258.111C1061.89 289.412 1076.54 407.757 1076.25 376.359C1075.83 332.962 1063.48 234.546 1123.78 251.207C1155.56 259.978 1125.83 373.833 1133.44 373.768C1136.66 373.735 1210.34 258.111 1170.48 241.198C1148.73 231.972 1146 356.096 1187.21 341.913C1225.26 328.806 1174.49 193.693 1203.18 221.961C1230.95 249.251 1217.03 348.63 1244.45 375.594C1277.63 408.263 1254.44 241.198 1283.06 241.198C1297.93 241.198 1359.87 383.083 1306.5 401C1253.13 418.917 42.3346 448.03 11.4018 411.741C-66.3369 320.546 286.025 7.15132 611.91 0.5L78.114 460.582L545.718 141.449L237.983 360.976C364.089 266.162 935.453 108.291 917.921 108.291C820.374 108.291 79.5182 463.121 97.1423 467.458C114.766 471.794 1244.45 141.449 1244.45 141.449"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="5"
+          />
+        </svg>
+      </footer>
     </main>
   </body>
 </html>

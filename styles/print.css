@@ -3,7 +3,8 @@
     margin: 0 !important;
   }
 
-  nav {
+  nav,
+  footer {
     display: none !important;
   }
 
