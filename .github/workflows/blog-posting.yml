@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -29,6 +29,7 @@ jobs:
         run: |
           node <<'EOF'
           const fs = require('fs');
+          const vm = require('vm');
           const path = require('path');
           const matter = require('gray-matter');
 
@@ -72,18 +73,24 @@ jobs:
 
           async function loadLanguages() {
             const filePath = path.join(ROOT_DIR, 'languages.js');
+            const code = fs.readFileSync(filePath, 'utf8');
 
-            try {
-              const mod = await import('file://' + filePath);
-              return mod.default || mod;
-            } catch (e) {
-              try {
-                delete require.cache[require.resolve(filePath)];
-                return require(filePath);
-              } catch (e2) {
-                throw new Error(e2.message);
-              }
+            const sandbox = {
+              window: {},
+              console,
+              URLSearchParams,
+            };
+
+            vm.createContext(sandbox);
+            vm.runInContext(code, sandbox, { filename: 'languages.js' });
+
+            const languages = sandbox.window.__LANG__;
+
+            if (!languages || typeof languages !== 'object') {
+              throw new Error('Cannot load __LANG__');
             }
+
+            return languages;
           }
 
           function getPostUrl(slug) {
