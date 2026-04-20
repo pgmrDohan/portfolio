@@ -11,11 +11,16 @@
   header {
     margin: 0 !important;
     padding: 0 !important;
+    align-items: center !important;
+  }
+
+  #profile-info {
+    align-items: flex-start !important;
   }
 
   main {
-    max-width: 100%;
-    width: 100%;
+    max-width: 100% !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -30,5 +35,14 @@
     background: none !important;
     background-image: none !important;
     text-decoration: none !important;
+    font-weight: 700 !important;
+  }
+
+  address {
+    display: none !important;
+  }
+
+  .print-contact {
+    display: block !important;
   }
 }

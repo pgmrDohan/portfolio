@@ -1,24 +1,29 @@
 :root {
-  --space-xs: 0.6rem;
-  --space-s: 2rem;
-  --space-lg: 5rem;
+  --space-xs: 0.4rem;
+  --space-sm: 0.8rem;
+  --space-md: 1.6rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
 }
 
 /* Margin */
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+.mt-sm {
+  margin-top: var(--space-sm);
+}
 .mt-lg {
   margin-top: var(--space-lg);
 }
-.mt-xs {
-  margin-top: var(--space-xs);
-}
-.mr-s {
-  margin-right: var(--space-s);
+.mr-md {
+  margin-right: var(--space-md);
 }
 
 /* padding */
-.pt-xs {
-  padding-top: var(--space-xs);
+.pt-sm {
+  padding-top: var(--space-sm);
 }
-.pb-xs {
-  padding-bottom: var(--space-xs);
+.pb-sm {
+  padding-bottom: var(--space-sm);
 }

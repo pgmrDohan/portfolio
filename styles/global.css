@@ -117,15 +117,18 @@ footer {
   }
 
   hr {
-    border-top: 0.18rem solid var(--color-neutral-light);
-    margin-right: 1rem;
-    margin-left: 1rem;
-    margin-top: 0.4rem;
-    margin-bottom: 0.4rem;
+    margin-right: var(--space-sm);
+    margin-left: var(--space-sm);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+
+    height: 0.1rem;
+    background-color: var(--color-neutral-light);
+    border-radius: 9999px;
   }
   svg {
     width: var(--typo-body-size);
-    margin-right: 0.4rem;
+    margin-right: var(--space-xs);
   }
   svg:has(#signiture) {
     width: 16rem;
@@ -133,4 +136,63 @@ footer {
     align-self: center;
     color: var(--color-neutral-light);
   }
+}
+
+address {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  a {
+    display: flex;
+    align-items: center;
+    font-size: var(--typo-body-size);
+    color: var(--color-neutral-light);
+    background: none;
+    background-image: none;
+    text-decoration: none;
+
+    svg {
+      width: var(--typo-h2-size);
+      margin-right: var(--space-sm);
+    }
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  #profile-image {
+    width: 13rem;
+    height: 13rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    flex-shrink: 0;
+  }
+
+  #profile-info {
+    align-items: flex-end;
+    color: var(--theme-color);
+    transition: color 0.3s;
+
+    p {
+      color: var(--color-neutral-light);
+    }
+  }
+
+  img {
+    width: 13rem;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.print-contact {
+  display: none;
+}
+
+strong {
+  font-weight: 700;
 }
