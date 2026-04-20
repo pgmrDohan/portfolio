@@ -43,7 +43,6 @@ jobs:
               awk -F',' '{for(i=1;i<=NF;i++){gsub(/^ +| +$/,"",$i); printf "\"%s\"%s",$i,(i<NF?",":"")}}' | \
               sed 's/^/[/; s/$/]/')
 
-            content=$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$filepath")
             echo "${slug}|${title}|${date}|${edited}|${tags_json}|${lang}|${authors_json}" >> "$POSTS_META_FILE"
           done
 
@@ -55,32 +54,30 @@ jobs:
           LANGS=$(grep -oP '(?<=window\.__LANG__ = \{|,\s{0,10})\s*\K[a-z]{2}(?=\s*:)' languages.js | tr '\n' ' ')
           echo "LANGS=$LANGS" >> "$GITHUB_ENV"
 
-      - name: Generate RSS, posts.json, sitemap.xml
+      - name: Generate RSS feeds
         run: |
           BASE_URL="https://www.dohan.in"
           NOW=$(date -u +"%a, %d %b %Y %H:%M:%S GMT")
-          POSTS_META_FILE="$POSTS_META_FILE"
 
           mkdir -p rss
 
           for lang_code in $LANGS; do
-            # languages.js에서 rss.title, rss.description 추출
             rss_block=$(awk "/^\s*${lang_code}\s*:/{found=1} found && /rss\s*:/{rss=1} rss && /title\s*:/{print;count++} rss && /description\s*:/{print;count++} count==2{exit}" languages.js)
 
             rss_title=$(echo "$rss_block" | grep 'title' | head -1 | sed 's/.*title[^"]*"//; s/".*//')
             rss_desc=$(echo "$rss_block" | grep 'description' | head -1 | sed 's/.*description[^"]*"//; s/".*//')
 
-            cat > "rss/${lang_code}.xml" <<EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>${rss_title}</title>
-    <link>${BASE_URL}</link>
-    <description>${rss_desc}</description>
-    <language>${lang_code}</language>
-    <lastBuildDate>${NOW}</lastBuildDate>
-    <atom:link href="${BASE_URL}/rss/${lang_code}.xml" rel="self" type="application/rss+xml"/>
-EOF
+            {
+              printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>'
+              printf '%s\n' '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">'
+              printf '%s\n' '  <channel>'
+              printf '    <title>%s</title>\n' "${rss_title}"
+              printf '    <link>%s</link>\n' "${BASE_URL}"
+              printf '    <description>%s</description>\n' "${rss_desc}"
+              printf '    <language>%s</language>\n' "${lang_code}"
+              printf '    <lastBuildDate>%s</lastBuildDate>\n' "${NOW}"
+              printf '    <atom:link href="%s/rss/%s.xml" rel="self" type="application/rss+xml"/>\n' "${BASE_URL}" "${lang_code}"
+            } > "rss/${lang_code}.xml"
 
             while IFS='|' read -r slug title date edited tags_json post_lang authors_json; do
               [ "$post_lang" = "$lang_code" ] || continue
@@ -91,90 +88,86 @@ EOF
               content=$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "posts/${slug}.md" | \
                 sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
 
-              cat >> "rss/${lang_code}.xml" <<EOF
-    <item>
-      <title>${title}</title>
-      <link>${post_url}</link>
-      <guid isPermaLink="true">${post_url}</guid>
-      <pubDate>${pub_date}</pubDate>
-      <description><![CDATA[${content}]]></description>
-    </item>
-EOF
+              {
+                printf '%s\n' '    <item>'
+                printf '      <title>%s</title>\n' "${title}"
+                printf '      <link>%s</link>\n' "${post_url}"
+                printf '      <guid isPermaLink="true">%s</guid>\n' "${post_url}"
+                printf '      <pubDate>%s</pubDate>\n' "${pub_date}"
+                printf '      <description><![CDATA[%s]]></description>\n' "${content}"
+                printf '%s\n' '    </item>'
+              } >> "rss/${lang_code}.xml"
+
             done < "$POSTS_META_FILE"
 
-            cat >> "rss/${lang_code}.xml" <<EOF
-  </channel>
-</rss>
-EOF
+            {
+              printf '%s\n' '  </channel>'
+              printf '%s\n' '</rss>'
+            } >> "rss/${lang_code}.xml"
 
             echo "Generated rss/${lang_code}.xml"
           done
 
+      - name: Generate posts.json
+        run: |
+          BASE_URL="https://www.dohan.in"
           FIRST=1
           printf '[' > posts.json
 
           while IFS='|' read -r slug title date edited tags_json lang_code authors_json; do
             post_url="${BASE_URL}/posts?p=${slug}"
-
             [ $FIRST -eq 1 ] && FIRST=0 || printf ',' >> posts.json
-
-            cat >> posts.json <<EOF
-{"slug":"${slug}","title":"${title}","date":"${date}","edited":"${edited}","tags":${tags_json},"lang":"${lang_code}","author":${authors_json},"url":"${post_url}"}
-EOF
+            printf '{"slug":"%s","title":"%s","date":"%s","edited":"%s","tags":%s,"lang":"%s","author":%s,"url":"%s"}\n' \
+              "${slug}" "${title}" "${date}" "${edited}" "${tags_json}" "${lang_code}" "${authors_json}" "${post_url}" >> posts.json
           done < "$POSTS_META_FILE"
 
           printf ']' >> posts.json
           echo "Generated posts.json"
 
+      - name: Generate sitemap.xml
+        run: |
+          BASE_URL="https://www.dohan.in"
           TODAY=$(date -u +"%Y-%m-%d")
 
-          cat > sitemap.xml <<EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-EOF
+          {
+            printf '%s\n' '<?xml version="1.0" encoding="UTF-8"?>'
+            printf '%s\n' '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+          } > sitemap.xml
 
           for html_file in *.html; do
             [ -f "$html_file" ] || continue
-
             name=$(basename "$html_file" .html)
-
             if [ "$name" = "index" ]; then
               loc="${BASE_URL}/"
             else
               loc="${BASE_URL}/${name}"
             fi
-
-            cat >> sitemap.xml <<EOF
-  <url>
-    <loc>${loc}</loc>
-    <lastmod>${TODAY}</lastmod>
-  </url>
-EOF
+            {
+              printf '%s\n' '  <url>'
+              printf '    <loc>%s</loc>\n' "${loc}"
+              printf '    <lastmod>%s</lastmod>\n' "${TODAY}"
+              printf '%s\n' '  </url>'
+            } >> sitemap.xml
           done
 
           while IFS='|' read -r slug title date edited tags_json lang_code authors_json; do
             post_url="${BASE_URL}/posts?p=${slug}"
-            lastmod="${date}"
-
-            cat >> sitemap.xml <<EOF
-  <url>
-    <loc>${post_url}</loc>
-    <lastmod>${lastmod}</lastmod>
-  </url>
-EOF
+            {
+              printf '%s\n' '  <url>'
+              printf '    <loc>%s</loc>\n' "${post_url}"
+              printf '    <lastmod>%s</lastmod>\n' "${date}"
+              printf '%s\n' '  </url>'
+            } >> sitemap.xml
           done < "$POSTS_META_FILE"
 
-          cat >> sitemap.xml <<EOF
-</urlset>
-EOF
-
+          printf '%s\n' '</urlset>' >> sitemap.xml
           echo "Generated sitemap.xml"
 
-#      - name: Commit and push
-#        run: |
-#          git config user.name "github-actions[bot]"
-#          git config user.email "github-actions[bot]@users.noreply.github.com"
-#          git add rss/ posts.json sitemap.xml
-#          git diff --cached --quiet && echo "Nothing to commit" && exit 0
-#          git commit -m "chore: pre-render rss, posts.json, sitemap [skip ci]"
-#          git push
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rss/ posts.json sitemap.xml
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "chore: pre-render rss, posts.json, sitemap [skip ci]"
+          git push
