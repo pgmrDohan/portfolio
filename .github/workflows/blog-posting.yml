@@ -33,7 +33,7 @@ jobs:
           const path = require('path');
           const matter = require('gray-matter');
 
-          const BASE_URL = process.env.BASE_URL || '';
+          const BASE_URL = process.env.BASE_URL || 'https://www.dohan.in';
           const POSTS_DIR = path.join(process.cwd(), 'posts');
           const RSS_DIR = path.join(process.cwd(), 'rss');
           const ROOT_DIR = process.cwd();
@@ -177,7 +177,7 @@ jobs:
               const name = path.basename(htmlFile, '.html');
               const loc = name === 'index' ? `${BASE_URL}/` : `${BASE_URL}/${name}`;
               lines.push('  <url>');
-              lines.push(`    <loc>${BASE_URL}${escapeXml(loc)}</loc>`);
+              lines.push(`    <loc>${escapeXml(loc)}</loc>`);
               lines.push(`    <lastmod>${escapeXml(new Date().toISOString().slice(0, 10))}</lastmod>`);
               lines.push('  </url>');
             }
@@ -185,7 +185,7 @@ jobs:
             for (const post of posts) {
               const postUrl = getPostUrl(post.slug);
               lines.push('  <url>');
-              lines.push(`    <loc>${BASE_URL}${escapeXml(postUrl)}</loc>`);
+              lines.push(`    <loc>${escapeXml(postUrl)}</loc>`);
               lines.push(`    <lastmod>${escapeXml(toIsoDate(post.edited || post.date))}</lastmod>`);
               lines.push('  </url>');
             }
