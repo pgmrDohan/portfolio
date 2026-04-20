@@ -45,7 +45,12 @@
       href="https://www.dohan.in/en/rss.xml"
       hreflang="en"
     />
-    <link rel="preload" as="image" href="/images/profile.avif" />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/profile.avif"
+      type="image/avif"
+    />
     <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body class="noscript">
@@ -147,16 +152,17 @@
         </div>
       </nav>
       <header class="mt-xl">
-        <div id="profile-image" class="mr-md">
+        <picture id="profile-image" class="mr-md">
           <source srcset="images/profile.avif" type="image/avif" />
           <source srcset="images/profile.webp" type="image/webp" />
           <img
             src="images/profile.jpg"
             fetchpriority="high"
+            decoding="async"
             data-i18n="body.profile@title"
             title="프로필 사진"
           />
-        </div>
+        </picture>
         <div class="pt-sm pb-sm" id="profile-info">
           <h1 data-i18n="body.name">권도한</h1>
           <p class="mt-sm">
