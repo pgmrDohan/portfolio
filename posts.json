@@ -12,7 +12,7 @@
     "author": [
       "Dohan Kwon"
     ],
-    "url": "/posts?p=en-hello-world"
+    "url": "https://www.dohan.in/posts?p=en-hello-world"
   },
   {
     "slug": "ko-hello-world",
@@ -27,6 +27,6 @@
     "author": [
       "권도한"
     ],
-    "url": "/posts?p=ko-hello-world"
+    "url": "https://www.dohan.in/posts?p=ko-hello-world"
   }
 ]

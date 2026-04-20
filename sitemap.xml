@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/</loc>
+    <loc>https://www.dohan.in/</loc>
     <lastmod>2026-04-20</lastmod>
   </url>
   <url>
-    <loc>/posts?p=en-hello-world</loc>
+    <loc>https://www.dohan.in/posts?p=en-hello-world</loc>
     <lastmod>2026-04-20</lastmod>
   </url>
   <url>
-    <loc>/posts?p=ko-hello-world</loc>
+    <loc>https://www.dohan.in/posts?p=ko-hello-world</loc>
     <lastmod>2026-04-20</lastmod>
   </url>
 </urlset>
