@@ -1,4 +1,4 @@
-name: Deploy Workers
+name: Cloudflare Workers
 
 on:
   push:
@@ -12,10 +12,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Deploy to Cloudflare Workers
+      - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
