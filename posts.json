@@ -1,3 +1,32 @@
-[{"slug":"en-hello-world","title":"Hello World","date":"2026-04-19","edited":"2026-04-20","tags":["First","Init"],"lang":"en","author":["Dohan Kwon"],"url":"https://www.dohan.in/posts?p=en-hello-world"}
-,{"slug":"ko-hello-world","title":"안녕, 세상아","date":"2026-04-19","edited":"2026-04-20","tags":["첫","초기화"],"lang":"ko","author":["권도한"],"url":"https://www.dohan.in/posts?p=ko-hello-world"}
+[
+  {
+    "slug": "en-hello-world",
+    "title": "Hello World",
+    "date": "2026-04-19",
+    "edited": "2026-04-20",
+    "tags": [
+      "First",
+      "Init"
+    ],
+    "lang": "en",
+    "author": [
+      "Dohan Kwon"
+    ],
+    "url": "/posts?p=en-hello-world"
+  },
+  {
+    "slug": "ko-hello-world",
+    "title": "안녕, 세상아",
+    "date": "2026-04-19",
+    "edited": "2026-04-20",
+    "tags": [
+      "첫",
+      "초기화"
+    ],
+    "lang": "ko",
+    "author": [
+      "권도한"
+    ],
+    "url": "/posts?p=ko-hello-world"
+  }
 ]
