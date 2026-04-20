@@ -1,4 +1,4 @@
-name: Pre-reder
+name: Pre-render
 
 on:
   push:
@@ -7,3 +7,176 @@ on:
     paths:
       - "posts/**"
   workflow_dispatch:
+
+jobs:
+  pre-render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Collect post metadata
+        id: collect
+        run: |
+          POSTS_META_FILE=$(mktemp)
+
+          for filepath in posts/*.md; do
+            [ -f "$filepath" ] || continue
+
+            slug=$(basename "$filepath" .md)
+
+            frontmatter=$(awk '/^---$/{if(found){exit}else{found=1;next}} found{print}' "$filepath")
+
+            title=$(echo "$frontmatter" | grep '^title:' | sed 's/^title: *//; s/^"//; s/"$//')
+            date=$(echo "$frontmatter" | grep '^date:' | sed 's/^date: *//; s/^"//; s/"$//')
+            edited=$(echo "$frontmatter" | grep '^edited:' | sed 's/^edited: *//; s/^"//; s/"$//')
+            lang=$(echo "$frontmatter" | grep '^lang:' | sed 's/^lang: *//; s/^"//; s/"$//')
+
+            tags_raw=$(echo "$frontmatter" | grep '^tags:' | sed 's/^tags: *//')
+            tags_json=$(echo "$tags_raw" | sed 's/\[//; s/\]//; s/"//g; s/ //g' | \
+              awk -F',' '{for(i=1;i<=NF;i++) printf "\"%s\"%s",$i,(i<NF?",":"")}' | \
+              sed 's/^/[/; s/$/]/')
+
+            authors_raw=$(echo "$frontmatter" | grep '^author:' | sed 's/^author: *//')
+            authors_json=$(echo "$authors_raw" | sed 's/\[//; s/\]//; s/"//g' | \
+              awk -F',' '{for(i=1;i<=NF;i++){gsub(/^ +| +$/,"",$i); printf "\"%s\"%s",$i,(i<NF?",":"")}}' | \
+              sed 's/^/[/; s/$/]/')
+
+            content=$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "$filepath")
+            echo "${slug}|${title}|${date}|${edited}|${tags_json}|${lang}|${authors_json}" >> "$POSTS_META_FILE"
+          done
+
+          echo "POSTS_META_FILE=$POSTS_META_FILE" >> "$GITHUB_ENV"
+
+      - name: Parse supported languages from languages.js
+        id: langs
+        run: |
+          LANGS=$(grep -oP '(?<=window\.__LANG__ = \{|,\s{0,10})\s*\K[a-z]{2}(?=\s*:)' languages.js | tr '\n' ' ')
+          echo "LANGS=$LANGS" >> "$GITHUB_ENV"
+
+      - name: Generate RSS, posts.json, sitemap.xml
+        run: |
+          BASE_URL="https://www.dohan.in"
+          NOW=$(date -u +"%a, %d %b %Y %H:%M:%S GMT")
+          POSTS_META_FILE="$POSTS_META_FILE"
+
+          mkdir -p rss
+
+          for lang_code in $LANGS; do
+            # languages.js에서 rss.title, rss.description 추출
+            rss_block=$(awk "/^\s*${lang_code}\s*:/{found=1} found && /rss\s*:/{rss=1} rss && /title\s*:/{print;count++} rss && /description\s*:/{print;count++} count==2{exit}" languages.js)
+
+            rss_title=$(echo "$rss_block" | grep 'title' | head -1 | sed 's/.*title[^"]*"//; s/".*//')
+            rss_desc=$(echo "$rss_block" | grep 'description' | head -1 | sed 's/.*description[^"]*"//; s/".*//')
+
+            cat > "rss/${lang_code}.xml" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${rss_title}</title>
+    <link>${BASE_URL}</link>
+    <description>${rss_desc}</description>
+    <language>${lang_code}</language>
+    <lastBuildDate>${NOW}</lastBuildDate>
+    <atom:link href="${BASE_URL}/rss/${lang_code}.xml" rel="self" type="application/rss+xml"/>
+EOF
+
+            while IFS='|' read -r slug title date edited tags_json post_lang authors_json; do
+              [ "$post_lang" = "$lang_code" ] || continue
+
+              post_url="${BASE_URL}/posts?p=${slug}"
+              pub_date=$(date -u -d "${date}" +"%a, %d %b %Y %H:%M:%S GMT" 2>/dev/null || echo "$NOW")
+
+              content=$(awk 'BEGIN{c=0} /^---$/{c++;next} c>=2{print}' "posts/${slug}.md" | \
+                sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+
+              cat >> "rss/${lang_code}.xml" <<EOF
+    <item>
+      <title>${title}</title>
+      <link>${post_url}</link>
+      <guid isPermaLink="true">${post_url}</guid>
+      <pubDate>${pub_date}</pubDate>
+      <description><![CDATA[${content}]]></description>
+    </item>
+EOF
+            done < "$POSTS_META_FILE"
+
+            cat >> "rss/${lang_code}.xml" <<EOF
+  </channel>
+</rss>
+EOF
+
+            echo "Generated rss/${lang_code}.xml"
+          done
+
+          FIRST=1
+          printf '[' > posts.json
+
+          while IFS='|' read -r slug title date edited tags_json lang_code authors_json; do
+            post_url="${BASE_URL}/posts?p=${slug}"
+
+            [ $FIRST -eq 1 ] && FIRST=0 || printf ',' >> posts.json
+
+            cat >> posts.json <<EOF
+{"slug":"${slug}","title":"${title}","date":"${date}","edited":"${edited}","tags":${tags_json},"lang":"${lang_code}","author":${authors_json},"url":"${post_url}"}
+EOF
+          done < "$POSTS_META_FILE"
+
+          printf ']' >> posts.json
+          echo "Generated posts.json"
+
+          TODAY=$(date -u +"%Y-%m-%d")
+
+          cat > sitemap.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+EOF
+
+          for html_file in *.html; do
+            [ -f "$html_file" ] || continue
+
+            name=$(basename "$html_file" .html)
+
+            if [ "$name" = "index" ]; then
+              loc="${BASE_URL}/"
+            else
+              loc="${BASE_URL}/${name}"
+            fi
+
+            cat >> sitemap.xml <<EOF
+  <url>
+    <loc>${loc}</loc>
+    <lastmod>${TODAY}</lastmod>
+  </url>
+EOF
+          done
+
+          while IFS='|' read -r slug title date edited tags_json lang_code authors_json; do
+            post_url="${BASE_URL}/posts?p=${slug}"
+            lastmod="${date}"
+
+            cat >> sitemap.xml <<EOF
+  <url>
+    <loc>${post_url}</loc>
+    <lastmod>${lastmod}</lastmod>
+  </url>
+EOF
+          done < "$POSTS_META_FILE"
+
+          cat >> sitemap.xml <<EOF
+</urlset>
+EOF
+
+          echo "Generated sitemap.xml"
+
+#      - name: Commit and push
+#        run: |
+#          git config user.name "github-actions[bot]"
+#          git config user.email "github-actions[bot]@users.noreply.github.com"
+#          git add rss/ posts.json sitemap.xml
+#          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+#          git commit -m "chore: pre-render rss, posts.json, sitemap [skip ci]"
+#          git push
