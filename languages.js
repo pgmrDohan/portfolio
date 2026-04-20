@@ -23,6 +23,10 @@ window.__LANG__ = {
     greeting: {
       header: "안녕하세요",
     },
+    rss: {
+      title: "도한로그",
+      description: "Legacy 위에서 Latest를 설계하는 컴퓨터 공학자",
+    },
   },
   en: {
     head: {
@@ -47,6 +51,11 @@ window.__LANG__ = {
     },
     greeting: {
       header: "Hello",
+    },
+    rss: {
+      title: "dohan.k.log",
+      description:
+        "Computer engineer who designs the 'Latest' atop the 'Legacy'",
     },
   },
 };
