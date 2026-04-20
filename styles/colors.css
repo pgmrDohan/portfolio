@@ -7,14 +7,14 @@
 html[data-theme="light"] {
   --theme-background: #fcfcfb;
   --theme-background-info: #dcdcdb;
-  --theme-color: #030712;
+  --theme-color: #0d0d0f;
 }
 
 /* Dark Theme */
 html[data-theme="dark"] {
   --theme-background: #0d0d0f;
   --theme-background-info: #2d2d2f;
-  --theme-color: white;
+  --theme-color: #fcfcfb;
 }
 
 html {

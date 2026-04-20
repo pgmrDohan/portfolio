@@ -58,6 +58,7 @@
       <!-- TODO -->
     </noscript>
     <main>
+      <div class="sentinel"></div>
       <nav class="mt-xl">
         <div>
           <button
@@ -111,7 +112,7 @@
         <div>
           <button
             onclick="toggleTheme()"
-            data-i18n="header.theme@title"
+            data-i18n="nav.theme@title"
             title="테마 변경"
           >
             <svg
@@ -131,7 +132,7 @@
               />
             </svg>
           </button>
-          <button data-i18n="header.index@title" title="찾기">
+          <button data-i18n="nav.index@title" title="찾기">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -159,17 +160,17 @@
             src="images/profile.jpg"
             fetchpriority="high"
             decoding="async"
-            data-i18n="body.profile@title"
+            data-i18n="header.profile@title"
             title="프로필 사진"
           />
         </picture>
         <div class="pt-sm pb-sm" id="profile-info">
-          <h1 data-i18n="body.name">권도한</h1>
+          <h1 data-i18n="header.name">권도한</h1>
           <p class="mt-sm">
-            <span data-i18n="body.bio">컴퓨터 공학자</span>
+            <span data-i18n="header.bio">컴퓨터 공학자</span>
             <a
               href="https://mirae.yonsei.ac.kr/wj/index.do"
-              data-i18n="body.department,body.department_url@href"
+              data-i18n="header.department,body.department_url@href"
               target="_blank"
               >@연세대학교 미래캠퍼스</a
             >
@@ -215,10 +216,31 @@
           <p>@pgmrDohan</p></a
         >
       </address>
-      <section class="mt-xl">
-        <h2>안녕하세요 👋</h2>
+      <section class="mt-xl" id="greeting">
+        <h2>
+          <h2 data-i18n="greeting.header">안녕하세요</h2>
+          <h2>👋</h2>
+        </h2>
+        <p class="mt-lg">
+          <strong>Legacy 위에서 Latest를 설계하는 컴퓨터 공학자</strong>,
+          권도한입니다.<br /><br />무어의 법칙이 물리적 한계에 다다를 만큼
+          컴퓨터 공학의 발전 속도는 비약적이며, AI의 등장으로 추상화 레이어를
+          지탱하는 Legacy 기술은 점차 조명받지 못하고 있습니다.<br /><br />Kubernetes도
+          Cgroups과 Namespaces를 기반으로 동작하며, 클라우드 인프라 또한
+          VirtiO를 기반으로 동작합니다.<br /><br /><strong>Legacy는</strong>
+          단순히 "오래된 기술"이 아니라,
+          <strong>Latest가 작동하는 원리를 담고 있습니다.</strong> 원리를
+          이해하지 못한 채 새로운 기술을 설계하는 것은, 기초 없이 건물을 쌓아
+          올리는 것과 다르지 않습니다.<br /><br />Latest만 좇으면 유행을 탈 수는
+          있지만 깊이를 잃습니다. Legacy에만 머무르면 견고하지만 시대에
+          뒤처집니다. 저는 그 가운데에서
+          <strong
+            >이론과 기반이 되는 기술을 바탕으로 새로운 기술의 가능성을 설계하는
+            공학자</strong
+          >로서 성장하고자 합니다.
+        </p>
       </section>
-      <footer class="mt-xl">
+      <footer class="mt-xl mb-xl">
         <div>
           <p><a href="/" data-i18n="footer.home">홈</a></p>
           <p><a href="/blog" data-i18n="footer.blog">블로그</a></p>

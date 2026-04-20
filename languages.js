@@ -3,14 +3,14 @@ window.__LANG__ = {
     head: {
       title: "권도한 :: 컴퓨터 공학자",
     },
-    body: {
+    header: {
       profile: "프로필 사진",
       name: "권도한",
       bio: "컴퓨터 공학자",
       department: "@연세대학교 미래캠퍼스",
       department_url: "https://mirae.yonsei.ac.kr/wj/index.do",
     },
-    header: {
+    nav: {
       theme: "테마 변경",
       index: "찾기",
     },
@@ -20,19 +20,22 @@ window.__LANG__ = {
       rss: "/ko/rss.xml",
       pdf: "PDF로 저장",
     },
+    greeting: {
+      header: "안녕하세요",
+    },
   },
   en: {
     head: {
       title: "Dohan Kwon :: Computer Engineer",
     },
-    body: {
+    header: {
       profile: "Profile Image",
       name: "Dohan Kwon",
       bio: "Computer Engineer",
       department: "@Yonsei University Mirae Campus",
       department_url: "https://mirae.yonsei.ac.kr/sites/en_wj/index.do",
     },
-    header: {
+    nav: {
       theme: "Toggle Color Theme",
       index: "Index",
     },
@@ -41,6 +44,9 @@ window.__LANG__ = {
       blog: "Blog",
       rss: "/en/rss.xml",
       pdf: "Save to PDF",
+    },
+    greeting: {
+      header: "Hello",
     },
   },
 };

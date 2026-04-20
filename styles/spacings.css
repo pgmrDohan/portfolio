@@ -2,13 +2,16 @@
   --space-xs: 0.4rem;
   --space-sm: 0.8rem;
   --space-md: 1.6rem;
-  --space-lg: 3rem;
+  --space-lg: 2rem;
   --space-xl: 5rem;
 }
 
 /* Margin */
 .mt-xl {
   margin-top: var(--space-xl);
+}
+.mb-xl {
+  margin-bottom: var(--space-xl);
 }
 .mt-sm {
   margin-top: var(--space-sm);

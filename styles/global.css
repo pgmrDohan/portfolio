@@ -1,6 +1,8 @@
 body {
   opacity: 0;
   transition: opacity 0.3s;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .noscript {
@@ -34,10 +36,28 @@ main {
   }
 }
 
+.is-sticky {
+    div
+}
+
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: sticky;
+  top: var(--space-xl);
+
+  &.is-sticky {
+    justify-content:flex-end;
+    div:nth-child(1) {
+        display: none;
+    }
+    div:nth-child(2) {
+        button:nth-child(1) {
+            display: none;
+        }
+    }
+  }
 
   div {
     display: flex;
