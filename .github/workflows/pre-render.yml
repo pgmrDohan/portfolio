@@ -51,7 +51,7 @@ jobs:
       - name: Parse supported languages from languages.js
         id: langs
         run: |
-          LANGS=$(grep -oP '(?<=window\.__LANG__ = \{|,\s{0,10})\s*\K[a-z]{2}(?=\s*:)' languages.js | tr '\n' ' ')
+          LANGS=$(grep -oP '\b[a-z]{2}(?=\s*:)' languages.js | tr '\n' ' ')
           echo "LANGS=$LANGS" >> "$GITHUB_ENV"
 
       - name: Generate RSS feeds
@@ -155,7 +155,7 @@ jobs:
             {
               printf '%s\n' '  <url>'
               printf '    <loc>%s</loc>\n' "${post_url}"
-              printf '    <lastmod>%s</lastmod>\n' "${date}"
+              printf '    <lastmod>%s</lastmod>\n' "${edited}"
               printf '%s\n' '  </url>'
             } >> sitemap.xml
           done < "$POSTS_META_FILE"
