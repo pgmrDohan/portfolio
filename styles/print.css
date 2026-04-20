@@ -11,7 +11,12 @@
   header {
     margin: 0 !important;
     padding: 0 !important;
-    align-items: center !important;
+    align-items: flex-end !important;
+  }
+
+  #profile-image {
+    border-radius: 0px !important;
+    height: 100% !important;
   }
 
   #profile-info {

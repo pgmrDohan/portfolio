@@ -1,63 +1,11 @@
-@font-face {
-  font-family: KoPubWorldDotum;
-  font-weight: 700;
-  font-display: swap;
-  src:
-    local("KoPubWorldDotumPB"),
-    url(../fonts/KoPubWorld\ Dotum_Pro\ Bold.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: KoPubWorldDotum;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    local("KoPubWorldDotumPM"),
-    url(../fonts/KoPubWorld\ Dotum_Pro\ Medium.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: KoPubWorldDotum;
-  font-weight: 300;
-  font-display: swap;
-  src:
-    local("KoPubWorldDotumPL"),
-    url(../fonts/KoPubWorld\ Dotum_Pro\ Light.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: KoPubWorldBatang;
-  font-weight: 700;
-  font-display: swap;
-  src:
-    local("KoPubWorldBatangPB"),
-    url(../fonts/KoPubWorld\ Batang_Pro\ Bold.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: KoPubWorldBatang;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    local("KoPubWorldBatangPM"),
-    url(../fonts/KoPubWorld\ Batang_Pro\ Medium.woff2) format("woff2");
-}
-
-@font-face {
-  font-family: KoPubWorldBatang;
-  font-weight: 300;
-  font-display: swap;
-  src:
-    local("KoPubWorldBatangPL"),
-    url(../fonts/KoPubWorld\ Batang_Pro\ Light.woff2) format("woff2");
-}
+@import url(../fonts/font-face.css);
 
 :root {
   --font-family-primary:
     "KoPubWorldDotum", -apple-system, BlinkMacSystemFont, system-ui, Roboto,
     "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
-    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    sans-serif;
+    "Malgun Gothic", "Fluent Emoji Color", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
   --typo-h1-size: 2.5rem;
   --typo-h1-weight: 700;
@@ -81,6 +29,13 @@ h1 {
   font-size: var(--typo-h1-size);
   font-weight: var(--typo-h1-weight);
   line-height: var(--typo-h1-lh);
+}
+
+h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--typo-h2-size);
+  font-weight: var(--typo-h2-weight);
+  line-height: var(--typo-h2-lh);
 }
 
 p {
