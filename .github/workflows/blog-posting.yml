@@ -196,7 +196,7 @@ jobs:
           }
 
           function buildSitemap(posts) {
-            const htmlFiles = getHtmlFiles(ROOT_DIR);
+            const htmlFiles = getAllHtmlFiles(ROOT_DIR);
             const lines = [];
 
             lines.push('<?xml version="1.0" encoding="UTF-8"?>');
