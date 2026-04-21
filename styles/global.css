@@ -244,3 +244,24 @@ ul#posts li a {
 ul#posts li a small {
   color: var(--color-neutral-light);
 }
+
+hgroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+hgroup a {
+  background: none;
+  background-image: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+hgroup .lucide-arrow-up-right {
+  width: var(--typo-h3-size);
+  height: var(--typo-h3-size);
+  color: var(--color-neutral-light);
+}

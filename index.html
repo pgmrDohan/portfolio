@@ -218,10 +218,8 @@
         >
       </address>
       <section class="mt-xl" id="greeting">
-        <h2>
-          <h2 data-i18n="greeting.header">안녕하세요</h2>
-          <h2>👋</h2>
-        </h2>
+        <h2 data-i18n="greeting.header">안녕하세요</h2>
+        <h2>👋</h2>
         <p class="mt-lg" data-i18n="greeting.content">
           <strong>Legacy 위에서 Latest를 설계하는 컴퓨터 공학자</strong>,
           권도한입니다.<br /><br />무어의 법칙이 물리적 한계에 다다를 만큼
@@ -242,10 +240,29 @@
         </p>
       </section>
       <section class="mt-xl" id="posts">
-        <h2>
-          <h2 data-i18n="posts.header">게시글</h2>
-          <h2>📒</h2>
-        </h2>
+        <hgroup>
+          <div>
+            <h2 data-i18n="posts.header">게시글</h2>
+            <h2>📒</h2>
+          </div>
+          <a href="/posts">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
+            >
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </a>
+        </hgroup>
         <ul class="mt-lg" data-show="5" id="posts"></ul>
       </section>
       <footer class="mt-xl mb-xl">
