@@ -22,6 +22,10 @@
   --typo-body-size: 1.4rem;
   --typo-body-weight: 500;
   --typo-body-lh: 1.4;
+
+  --typo-small-size: 1rem;
+  --typo-small-weight: 300;
+  --typo-small-lh: 1.4;
 }
 
 html {
@@ -55,4 +59,11 @@ p {
   font-size: var(--typo-body-size);
   font-weight: var(--typo-body-weight);
   line-height: var(--typo-body-lh);
+}
+
+small {
+  font-family: var(--font-family-primary);
+  font-size: var(--typo-small-size);
+  font-weight: var(--typo-small-weight);
+  line-height: var(--typo-small-lh);
 }

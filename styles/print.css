@@ -54,4 +54,8 @@
   strong {
     font-weight: 700 !important;
   }
+
+  section#posts {
+    display: none !important;
+  }
 }

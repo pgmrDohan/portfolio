@@ -215,3 +215,32 @@ p strong {
   color: var(--theme-color);
   font-weight: 500;
 }
+
+.tag {
+  border-radius: 9999px;
+  width: fit-content;
+  padding-top: var(--space-xs);
+  padding-bottom: var(--space-xs);
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+  display: inline-block;
+}
+
+div:has(.tag) {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+ul#posts li a {
+  display: flex;
+  align-items: flex-end;
+  background: none;
+  background-image: none;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+ul#posts li a small {
+  color: var(--color-neutral-light);
+}
