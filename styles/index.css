@@ -1,9 +1,0 @@
-p {
-  color: var(--color-neutral-light);
-  line-height: 1.8;
-}
-
-p strong {
-  color: var(--theme-color);
-  font-weight: 500;
-}
