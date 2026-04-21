@@ -98,10 +98,38 @@ jobs:
             return `${BASE_URL}/posts?p=${encodeURIComponent(slug)}`;
           }
 
-          function getHtmlFiles() {
-            return fs.readdirSync(ROOT_DIR)
-              .filter(name => name.endsWith('.html'))
-              .sort();
+          function getAllHtmlFiles(dir, base = '') {
+            const entries = fs.readdirSync(dir, { withFileTypes: true });
+            let results = [];
+
+            for (const entry of entries) {
+              if (entry.isDirectory() && ['.git'].includes(entry.name)) {
+                continue;
+              }
+            
+              const fullPath = path.join(dir, entry.name);
+              const relativePath = path.join(base, entry.name);
+
+              if (entry.isDirectory()) {
+                results = results.concat(getAllHtmlFiles(fullPath, relativePath));
+              } else if (entry.isFile() && entry.name.endsWith('.html')) {
+                results.push(relativePath);
+              }
+            }
+
+            return results;
+          }
+
+          function toUrlPath(filePath) {
+            const normalized = filePath.replace(/\\/g, '/'); // Windows 대응
+
+            if (normalized === 'index.html') return '';
+
+            if (normalized.endsWith('/index.html')) {
+              return normalized.replace(/index\.html$/, '');
+            }
+
+            return normalized.replace(/\.html$/, '');
           }
 
           function readPosts() {
@@ -168,15 +196,16 @@ jobs:
           }
 
           function buildSitemap(posts) {
-            const htmlFiles = getHtmlFiles();
+            const htmlFiles = getHtmlFiles(ROOT_DIR);
             const lines = [];
 
             lines.push('<?xml version="1.0" encoding="UTF-8"?>');
             lines.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
 
             for (const htmlFile of htmlFiles) {
-              const name = path.basename(htmlFile, '.html');
-              const loc = name === 'index' ? `${BASE_URL}/` : `${BASE_URL}/${name}`;
+              const urlPath = toUrlPath(htmlFile);
+              const loc = `${BASE_URL}/${urlPath}`;
+
               lines.push('  <url>');
               lines.push(`    <loc>${escapeXml(loc)}</loc>`);
               lines.push(`    <lastmod>${escapeXml(new Date().toISOString().slice(0, 10))}</lastmod>`);
