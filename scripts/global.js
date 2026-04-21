@@ -41,8 +41,7 @@ function getTagColor(tag) {
 
 async function loadPosts() {
   const postsList = document.querySelector("ul#posts");
-  const url =
-    "https://raw.githubusercontent.com/pgmrDohan/portfolio/refs/heads/master/posts.json";
+  const url = "/posts.json";
 
   const urlParams = new URLSearchParams(window.location.search);
   const langFilter = urlParams.get("lang");
