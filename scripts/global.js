@@ -62,7 +62,7 @@ async function loadPosts() {
         const displayDate = formatDate(rawDate, locale);
 
         return `
-            <li>
+            <li class="mt-lg">
                 <a href="${post.url}">
                     <h3>${post.title}</h3>
                     <small>@${post.author.join(", ")}</small>
