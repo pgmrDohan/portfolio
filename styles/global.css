@@ -322,3 +322,19 @@ ul#projects li div.icons svg {
 center {
   text-align: center;
 }
+
+#tags {
+  overflow-x: scroll;
+  display: flex;
+  gap: var(--space-sm);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#tags::-webkit-scrollbar {
+  display: none;
+}
+
+.tag {
+  flex-shrink: 0;
+}

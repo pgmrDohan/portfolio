@@ -5,6 +5,9 @@ window.__LANG__ = {
     head: {
       title: "권도한 :: 컴퓨터 공학자",
     },
+    filter: {
+      all: "모두",
+    },
     header: {
       profile: "프로필 사진",
       name: "권도한",
@@ -48,6 +51,9 @@ window.__LANG__ = {
     open: "Open",
     head: {
       title: "Dohan Kwon :: Computer Engineer",
+    },
+    filter: {
+      all: "All",
     },
     header: {
       profile: "Profile Image",
