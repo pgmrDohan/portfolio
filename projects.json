@@ -9,14 +9,8 @@
     "cover": "/images/projects/my-awesome-projects.jpg",
     "url": "https://cbns.dohan.in/",
     "repository": "https://github.com/pgmrDohan/react.ts",
-    "skills": [
-      "APL",
-      "LISP",
-      "Fortran"
-    ],
-    "platform": [
-      "In My Mind"
-    ],
+    "skills": ["APL", "LISP", "Fortran"],
+    "platform": ["In My Mind"],
     "projectUrl": "https://www.dohan.in/projects?p=en-test-0"
   },
   {
@@ -29,14 +23,8 @@
     "cover": "/images/projects/my-awesome-projects.jpg",
     "url": "https://cbns.dohan.in/",
     "repository": "https://github.com/pgmrDohan/react.ts",
-    "skills": [
-      "APL",
-      "LISP",
-      "Fortran"
-    ],
-    "platform": [
-      "내 마음 속"
-    ],
+    "skills": ["APL", "LISP", "Fortran"],
+    "platform": ["내 마음 속"],
     "projectUrl": "https://www.dohan.in/projects?p=ko-test-0"
   }
 ]

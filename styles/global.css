@@ -226,7 +226,7 @@ p strong {
   display: inline-block;
 }
 
-div:has(.tag) {
+div:has(> .tag) {
   display: flex;
   gap: var(--space-sm);
   margin-top: var(--space-xs);
@@ -243,6 +243,7 @@ ul#posts li a {
 
 ul#posts li a small {
   color: var(--color-neutral-light);
+  flex-shrink: 0;
 }
 
 hgroup {
@@ -266,16 +267,47 @@ hgroup .lucide-arrow-up-right {
   color: var(--color-neutral-light);
 }
 
-ul#projects li div {
+ul#projects li > div {
   display: flex;
-  gap: var(--mr-sm);
+  gap: var(--space-sm);
   align-items: center;
 }
 
 ul#projects li > div img {
-  width: 4rem;
-  height: 4rem;
+  width: 10rem;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 1rem;
+}
+
+ul#projects li a {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background: none;
+  background-image: none;
+  text-decoration: none;
+}
+
+ul#projects li a small {
+  color: var(--color-neutral-light);
+  flex-shrink: 0;
+}
+
+ul#projects li div.icons {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
+ul#projects li div:has(> .icons) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul#projects li div.icons svg {
+  width: var(--typo-h3-size);
+  color: var(--color-neutral-light);
 }

@@ -35,8 +35,6 @@ window.__LANG__ = {
     projects: {
       header: "프로젝트",
       error: "프로젝트 로드에 실패하였습니다.",
-      link: "새 탭에서 열기",
-      repository: "새 탭에서 열기",
     },
     rss: {
       title: "도한로그",
@@ -75,8 +73,6 @@ window.__LANG__ = {
       header: "Posts",
       error: "Failed to load Posts.",
       edited: "edited",
-      link: "Open Link in New Tab",
-      repository: "Open Repository Link in New Tab",
     },
     projects: {
       header: "Projects",
