@@ -286,6 +286,12 @@ function renderProjectItem(project, langFilter, locale) {
       </div>
     </div>
     <p class="mt-xs print-content">${project.description}</p>
+    <small class="print-content">${[
+      project.url ? project.url : null,
+      project.repository ? project.repository : null,
+    ]
+      .filter(Boolean)
+      .join(" · ")}</small>
   </li>`;
 }
 
@@ -324,11 +330,12 @@ function renderActivityItem(item, langFilter, locale) {
       <h3>${item.title}</h3>
       <small>${(item.achievement || []).join(" · ")}</small>
     </hgroup>
-    <small class="mt-xs mb-xs">${(item.organization || []).join(", ")}${item.country ? ` - ${item.country}` : ""}</small>
+    <p class="mt-xs mb-xs">${(item.organization || []).join(", ")}${item.country ? ` - ${item.country}` : ""}</p>
     <hgroup>
       <div>${badge(item.type)}</div>
       ${links ? `<div class="icons">${links}</div>` : ""}
     </hgroup>
+    <small class="mt-sm print-content">${(item.links || []).map((l) => l.URL).join(" · ")}</small>
   </li>`;
 }
 
@@ -374,6 +381,16 @@ function renderResearchItem(item, langFilter, locale) {
     })
     .join(" · ");
 
+  const identifiersPrint = (item.identifiers || [])
+    .map((id) => {
+      if (id.URL) return `${id.title} ${id.URL}`;
+      if (id.isbn) return `${id.title} ${id.isbn}`;
+      if (id.issn) return `${id.title} ${id.issn}`;
+      if (id.doi) return `${id.title} ${id.doi}`;
+      return `${id.title}`;
+    })
+    .join(" · ");
+
   return `
   <li class="mt-lg">
     <h3>${item.title}</h3>
@@ -382,7 +399,7 @@ function renderResearchItem(item, langFilter, locale) {
       <p>${displayDate}${item.country ? ` · ${item.country}` : ""}</p>
     </hgroup>
     <div class="mb-sm">${badge(item.type)}</div>
-    ${identifiers ? `<small>${identifiers}</small>` : ""}
+    ${identifiers ? `<small class="wo-print-content">${identifiers}</small><small class="print-content">${identifiersPrint}</small>` : ""}
   </li>`;
 }
 

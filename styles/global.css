@@ -387,7 +387,7 @@ ul#research > li > small > a {
   display: inline-block;
 }
 
-ul#research > li > small {
+ul > li > small {
   line-height: 2.4;
 }
 
