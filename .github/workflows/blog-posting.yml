@@ -32,7 +32,7 @@ jobs:
 
   pre-render:
     needs: check_changes
-    if: needs.check_changes.outputs.any_added == 'true'
+    if: needs.check_changes.outputs.any_added == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
