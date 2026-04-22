@@ -70,4 +70,8 @@
   .wo-print-content {
     display: none !important;
   }
+
+  section#posts {
+    display: none !important;
+  }
 }
