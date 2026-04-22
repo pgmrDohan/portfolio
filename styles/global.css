@@ -393,4 +393,5 @@ ul > li > small {
 
 ul > li > hgroup > small {
   flex-shrink: 0;
+  color: var(--color-neutral-light);
 }
