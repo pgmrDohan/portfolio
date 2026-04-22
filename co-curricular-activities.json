@@ -1,22 +1,543 @@
 [
   {
-    "title": "",
-    "type": "course|completion|award|participation",
-    "year": "YYYY",
-    "organization": ["", ""],
-    "achievement": ["", ""],
+    "title": "Google Cloud 기반 인공지능 전문가 양성과정 (2조)",
+    "type": "교육",
+    "year": "2025",
+    "organization": ["경상북도", "Google Cloud"],
+    "achievement": ["조장", "수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
+    "title": "Google Cloud 기반 인공지능 전문가 양성과정 성과 공유회 및 프로젝트 발표회",
+    "type": "수상",
+    "year": "2025",
+    "organization": ["경상북도", "Google Cloud"],
+    "achievement": ["1위 (최우수상)"],
     "links": [
       {
-        "type": "github|figma|article",
-        "URL": ""
+        "type": "소스코드",
+        "URL": "https://github.com/pgmrDohan/real-time-knowledge-graph-with-gcp"
       },
       {
-        "type": "github|figma|article",
-        "URL": ""
+        "type": "발표 자료",
+        "URL": "https://www.figma.com/deck/wucZvryW4qw6aMODOuyhgz/GCP-기반-인공지능-전문가-양성과정?t=lwTdGNQ8nmcgvv2V-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-168"
       }
     ],
-    "country": "",
+    "country": "대한민국",
     "pinned": true,
-    "lang": ""
+    "lang": "ko"
+  },
+  {
+    "title": "Junction Asia DEMO DAY",
+    "type": "참가",
+    "year": "2025",
+    "organization": ["ENTBE"],
+    "achievement": ["기획 및 비즈니스 모델"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "대한민국 고등학생 소프트웨어 개발 공모전",
+    "type": "수상",
+    "year": "2024",
+    "organization": ["한국소프트웨어산업협회"],
+    "achievement": ["동상 (4등)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
+    "title": "제 28회 고교생 해커톤 대회 앱잼 - 생활정보",
+    "type": "수상",
+    "year": "2024",
+    "organization": ["SK플래닛", "중소벤처기업부"],
+    "achievement": ["우수상 (2등)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "코드코리아 부산 금정구 해커톤",
+    "type": "수상",
+    "year": "2024",
+    "organization": ["코드코리아"],
+    "achievement": ["우수상 (2등)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "경북교육청 SW-AI 해커톤대회",
+    "type": "수상",
+    "year": "2024",
+    "organization": ["경상북도교육청"],
+    "achievement": ["창의융합상 (1등)"],
+    "links": [
+      {
+        "type": "관련 기사",
+        "URL": "http://www.adinews.co.kr/news/articleView.html?idxno=65018"
+      }
+    ],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
+    "title": "Junction Asia",
+    "type": "참가",
+    "year": "2024",
+    "organization": ["ENTBE"],
+    "achievement": ["프론트엔드 개발", "국제 대회 (영어 진행)"],
+    "links": [],
+    "country": "아시아",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "공개 SW 개발자 대회",
+    "type": "참가",
+    "year": "2024",
+    "organization": ["과학기술정보통신부"],
+    "achievement": ["자유주제 (운영체제 개발 프레임워크)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "쿠팡 HackSeoul",
+    "type": "참가",
+    "year": "2024",
+    "organization": ["쿠팡"],
+    "achievement": ["UI•UX 디자인", "프론트엔드 개발", "국제 대회 (영어 진행)"],
+    "links": [],
+    "country": "글로벌",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "안동대학교 과학영재교육원 소프트웨어 융합사사 과정",
+    "type": "수료",
+    "year": "2022",
+    "organization": ["안동대학교"],
+    "achievement": ["수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "네이버 커넥트재단 부스트코스 CS50 코칭스터디 2기 (7조)",
+    "type": "교육",
+    "year": "2021",
+    "organization": ["네이버 커넥트재단"],
+    "achievement": ["조장", "인터뷰", "수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "J2KB 전국연합코딩동아리",
+    "type": "수료",
+    "year": "2021",
+    "organization": ["J2KB"],
+    "achievement": ["인터뷰", "수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "안동대학교 과학영재교육원 소프트웨어 사사 과정",
+    "type": "수료",
+    "year": "2021",
+    "organization": ["안동대학교"],
+    "achievement": ["최우수", "수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "영남, 제주권역 대학부설 과학영재교육원 과학기술 입문캠프 - IT",
+    "type": "수료",
+    "year": "2021",
+    "organization": ["영남·제주권 대학부설 과학영재교육원"],
+    "achievement": ["수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "한국과학창의재단 대학부설 과학영재 교육원 사사과정 연구 성과 발표대회",
+    "type": "수료",
+    "year": "2021",
+    "organization": ["한국과학창의재단"],
+    "achievement": ["장려상"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "안동대학교 과학영재교육원 소프트웨어 심화 과정",
+    "type": "수료",
+    "year": "2020",
+    "organization": ["안동대학교"],
+    "achievement": ["최우수", "수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "부산대학교 영남·제주권 온라인 창의 디자인 캠프 SW 온라인 해커톤 대회",
+    "type": "수료",
+    "year": "2020",
+    "organization": ["부산대학교"],
+    "achievement": ["동상 (3등)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "경북콘텐츠코리아랩 콘텐츠 창작살롱 공모전",
+    "type": "수료",
+    "year": "2020",
+    "organization": ["경북콘텐츠코리아랩"],
+    "achievement": ["최우수상 (1등)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "경북콘텐츠코리아랩 콘텐츠 파트너링 데이 - IR 피칭",
+    "type": "수료",
+    "year": "2020",
+    "organization": ["경북콘텐츠코리아랩"],
+    "achievement": ["특별상"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "안동대학교 과학영재교육원 소프트웨어 심화 과정",
+    "type": "수료",
+    "year": "2019",
+    "organization": ["안동대학교"],
+    "achievement": ["수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "안동시 공공아이디어 공모전",
+    "type": "수료",
+    "year": "2019",
+    "organization": ["안동시"],
+    "achievement": ["최우수상 (1등)"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "네이버 커넥트재단 대구교육대학생 선생님과 함께하는 소프트웨어 교실",
+    "type": "수료",
+    "year": "2016",
+    "organization": ["네이버 커넥트재단", "대구교육대학교"],
+    "achievement": ["조장", "수료"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "title": "Google Cloud-based AI Expert Training Program (Team 2)",
+    "type": "course",
+    "year": "2025",
+    "organization": ["Gyeongsangbuk-do", "Google Cloud"],
+    "achievement": ["Team Leader", "Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "title": "Google Cloud-based AI Expert Training Program Performance Sharing & Project Presentation",
+    "type": "award",
+    "year": "2025",
+    "organization": ["Gyeongsangbuk-do", "Google Cloud"],
+    "achievement": ["1st Place (Grand Prize)"],
+    "links": [
+      {
+        "type": "github",
+        "URL": "https://github.com/pgmrDohan/real-time-knowledge-graph-with-gcp"
+      },
+      {
+        "type": "figma",
+        "URL": "https://www.figma.com/deck/wucZvryW4qw6aMODOuyhgz/GCP-기반-인공지능-전문가-양성과정?t=lwTdGNQ8nmcgvv2V-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-168"
+      }
+    ],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "title": "Junction Asia DEMO DAY",
+    "type": "participation",
+    "year": "2025",
+    "organization": ["ENTBE"],
+    "achievement": ["Planning & Business Model"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Korea High School Software Development Contest",
+    "type": "award",
+    "year": "2024",
+    "organization": ["Korea Software Industry Association"],
+    "achievement": ["Bronze Prize (4th Place)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "title": "The 28th High School Hackathon 'AppJam' - Life Information",
+    "type": "award",
+    "year": "2024",
+    "organization": ["SK Planet", "Ministry of SMEs and Startups"],
+    "achievement": ["Excellence Award (2nd Place)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "CodeKorea Busan Geumjeong-gu Hackathon",
+    "type": "award",
+    "year": "2024",
+    "organization": ["CodeKorea"],
+    "achievement": ["Excellence Award (2nd Place)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Gyeongsangbuk-do Office of Education SW-AI Hackathon",
+    "type": "award",
+    "year": "2024",
+    "organization": ["Gyeongsangbuk-do Office of Education"],
+    "achievement": ["Creative Convergence Award (1st Place)"],
+    "links": [
+      {
+        "type": "article",
+        "URL": "http://www.adinews.co.kr/news/articleView.html?idxno=65018"
+      }
+    ],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "title": "Junction Asia",
+    "type": "participation",
+    "year": "2024",
+    "organization": ["ENTBE"],
+    "achievement": [
+      "Frontend Development",
+      "International Competition (English)"
+    ],
+    "links": [],
+    "country": "Asia",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Open SW Developer Contest",
+    "type": "participation",
+    "year": "2024",
+    "organization": ["Ministry of Science and ICT"],
+    "achievement": ["Open Topic (OS Development Framework)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Coupang HackSeoul",
+    "type": "participation",
+    "year": "2024",
+    "organization": ["Coupang"],
+    "achievement": [
+      "UI•UX Design",
+      "Frontend Development",
+      "International Competition (English)"
+    ],
+    "links": [],
+    "country": "Global",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Convergence Course",
+    "type": "completion",
+    "year": "2022",
+    "organization": ["Andong National University"],
+    "achievement": ["Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "NAVER Connect Foundation Boostcourse CS50 Coaching Study 2nd (Team 7)",
+    "type": "course",
+    "year": "2021",
+    "organization": ["NAVER Connect Foundation"],
+    "achievement": ["Team Leader", "Interviewed", "Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "J2KB National United Coding Club",
+    "type": "completion",
+    "year": "2021",
+    "organization": ["J2KB"],
+    "achievement": ["Interviewed", "Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Independent Research",
+    "type": "completion",
+    "year": "2021",
+    "organization": ["Andong National University"],
+    "achievement": ["Outstanding Performance", "Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Yeongnam & Jeju Science Gifted Education Center IT Camp",
+    "type": "completion",
+    "year": "2021",
+    "organization": ["Yeongnam & Jeju Science Gifted Education Centers"],
+    "achievement": ["Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "KOFAC Science Gifted Education Center Research Result Presentation",
+    "type": "award",
+    "year": "2021",
+    "organization": ["KOFAC"],
+    "achievement": ["Participation Award"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Advanced Course",
+    "type": "completion",
+    "year": "2020",
+    "organization": ["Andong National University"],
+    "achievement": ["Outstanding Performance", "Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "PNU Yeongnam & Jeju Online Creative Design Camp SW Hackathon",
+    "type": "award",
+    "year": "2020",
+    "organization": ["Pusan National University"],
+    "achievement": ["Bronze Prize (3rd Place)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Gyeongbuk Content Korea Lab Content Creation Salon Contest",
+    "type": "award",
+    "year": "2020",
+    "organization": ["Gyeongbuk Content Korea Lab"],
+    "achievement": ["Grand Prize (1st Place)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Gyeongbuk Content Korea Lab Content Partnering Day - IR Pitching",
+    "type": "award",
+    "year": "2020",
+    "organization": ["Gyeongbuk Content Korea Lab"],
+    "achievement": ["Special Award"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Advanced Course",
+    "type": "completion",
+    "year": "2019",
+    "organization": ["Andong National University"],
+    "achievement": ["Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "Andong Public Idea Contest",
+    "type": "award",
+    "year": "2019",
+    "organization": ["Andong City"],
+    "achievement": ["Grand Prize (1st Place)"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "title": "NAVER Connect Foundation SW Class with Daegu Nat'l Univ. of Education",
+    "type": "completion",
+    "year": "2016",
+    "organization": ["NAVER Connect Foundation", "DNUE"],
+    "achievement": ["Team Leader", "Completion"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
   }
 ]

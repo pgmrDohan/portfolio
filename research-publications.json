@@ -1,25 +1,94 @@
 [
   {
-    "type": "research|publication",
-    "title": "",
-    "subtitle": "",
-    "date": "YYYY-MM-DD",
+    "type": "research",
+    "title": "Design of ALU Based on Complex-base Numeral System: Performance Evaluation and Application Methods",
+    "subtitle": "2025 Fall Conference of the Korean Society for Computational Science and Engineering",
+    "date": "2025-09-04",
+    "author": ["Dohan Kwon"],
     "identifiers": [
       {
-        "title": "",
-        "URL": ""
+        "title": "Full Paper (PDF)",
+        "URL": "https://raw.githubusercontent.com/pgmrDohan/Design-of-ALU-Based-on-Complex-base-Numeral-System/refs/heads/main/paper.pdf"
       },
       {
-        "title": "",
-        "isbn": "only number"
+        "title": "Book of Abstracts (KSC 2025)",
+        "URL": "https://www.ksc-hpc.kr/file/KSC2025_%EC%B4%88%EB%A1%9D%EC%A7%91_v09_250901.pdf"
       },
       {
-        "title": "",
-        "issn": "only number"
+        "title": "Press Article (Adinews)",
+        "URL": "http://www.adinews.co.kr/news/articleView.html?idxno=66254"
+      },
+      {
+        "title": "Press Article (Gailbo)",
+        "URL": "https://www.gailbo.com/news/articleView.html?idxno=413021"
       }
     ],
-    "country": "",
+    "country": "Republic of Korea",
     "pinned": true,
-    "lang": ""
+    "lang": "en"
+  },
+  {
+    "type": "research",
+    "title": "Complex-Number Representation-Based Lossless High-Capacity Data Hiding Method in k-Space of Magnetic Resonance Imaging",
+    "subtitle": "2025 Korea Software Congress",
+    "date": "2025-12-16",
+    "author": ["Dohan Kwon"],
+    "identifiers": [
+      {
+        "title": "Full Paper (PDF)",
+        "URL": "https://raw.githubusercontent.com/pgmrDohan/mri-k-space-cbns-steganography/refs/heads/main/paper.pdf"
+      }
+    ],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "type": "논문",
+    "title": "복소수 진법 체계 기반 ALU 설계: 성능 평가 및 응용 방안",
+    "subtitle": "2025 한국계산과학공학회 추계학술대회",
+    "date": "2025-09-04",
+    "author": ["권도한"],
+    "identifiers": [
+      {
+        "title": "논문 전문 (PDF)",
+        "URL": "https://raw.githubusercontent.com/pgmrDohan/Design-of-ALU-Based-on-Complex-base-Numeral-System/refs/heads/main/paper.pdf"
+      },
+      {
+        "title": "2025 한국계산과학공학회 추계학술대회 초록집",
+        "URL": "https://www.ksc-hpc.kr/file/KSC2025_%EC%B4%88%EB%A1%9D%EC%A7%91_v09_250901.pdf"
+      },
+      {
+        "title": "안동인터넷뉴스 보도자료",
+        "URL": "http://www.adinews.co.kr/news/articleView.html?idxno=66254"
+      },
+      {
+        "title": "경북일보 보도자료",
+        "URL": "https://www.gailbo.com/news/articleView.html?idxno=413021"
+      }
+    ],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
+    "type": "논문",
+    "title": "자기공명영상 K-공간에서의 복소수 진법 기반 무손실 고용량 정보 은닉 기법",
+    "subtitle": "2025 한국소프트웨어종합학술대회",
+    "date": "2025-12-16",
+    "author": ["권도한"],
+    "identifiers": [
+      {
+        "title": "논문 전문 (PDF)",
+        "URL": "https://raw.githubusercontent.com/pgmrDohan/mri-k-space-cbns-steganography/refs/heads/main/paper.pdf"
+      },
+      {
+        "title": "2025 한국소프트웨어종합학술대회(KSC 2025) 논문집",
+        "URL": "https://raw.githubusercontent.com/pgmrDohan/mri-k-space-cbns-steganography/refs/heads/main/paper.pdf"
+      }
+    ],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
   }
 ]

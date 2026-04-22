@@ -1,14 +1,86 @@
 [
   {
-    "company": "",
-    "department": "",
-    "position": "",
-    "period": ["(start)YYYY-MM-DD", "(end)YYYY-MM-DD"],
-    "responsibilities": ["", ""],
-    "type": "full|contract|internship|freelance",
-    "status": "employed|resigned",
-    "country": "",
+    "company": "박서 (BOX-er)",
+    "department": "개발",
+    "position": "개발자",
+    "period": ["2025-09-01", "현재"],
+    "responsibilities": [
+      "React Native 기반 앱 개발",
+      "NestJS 기반 웹 서버단 개발"
+    ],
+    "type": "소속",
+    "status": "재직",
+    "country": "대한민국",
     "pinned": true,
-    "lang": ""
+    "lang": "ko"
+  },
+  {
+    "company": "(주) 슈퍼아이콘",
+    "department": "",
+    "position": "프리랜서",
+    "period": ["2023-12-01", "2024-01-31"],
+    "responsibilities": [
+      "CodeIgniter 기반 웹 유지보수",
+      "OpenAI API 연동 및 운영 자동화"
+    ],
+    "type": "프리랜서",
+    "status": "사직",
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "company": "뭐지 미디어랩",
+    "department": "뭐지 뉴스레터",
+    "position": "아티클러",
+    "period": ["2023-01-01", "2023-12-31"],
+    "responsibilities": ["IT 관련 뉴스레터 아티클 작성"],
+    "type": "소속",
+    "status": "사직",
+    "country": "대한민국",
+    "pinned": false,
+    "lang": "ko"
+  },
+  {
+    "company": "BOX-er",
+    "department": "Development",
+    "position": "Developer",
+    "period": ["2025-09-01", ""],
+    "responsibilities": [
+      "App development based on React Native",
+      "Web server-side development based on NestJS"
+    ],
+    "type": "Member",
+    "status": "employed",
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "company": "Super Icon Co., Ltd.",
+    "department": "",
+    "position": "Freelancer",
+    "period": ["2023-12-01", "2024-01-31"],
+    "responsibilities": [
+      "Web maintenance based on CodeIgniter",
+      "OpenAI API integration and operation automation"
+    ],
+    "type": "freelance",
+    "status": "resigned",
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
+  },
+  {
+    "company": "Morge Media Lab",
+    "department": "Morge Newsletter",
+    "position": "Articler",
+    "period": ["2023-01-01", "2023-12-31"],
+    "responsibilities": ["Writing IT-related newsletter articles"],
+    "type": "Member",
+    "status": "resigned",
+    "country": "Republic of Korea",
+    "pinned": false,
+    "lang": "en"
   }
 ]

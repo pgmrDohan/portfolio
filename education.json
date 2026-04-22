@@ -1,10 +1,30 @@
 [
   {
-    "period": ["(start)YYYY-MM-DD", "(end)YYYY-MM-DD"],
-    "title": "",
-    "major": "",
-    "status": "enrolled|graduated",
-    "gpa": "",
-    "lang": ""
+    "period": ["2023-03-02", "2025-12-31"],
+    "title": "안동고등학교",
+    "major": "인문계",
+    "status": "졸업",
+    "lang": "ko"
+  },
+  {
+    "period": ["2026-03-01", "현재"],
+    "title": "연세대학교 미래캠퍼스",
+    "major": "소프트웨어학부",
+    "status": "재학",
+    "lang": "ko"
+  },
+  {
+    "period": ["2023-03-02", "2025-12-31"],
+    "title": "Andong High School",
+    "major": "Academic",
+    "status": "graduated",
+    "lang": "en"
+  },
+  {
+    "period": ["2026-03-01", "현재"],
+    "title": "연세대학교 미래캠퍼스",
+    "major": "소프트웨어학부",
+    "status": "enrolled",
+    "lang": "en"
   }
 ]

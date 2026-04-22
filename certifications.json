@@ -1,12 +1,42 @@
 [
   {
-    "title": "",
-    "type": "certification|license",
-    "year": "YYYY",
-    "organization": "",
-    "description": "",
-    "country": "",
+    "title": "정보처리기능사",
+    "type": "자격",
+    "year": "2022",
+    "organization": "한국산업인력공단",
+    "description": "합격률 17.8%",
+    "country": "대한민국",
     "pinned": true,
-    "lang": ""
+    "lang": "ko"
+  },
+  {
+    "title": "자동차 운전면허",
+    "type": "면허",
+    "year": "2026",
+    "organization": "경찰청",
+    "description": "2종 자동",
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
+    "title": "Craftsman Information Processing",
+    "type": "certification",
+    "year": "2022",
+    "organization": "Human Resources Development Service of Korea",
+    "description": "Pass rate 17.8%",
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "title": "Driver's license",
+    "type": "license",
+    "year": "2026",
+    "organization": "Korean National Police Agency",
+    "description": "Class 2 Automatic",
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
   }
 ]
