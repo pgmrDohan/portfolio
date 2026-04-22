@@ -21,7 +21,7 @@
   },
   {
     "title": "Craftsman Information Processing",
-    "type": "certification",
+    "type": "Certification",
     "year": "2022",
     "organization": "Human Resources Development Service of Korea",
     "description": "Pass rate 17.8%",
@@ -31,7 +31,7 @@
   },
   {
     "title": "Driver's license",
-    "type": "license",
+    "type": "License",
     "year": "2026",
     "organization": "Korean National Police Agency",
     "description": "Class 2 Automatic",

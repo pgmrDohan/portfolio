@@ -1,3 +1,10 @@
+* {
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
 body {
   opacity: 0;
   transition: opacity 0.3s;
@@ -331,7 +338,7 @@ ul#projects li a small {
   flex-shrink: 0;
 }
 
-ul#projects li div.icons {
+ul li div.icons {
   display: flex;
   gap: var(--space-sm);
   align-items: center;
@@ -343,7 +350,7 @@ ul#projects li div:has(> .icons) {
   justify-content: space-between;
 }
 
-ul#projects li div.icons svg {
+ul li div.icons svg {
   width: var(--typo-h3-size);
   color: var(--color-neutral-light);
 }
@@ -369,5 +376,21 @@ center {
 }
 
 .tag {
+  flex-shrink: 0;
+}
+
+ul > li > hgroup {
+  align-items: flex-end;
+}
+
+ul#research > li > small > a {
+  display: inline-block;
+}
+
+ul#research > li > small {
+  line-height: 2.4;
+}
+
+ul > li > hgroup > small {
   flex-shrink: 0;
 }

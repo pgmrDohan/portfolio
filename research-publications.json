@@ -1,25 +1,25 @@
 [
   {
-    "type": "research",
+    "type": "Research",
     "title": "Design of ALU Based on Complex-base Numeral System: Performance Evaluation and Application Methods",
     "subtitle": "2025 Fall Conference of the Korean Society for Computational Science and Engineering",
     "date": "2025-09-04",
     "author": ["Dohan Kwon"],
     "identifiers": [
       {
-        "title": "Full Paper (PDF)",
+        "title": "Full-Paper",
         "URL": "https://raw.githubusercontent.com/pgmrDohan/Design-of-ALU-Based-on-Complex-base-Numeral-System/refs/heads/main/paper.pdf"
       },
       {
-        "title": "Book of Abstracts (KSC 2025)",
+        "title": "Book-of-Abstracts",
         "URL": "https://www.ksc-hpc.kr/file/KSC2025_%EC%B4%88%EB%A1%9D%EC%A7%91_v09_250901.pdf"
       },
       {
-        "title": "Press Article (Adinews)",
+        "title": "Press-Article (Adinews)",
         "URL": "http://www.adinews.co.kr/news/articleView.html?idxno=66254"
       },
       {
-        "title": "Press Article (Gailbo)",
+        "title": "Press-Article (Gailbo)",
         "URL": "https://www.gailbo.com/news/articleView.html?idxno=413021"
       }
     ],
@@ -28,14 +28,14 @@
     "lang": "en"
   },
   {
-    "type": "research",
+    "type": "Research",
     "title": "Complex-Number Representation-Based Lossless High-Capacity Data Hiding Method in k-Space of Magnetic Resonance Imaging",
     "subtitle": "2025 Korea Software Congress",
     "date": "2025-12-16",
     "author": ["Dohan Kwon"],
     "identifiers": [
       {
-        "title": "Full Paper (PDF)",
+        "title": "Full-Paper",
         "URL": "https://raw.githubusercontent.com/pgmrDohan/mri-k-space-cbns-steganography/refs/heads/main/paper.pdf"
       }
     ],
@@ -51,11 +51,11 @@
     "author": ["권도한"],
     "identifiers": [
       {
-        "title": "논문 전문 (PDF)",
+        "title": "전문 PDF",
         "URL": "https://raw.githubusercontent.com/pgmrDohan/Design-of-ALU-Based-on-Complex-base-Numeral-System/refs/heads/main/paper.pdf"
       },
       {
-        "title": "2025 한국계산과학공학회 추계학술대회 초록집",
+        "title": "초록집",
         "URL": "https://www.ksc-hpc.kr/file/KSC2025_%EC%B4%88%EB%A1%9D%EC%A7%91_v09_250901.pdf"
       },
       {
@@ -79,11 +79,7 @@
     "author": ["권도한"],
     "identifiers": [
       {
-        "title": "논문 전문 (PDF)",
-        "URL": "https://raw.githubusercontent.com/pgmrDohan/mri-k-space-cbns-steganography/refs/heads/main/paper.pdf"
-      },
-      {
-        "title": "2025 한국소프트웨어종합학술대회(KSC 2025) 논문집",
+        "title": "전문-PDF",
         "URL": "https://raw.githubusercontent.com/pgmrDohan/mri-k-space-cbns-steganography/refs/heads/main/paper.pdf"
       }
     ],

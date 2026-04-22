@@ -45,13 +45,13 @@
     "company": "BOX-er",
     "department": "Development",
     "position": "Developer",
-    "period": ["2025-09-01", ""],
+    "period": ["2025-09-01", "Present"],
     "responsibilities": [
       "App development based on React Native",
       "Web server-side development based on NestJS"
     ],
     "type": "Member",
-    "status": "employed",
+    "status": "Employed",
     "country": "Republic of Korea",
     "pinned": true,
     "lang": "en"
@@ -65,20 +65,20 @@
       "Web maintenance based on CodeIgniter",
       "OpenAI API integration and operation automation"
     ],
-    "type": "freelance",
-    "status": "resigned",
+    "type": "Freelance",
+    "status": "Resigned",
     "country": "Republic of Korea",
     "pinned": false,
     "lang": "en"
   },
   {
-    "company": "Morge Media Lab",
-    "department": "Morge Newsletter",
+    "company": "Moji Media Lab",
+    "department": "Moji Newsletter",
     "position": "Articler",
     "period": ["2023-01-01", "2023-12-31"],
     "responsibilities": ["Writing IT-related newsletter articles"],
     "type": "Member",
-    "status": "resigned",
+    "status": "Resigned",
     "country": "Republic of Korea",
     "pinned": false,
     "lang": "en"

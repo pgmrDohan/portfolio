@@ -18,11 +18,11 @@
     "achievement": ["1위 (최우수상)"],
     "links": [
       {
-        "type": "소스코드",
+        "type": "github",
         "URL": "https://github.com/pgmrDohan/real-time-knowledge-graph-with-gcp"
       },
       {
-        "type": "발표 자료",
+        "type": "slides",
         "URL": "https://www.figma.com/deck/wucZvryW4qw6aMODOuyhgz/GCP-기반-인공지능-전문가-양성과정?t=lwTdGNQ8nmcgvv2V-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-168"
       }
     ],
@@ -82,7 +82,7 @@
     "achievement": ["창의융합상 (1등)"],
     "links": [
       {
-        "type": "관련 기사",
+        "type": "article",
         "URL": "http://www.adinews.co.kr/news/articleView.html?idxno=65018"
       }
     ],
@@ -268,7 +268,7 @@
   },
   {
     "title": "Google Cloud-based AI Expert Training Program (Team 2)",
-    "type": "course",
+    "type": "Course",
     "year": "2025",
     "organization": ["Gyeongsangbuk-do", "Google Cloud"],
     "achievement": ["Team Leader", "Completion"],
@@ -279,7 +279,7 @@
   },
   {
     "title": "Google Cloud-based AI Expert Training Program Performance Sharing & Project Presentation",
-    "type": "award",
+    "type": "Award",
     "year": "2025",
     "organization": ["Gyeongsangbuk-do", "Google Cloud"],
     "achievement": ["1st Place (Grand Prize)"],
@@ -289,7 +289,7 @@
         "URL": "https://github.com/pgmrDohan/real-time-knowledge-graph-with-gcp"
       },
       {
-        "type": "figma",
+        "type": "slides",
         "URL": "https://www.figma.com/deck/wucZvryW4qw6aMODOuyhgz/GCP-기반-인공지능-전문가-양성과정?t=lwTdGNQ8nmcgvv2V-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=1-168"
       }
     ],
@@ -299,7 +299,7 @@
   },
   {
     "title": "Junction Asia DEMO DAY",
-    "type": "participation",
+    "type": "Participation",
     "year": "2025",
     "organization": ["ENTBE"],
     "achievement": ["Planning & Business Model"],
@@ -310,7 +310,7 @@
   },
   {
     "title": "Korea High School Software Development Contest",
-    "type": "award",
+    "type": "Award",
     "year": "2024",
     "organization": ["Korea Software Industry Association"],
     "achievement": ["Bronze Prize (4th Place)"],
@@ -321,7 +321,7 @@
   },
   {
     "title": "The 28th High School Hackathon 'AppJam' - Life Information",
-    "type": "award",
+    "type": "Award",
     "year": "2024",
     "organization": ["SK Planet", "Ministry of SMEs and Startups"],
     "achievement": ["Excellence Award (2nd Place)"],
@@ -332,7 +332,7 @@
   },
   {
     "title": "CodeKorea Busan Geumjeong-gu Hackathon",
-    "type": "award",
+    "type": "Award",
     "year": "2024",
     "organization": ["CodeKorea"],
     "achievement": ["Excellence Award (2nd Place)"],
@@ -343,7 +343,7 @@
   },
   {
     "title": "Gyeongsangbuk-do Office of Education SW-AI Hackathon",
-    "type": "award",
+    "type": "Award",
     "year": "2024",
     "organization": ["Gyeongsangbuk-do Office of Education"],
     "achievement": ["Creative Convergence Award (1st Place)"],
@@ -359,7 +359,7 @@
   },
   {
     "title": "Junction Asia",
-    "type": "participation",
+    "type": "Participation",
     "year": "2024",
     "organization": ["ENTBE"],
     "achievement": [
@@ -373,7 +373,7 @@
   },
   {
     "title": "Open SW Developer Contest",
-    "type": "participation",
+    "type": "Participation",
     "year": "2024",
     "organization": ["Ministry of Science and ICT"],
     "achievement": ["Open Topic (OS Development Framework)"],
@@ -384,7 +384,7 @@
   },
   {
     "title": "Coupang HackSeoul",
-    "type": "participation",
+    "type": "Participation",
     "year": "2024",
     "organization": ["Coupang"],
     "achievement": [
@@ -399,7 +399,7 @@
   },
   {
     "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Convergence Course",
-    "type": "completion",
+    "type": "Completion",
     "year": "2022",
     "organization": ["Andong National University"],
     "achievement": ["Completion"],
@@ -409,8 +409,8 @@
     "lang": "en"
   },
   {
-    "title": "NAVER Connect Foundation Boostcourse CS50 Coaching Study 2nd (Team 7)",
-    "type": "course",
+    "title": "NAVER Connect Foundation BoostCourse CS50 Coaching Study 2nd (Team 7)",
+    "type": "Course",
     "year": "2021",
     "organization": ["NAVER Connect Foundation"],
     "achievement": ["Team Leader", "Interviewed", "Completion"],
@@ -421,7 +421,7 @@
   },
   {
     "title": "J2KB National United Coding Club",
-    "type": "completion",
+    "type": "Completion",
     "year": "2021",
     "organization": ["J2KB"],
     "achievement": ["Interviewed", "Completion"],
@@ -432,7 +432,7 @@
   },
   {
     "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Independent Research",
-    "type": "completion",
+    "type": "Completion",
     "year": "2021",
     "organization": ["Andong National University"],
     "achievement": ["Outstanding Performance", "Completion"],
@@ -443,7 +443,7 @@
   },
   {
     "title": "Yeongnam & Jeju Science Gifted Education Center IT Camp",
-    "type": "completion",
+    "type": "Completion",
     "year": "2021",
     "organization": ["Yeongnam & Jeju Science Gifted Education Centers"],
     "achievement": ["Completion"],
@@ -454,7 +454,7 @@
   },
   {
     "title": "KOFAC Science Gifted Education Center Research Result Presentation",
-    "type": "award",
+    "type": "Award",
     "year": "2021",
     "organization": ["KOFAC"],
     "achievement": ["Participation Award"],
@@ -465,7 +465,7 @@
   },
   {
     "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Advanced Course",
-    "type": "completion",
+    "type": "Completion",
     "year": "2020",
     "organization": ["Andong National University"],
     "achievement": ["Outstanding Performance", "Completion"],
@@ -476,7 +476,7 @@
   },
   {
     "title": "PNU Yeongnam & Jeju Online Creative Design Camp SW Hackathon",
-    "type": "award",
+    "type": "Award",
     "year": "2020",
     "organization": ["Pusan National University"],
     "achievement": ["Bronze Prize (3rd Place)"],
@@ -487,7 +487,7 @@
   },
   {
     "title": "Gyeongbuk Content Korea Lab Content Creation Salon Contest",
-    "type": "award",
+    "type": "Award",
     "year": "2020",
     "organization": ["Gyeongbuk Content Korea Lab"],
     "achievement": ["Grand Prize (1st Place)"],
@@ -498,7 +498,7 @@
   },
   {
     "title": "Gyeongbuk Content Korea Lab Content Partnering Day - IR Pitching",
-    "type": "award",
+    "type": "Award",
     "year": "2020",
     "organization": ["Gyeongbuk Content Korea Lab"],
     "achievement": ["Special Award"],
@@ -509,7 +509,7 @@
   },
   {
     "title": "Andong Nat'l Univ. Gifted Science Education Center - SW Advanced Course",
-    "type": "completion",
+    "type": "Completion",
     "year": "2019",
     "organization": ["Andong National University"],
     "achievement": ["Completion"],
@@ -520,7 +520,7 @@
   },
   {
     "title": "Andong Public Idea Contest",
-    "type": "award",
+    "type": "Award",
     "year": "2019",
     "organization": ["Andong City"],
     "achievement": ["Grand Prize (1st Place)"],
@@ -531,7 +531,7 @@
   },
   {
     "title": "NAVER Connect Foundation SW Class with Daegu Nat'l Univ. of Education",
-    "type": "completion",
+    "type": "Completion",
     "year": "2016",
     "organization": ["NAVER Connect Foundation", "DNUE"],
     "achievement": ["Team Leader", "Completion"],
