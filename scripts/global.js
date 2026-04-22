@@ -51,9 +51,9 @@ async function loadPosts() {
     const response = await fetch(url, { priority: "high" });
     const posts = await response.json();
 
-    const filteredPosts = langFilter
-      ? posts.filter((post) => post.lang === langFilter)
-      : posts;
+    const filteredPosts = (
+      langFilter ? posts.filter((post) => post.lang === langFilter) : posts
+    ).sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
 
     postsList.innerHTML = filteredPosts
       .map((post) => {
@@ -87,7 +87,7 @@ async function loadPosts() {
   const items = postsList.querySelectorAll("li");
   items.forEach((item, index) => {
     if (index >= showCount) {
-      item.classList.add("print-content");
+      item.style.display = "none";
     }
   });
 }
@@ -104,9 +104,11 @@ async function loadProjects() {
     const response = await fetch(url, { priority: "high" });
     const projects = await response.json();
 
-    const filteredProjects = langFilter
-      ? projects.filter((project) => project.lang === langFilter)
-      : projects;
+    const filteredProjects = (
+      langFilter
+        ? projects.filter((project) => project.lang === langFilter)
+        : projects
+    ).sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));
 
     projectsList.innerHTML = filteredProjects
       .map((project) => {
@@ -164,7 +166,7 @@ async function loadProjects() {
   const items = projectsList.querySelectorAll("li");
   items.forEach((item, index) => {
     if (index >= showCount) {
-      item.classList.add("print-content");
+      item.style.display = "none";
     }
   });
 }
