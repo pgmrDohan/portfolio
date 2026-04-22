@@ -26,7 +26,7 @@ jobs:
       - name: Install minimal deps
         run: npm install gray-matter
 
-      - name: Generate RSS, posts.json, sitemap.xml
+      - name: Generate RSS, posts.json, projects.json, sitemap.xml
         run: |
           node <<'EOF'
           const fs = require('fs');
@@ -36,6 +36,7 @@ jobs:
 
           const BASE_URL = process.env.BASE_URL || 'https://www.dohan.in';
           const POSTS_DIR = path.join(process.cwd(), 'posts');
+          const PROJECTS_DIR = path.join(process.cwd(), 'projects');
           const RSS_DIR = path.join(process.cwd(), 'rss');
           const ROOT_DIR = process.cwd();
 
@@ -163,6 +164,41 @@ jobs:
               });
           }
 
+          function readProjects() {
+            if (!fs.existsSync(PROJECTS_DIR)) return [];
+
+            return fs.readdirSync(PROJECTS_DIR)
+              .filter(name => name.endsWith('.md'))
+              .sort()
+              .map(filename => {
+                const fullPath = path.join(PROJECTS_DIR, filename);
+                const raw = fs.readFileSync(fullPath, 'utf8');
+                const { data, content } = matter(raw);
+                const slug = path.basename(filename, '.md');
+
+                const project = {
+                  slug,
+                  title: data.title ?? slug,
+                  date: data.date ?? null,
+                  edited: data.edited ?? data.date ?? null,
+                  lang: data.lang ?? '',
+                  contribution: data.contribution ?? '',
+                  cover: data.cover ?? '',
+                  url: data.url ?? null,
+                  repository: data.repository ?? null,
+                  skills: ensureArray(data.skills),
+                  platform: ensureArray(data.platform),
+                  content,
+                };
+
+                if (!project.lang) {
+                  throw new Error(`projects/${filename}: missing 'lang'.`);
+                }
+
+                return project;
+              });
+          }
+
           function buildRss(langCode, langConfig, posts) {
             const now = new Date().toUTCString();
             const rssTitle = langConfig?.rss?.title ?? `RSS (${langCode})`;
@@ -195,7 +231,7 @@ jobs:
             return lines.join('\n');
           }
 
-          function buildSitemap(posts) {
+          function buildSitemap(posts, projects) {
             const htmlFiles = getAllHtmlFiles(ROOT_DIR);
             const lines = [];
 
@@ -209,6 +245,14 @@ jobs:
               lines.push('  <url>');
               lines.push(`    <loc>${escapeXml(loc)}</loc>`);
               lines.push(`    <lastmod>${escapeXml(new Date().toISOString().slice(0, 10))}</lastmod>`);
+              lines.push('  </url>');
+            }
+
+            for (const project of projects) {
+              const projectUrl = `${BASE_URL}/projects?p=${encodeURIComponent(project.slug)}`;
+              lines.push('  <url>');
+              lines.push(`    <loc>${escapeXml(projectUrl)}</loc>`);
+              lines.push(`    <lastmod>${escapeXml(toIsoDate(project.edited || project.date))}</lastmod>`);
               lines.push('  </url>');
             }
 
@@ -227,6 +271,7 @@ jobs:
           async function main() {
             const languages = await loadLanguages();
             const posts = readPosts();
+            const projects = readProjects();
 
             fs.mkdirSync(RSS_DIR, { recursive: true });
 
@@ -252,6 +297,27 @@ jobs:
               'utf8'
             );
             console.log('Generated posts.json');
+
+            const projectsJson = projects.map(project => ({
+              slug: project.slug,
+              title: project.title,
+              date: project.date,
+              edited: project.edited,
+              lang: project.lang,
+              contribution: project.contribution,
+              cover: project.cover,
+              url: project.url,
+              repository: project.repository,
+              skills: project.skills,
+              platform: project.platform,
+              projectUrl: `${BASE_URL}/projects?p=${encodeURIComponent(project.slug)}`,
+            }));
+            fs.writeFileSync(
+              path.join(ROOT_DIR, 'projects.json'),
+              JSON.stringify(projectsJson, null, 2),
+              'utf8'
+            );
+            console.log('Generated projects.json');
 
             const sitemap = buildSitemap(posts);
             fs.writeFileSync(path.join(ROOT_DIR, 'sitemap.xml'), sitemap, 'utf8');

@@ -13,18 +13,18 @@
       </style>
       `);
     </script>
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/colors.css" />
-    <link rel="stylesheet" href="styles/spacings.css" />
-    <link rel="stylesheet" href="styles/typo.css" />
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/print.css" media="print" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/colors.css" />
+    <link rel="stylesheet" href="/styles/spacings.css" />
+    <link rel="stylesheet" href="/styles/typo.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/print.css" media="print" />
     <link rel="alternate" hreflang="ko" href="https://www.dohan.in/?lang=ko" />
     <link rel="alternate" hreflang="en" href="https://www.dohan.in/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="https://www.dohan.in/" />
     <script src="/languages.js"></script>
-    <script src="scripts/global.js" defer></script>
-    <script src="scripts/index.js" defer></script>
+    <script src="/scripts/global.js" defer></script>
+    <script src="/scripts/index.js" defer></script>
     <title data-i18n="head.title">권도한 :: 컴퓨터 공학자</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -52,7 +52,7 @@
       href="/images/profile.avif"
       type="image/avif"
     />
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="noscript">
     <noscript>
@@ -153,143 +153,12 @@
           </button>
         </div>
       </nav>
-      <header class="mt-xl">
-        <picture id="profile-image" class="mr-md">
-          <source srcset="images/profile.avif" type="image/avif" />
-          <source srcset="images/profile.webp" type="image/webp" />
-          <img
-            src="images/profile.jpg"
-            fetchpriority="high"
-            decoding="async"
-            data-i18n="header.profile@title"
-            title="프로필 사진"
-          />
-        </picture>
-        <div class="pt-sm pb-sm" id="profile-info">
-          <h1 data-i18n="header.name">권도한</h1>
-          <p class="mt-sm">
-            <span data-i18n="header.bio">컴퓨터 공학자</span>
-            <a
-              href="https://mirae.yonsei.ac.kr/wj/index.do"
-              data-i18n="header.department,body.department_url@href"
-              target="_blank"
-              >@연세대학교 미래캠퍼스</a
-            >
-          </p>
-          <div class="print-contact mt-sm">
-            <p><strong>E-mail:</strong> me@dohan.in</p>
-            <p><strong>Github:</strong> @pgmrDohan</p>
-          </div>
-        </div>
-      </header>
-      <address class="mt-lg">
-        <a href="mailto:me@dohan.in">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-mail-icon lucide-mail"
-          >
-            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-          </svg>
-          <p>me@dohan.in</p></a
-        >
-        <a href="https://github.com/pgmrDohan" target="_blank">
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 18 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M9 0C4.0275 0 0 4.02975 0 9C0 12.9773 2.5785 16.35 6.15375 17.5387C6.60375 17.6235 6.76875 17.3452 6.76875 17.106C6.76875 16.8922 6.76125 16.326 6.7575 15.576C4.254 16.119 3.726 14.3685 3.726 14.3685C3.3165 13.3297 2.72475 13.0522 2.72475 13.0522C1.9095 12.4943 2.78775 12.5055 2.78775 12.5055C3.6915 12.5685 4.16625 13.4325 4.16625 13.4325C4.96875 14.8088 6.273 14.4112 6.7875 14.181C6.8685 13.599 7.10025 13.2022 7.3575 12.9772C5.35875 12.7522 3.258 11.9783 3.258 8.52975C3.258 7.54725 3.60675 6.74475 4.18425 6.11475C4.083 5.8875 3.77925 4.9725 4.263 3.73275C4.263 3.73275 5.01675 3.49125 6.738 4.65525C7.458 4.455 8.223 4.356 8.988 4.3515C9.753 4.356 10.518 4.455 11.238 4.65525C12.948 3.49125 13.7017 3.73275 13.7017 3.73275C14.1855 4.9725 13.8818 5.8875 13.7917 6.11475C14.3655 6.74475 14.7142 7.54725 14.7142 8.52975C14.7142 11.9873 12.6105 12.7485 10.608 12.9697C10.923 13.2397 11.2155 13.7917 11.2155 14.6347C11.2155 15.8392 11.2043 16.8067 11.2043 17.0993C11.2043 17.3355 11.3617 17.6167 11.823 17.5267C15.4237 16.3463 18 12.9713 18 9C18 4.02975 13.9703 0 9 0Z"
-              fill="currentColor"
-            />
-          </svg>
-          <p>@pgmrDohan</p></a
-        >
-      </address>
-      <section class="mt-xl" id="greeting">
-        <h2 data-i18n="greeting.header">안녕하세요</h2>
-        <h2>👋</h2>
-        <p class="mt-lg" data-i18n="greeting.content">
-          <strong>Legacy 위에서 Latest를 설계하는 컴퓨터 공학자</strong>,
-          권도한입니다.<br /><br />무어의 법칙이 물리적 한계에 다다를 만큼
-          컴퓨터 공학의 발전 속도는 비약적이며, AI의 등장으로 추상화 레이어를
-          지탱하는 Legacy 기술은 점차 조명받지 못하고 있습니다.<br /><br />Kubernetes도
-          Cgroups과 Namespaces를 기반으로 동작하며, 클라우드 인프라 또한
-          VirtIO를 기반으로 동작합니다.<br /><br /><strong>Legacy는</strong>
-          단순히 '오래된 기술'이 아니라,
-          <strong>Latest가 작동하는 원리를 담고 있습니다.</strong> 원리를
-          이해하지 못한 채 새로운 기술을 설계하는 것은, 기초 없이 건물을 쌓아
-          올리는 것과 다르지 않습니다.<br /><br />Latest만 좇으면 유행을 탈 수는
-          있지만 깊이를 잃습니다. Legacy에만 머무르면 견고하지만 시대에
-          뒤처집니다. 저는 그 가운데에서
-          <strong
-            >이론과 기반이 되는 기술을 바탕으로 새로운 기술의 가능성을 설계하는
-            공학자</strong
-          >로서 성장하고자 합니다.
-        </p>
-      </section>
       <section class="mt-xl" id="projects">
-        <hgroup>
-          <div>
-            <h2 data-i18n="projects.header">프로젝트</h2>
-            <h2>💿</h2>
-          </div>
-          <a href="/projects">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
-            >
-              <path d="M7 7h10v10" />
-              <path d="M7 17 17 7" />
-            </svg>
-          </a>
-        </hgroup>
-        <ul class="mt-lg" data-show="5" id="projects"></ul>
-      </section>
-      <section class="mt-xl" id="posts">
-        <hgroup>
-          <div>
-            <h2 data-i18n="posts.header">게시글</h2>
-            <h2>📒</h2>
-          </div>
-          <a href="/posts">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-arrow-up-right-icon lucide-arrow-up-right"
-            >
-              <path d="M7 7h10v10" />
-              <path d="M7 17 17 7" />
-            </svg>
-          </a>
-        </hgroup>
-        <ul class="mt-lg" data-show="5" id="posts"></ul>
+        <h2>
+          <h2 data-i18n="projects.header">프로젝트</h2>
+          <h2>💿</h2>
+        </h2>
+        <ul class="mt-lg" id="projects"></ul>
       </section>
       <footer class="mt-xl mb-xl">
         <div>

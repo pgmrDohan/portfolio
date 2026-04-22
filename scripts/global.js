@@ -92,6 +92,83 @@ async function loadPosts() {
   });
 }
 
+async function loadProjects() {
+  const projectsList = document.querySelector("ul#projects");
+  const url = "/projects.json";
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const langFilter = urlParams.get("lang");
+  const locale = window.__LANG__?.[langFilter]?.locale || "en-US";
+
+  try {
+    const response = await fetch(url);
+    const projects = await response.json();
+
+    const filteredProjects = langFilter
+      ? projects.filter((project) => project.lang === langFilter)
+      : projects;
+
+    projectsList.innerHTML = filteredProjects
+      .map((project) => {
+        const rawDate = project.date || "";
+        const displayDate = formatDate(rawDate, locale);
+
+        const linkIcon = `<img src="/icons/external-link.svg" width="14" height="14" alt="${window.__LANG__?.[langFilter]?.projects.link}"/>`;
+        const repoIcon = `<img src="/icons/github.svg" width="14" height="14" alt="${window.__LANG__?.[langFilter]?.projects.repository}"/>`;
+
+        const links = [
+          project.url
+            ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${linkIcon}</a>`
+            : null,
+          project.repository
+            ? `<a href="${project.repository}" target="_blank" rel="noopener noreferrer">${repoIcon}</a>`
+            : null,
+        ]
+          .filter(Boolean)
+          .join("");
+
+        const badges = (items) =>
+          items
+            .map(
+              (item) =>
+                `<div class='tag' style="border:0.1rem solid ${getTagColor(item)}"><small style="color:${getTagColor(item)}">${item}</small></div>`,
+            )
+            .join("");
+
+        return `
+          <li class="mt-lg">
+            <div>
+              <img src="${project.cover}" alt="${project.title}"/>
+              <div>
+                <a href="${project.projectUrl}">
+                  <h3>${project.title}</h3>
+                  <small>@${project.contribution}</small>
+                </a>
+                <div>
+                  <p>${displayDate}</p>
+                  <div>${links}</div>
+                </div>
+                <div>${badges(project.skills)}${badges(project.platform)}</div>
+              </div>
+            </div>
+          </li>
+        `;
+      })
+      .join("");
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    projectsList.innerHTML = `<li class='error'>${window.__LANG__?.[langFilter]?.projects.error}</li>`;
+  }
+
+  const showCount = parseInt(projectsList.getAttribute("data-show"), 10);
+  const items = projectsList.querySelectorAll("li");
+  items.forEach((item, index) => {
+    if (index >= showCount) {
+      item.style.display = "none";
+    }
+  });
+}
+
 const toggleTheme = (targetTheme) => {
   const currentTheme =
     document.documentElement.getAttribute("data-theme") || "dark";

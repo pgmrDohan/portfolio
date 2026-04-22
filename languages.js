@@ -17,7 +17,8 @@ window.__LANG__ = {
     },
     footer: {
       home: "홈",
-      blog: "블로그",
+      posts: "블로그",
+      projects: "프로젝트",
       rss: "/ko/rss.xml",
       pdf: "PDF로 저장",
     },
@@ -30,6 +31,12 @@ window.__LANG__ = {
       header: "게시글",
       error: "게시글 로드에 실패하였습니다.",
       edited: "수정됨",
+    },
+    projects: {
+      header: "프로젝트",
+      error: "프로젝트 로드에 실패하였습니다.",
+      link: "새 탭에서 열기",
+      repository: "새 탭에서 열기",
     },
     rss: {
       title: "도한로그",
@@ -54,7 +61,8 @@ window.__LANG__ = {
     },
     footer: {
       home: "Home",
-      blog: "Blog",
+      posts: "Posts",
+      projects: "Projects",
       rss: "/en/rss.xml",
       pdf: "Save to PDF",
     },
@@ -65,8 +73,14 @@ window.__LANG__ = {
     },
     posts: {
       header: "Posts",
-      error: "Failed to load Posts",
+      error: "Failed to load Posts.",
       edited: "edited",
+      link: "Open Link in New Tab",
+      repository: "Open Repository Link in New Tab",
+    },
+    projects: {
+      header: "Projects",
+      error: "Failed to load Projects.",
     },
     rss: {
       title: "dohan.k.log",

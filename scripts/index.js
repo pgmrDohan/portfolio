@@ -1,1 +1,2 @@
+loadProjects();
 loadPosts();

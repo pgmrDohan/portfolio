@@ -25,6 +25,9 @@
 .mr-md {
   margin-right: var(--space-md);
 }
+.mr-sm {
+  margin-right: var(--space-sm);
+}
 
 /* padding */
 .pt-sm {
