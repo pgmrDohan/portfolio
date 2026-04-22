@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.documentElement.setAttribute("data-theme", theme);
+      const bgColor = theme === "dark" ? "#0d0d0f" : "#fcfcfb";
+      document.write(`
+      <style id="theme-preloader">
+        html { background-color: ${bgColor} !important; }
+      </style>
+      `);
+    </script>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/spacings.css" />
+    <link
+      rel="preload"
+      href="/fonts/font-face.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="/fonts/font-face.css" /></noscript>
+    <link rel="stylesheet" href="styles/typo.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/print.css" media="print" />
+    <link rel="alternate" hreflang="ko" href="https://www.dohan.in/?lang=ko" />
+    <link rel="alternate" hreflang="en" href="https://www.dohan.in/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://www.dohan.in/" />
+    <script src="/languages.js"></script>
+    <script src="scripts/global.js" defer></script>
+    <title data-i18n="head.title">권도한 :: 컴퓨터 공학자</title>
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Dohan Kwon" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="권도한 :: 기록"
+      href="https://www.dohan.in/ko/rss.xml"
+      hreflang="ko"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Dohan Kwon :: Posts"
+      href="https://www.dohan.in/en/rss.xml"
+      hreflang="en"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/profile.avif"
+      type="image/avif"
+    />
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body class="noscript">
+    <noscript>
+      <!-- TODO -->
+    </noscript>
+    <main>
+      <div class="sentinel"></div>
+      <nav class="mt-xl">
+        <div>
+          <button
+            onclick="window.location.href = '/'"
+            data-i18n="footer.home@title"
+            title="홈"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-house-icon lucide-house"
+            >
+              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+              <path
+                d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+              />
+            </svg>
+          </button>
+          <button
+            onclick="window.location.href = '/posts'"
+            data-i18n="footer.blog@title"
+            title="블로그"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-book-text-icon lucide-book-text"
+            >
+              <path
+                d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+              />
+              <path d="M8 11h8" />
+              <path d="M8 7h6" />
+            </svg>
+          </button>
+        </div>
+        <div>
+          <button
+            onclick="toggleTheme()"
+            data-i18n="nav.theme@title"
+            title="테마 변경"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-moon-icon lucide-moon"
+            >
+              <path
+                d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+              />
+            </svg>
+          </button>
+          <button data-i18n="nav.index@title" title="찾기">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-command-icon lucide-command"
+            >
+              <path
+                d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <section class="mt-xl" id="404">
+        <center>
+          <div
+            class="tenor-gif-embed"
+            data-postid="2120212659711169654"
+            data-share-method="host"
+            data-aspect-ratio="1.76596"
+            data-width="100%"
+          >
+            <a
+              href="https://tenor.com/view/stitch-chocolate-milk-drinking-lilo-and-stitch-thirsty-gif-2120212659711169654"
+              >Stitch Chocolate Milk GIF</a
+            >from <a href="https://tenor.com/search/stitch-gifs">Stitch GIFs</a>
+          </div>
+          <script
+            type="text/javascript"
+            async
+            src="https://tenor.com/embed.js"
+          ></script>
+          <h1 class="mt-xl">404</h1>
+          <p>
+            <a
+              href="javascript:void(0)"
+              onclick="location.href = 'https://youtu.be/xvFZjo5PgG0&t=0'"
+              >Take me back</a
+            >
+          </p>
+          <p class="mt-sm">Not Found</p>
+        </center>
+      </section>
+      <footer class="mt-xl mb-xl">
+        <div>
+          <p><a href="/" data-i18n="footer.home">홈</a></p>
+          <p><a href="/projects" data-i18n="footer.projects">프로젝트</a></p>
+          <p><a href="/posts" data-i18n="footer.posts">블로그</a></p>
+        </div>
+        <hr />
+        <div>
+          <a data-i18n="footer.rss@href" href="/ko/rss.xml">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-rss-icon lucide-rss"
+            >
+              <path d="M4 11a9 9 0 0 1 9 9" />
+              <path d="M4 4a16 16 0 0 1 16 16" />
+              <circle cx="5" cy="19" r="1" />
+            </svg>
+            <p>RSS</p>
+          </a>
+          <p>CC BY 4.0</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1400 500"
+          class="mt-xl"
+        >
+          <path
+            id="signiture"
+            d="M691.989 21.2802C668.541 141.449 726.526 448.438 723.506 448.758C712.03 449.975 644.984 68.5471 757.725 54.928C902.664 37.4193 936.175 108.291 904.778 261.804C892.701 320.855 831.398 364.801 786.478 396.95C766.832 411.002 723.961 448.758 729.547 448.758L915.958 311.371C905.461 319.24 892.631 338.712 892.631 352.83C892.631 376.654 901.396 382.392 925.248 382.392C949.099 382.392 967.529 366.103 967.529 345.892C967.529 319.573 926 310 918 311.371C910 312.742 966.597 268.543 978.841 269.662C991.085 270.781 1033.37 365.074 1033.37 382.392C1033.37 399.71 1045 35.9246 1050.66 35.1049C1056.32 34.2851 1055.58 187.392 1059.94 258.111C1061.89 289.412 1076.54 407.757 1076.25 376.359C1075.83 332.962 1063.48 234.546 1123.78 251.207C1155.56 259.978 1125.83 373.833 1133.44 373.768C1136.66 373.735 1210.34 258.111 1170.48 241.198C1148.73 231.972 1146 356.096 1187.21 341.913C1225.26 328.806 1174.49 193.693 1203.18 221.961C1230.95 249.251 1217.03 348.63 1244.45 375.594C1277.63 408.263 1254.44 241.198 1283.06 241.198C1297.93 241.198 1359.87 383.083 1306.5 401C1253.13 418.917 42.3346 448.03 11.4018 411.741C-66.3369 320.546 286.025 7.15132 611.91 0.5L78.114 460.582L545.718 141.449L237.983 360.976C364.089 266.162 935.453 108.291 917.921 108.291C820.374 108.291 79.5182 463.121 97.1423 467.458C114.766 471.794 1244.45 141.449 1244.45 141.449"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="5"
+          />
+        </svg>
+      </footer>
+    </main>
+  </body>
+</html>
