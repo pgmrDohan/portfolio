@@ -74,6 +74,7 @@ async function loadPosts() {
                       `<div class='tag' style="border:0.1rem solid ${getTagColor(tag)}"><small style="color:${getTagColor(tag)}">${tag}</small></div>`,
                   )
                   .join("")}</div>
+                <p class="mt-xs print-content">${post.description}</p>
             </li>
         `;
       })
@@ -153,6 +154,7 @@ async function loadProjects() {
                 <div>${badges(project.skills)}${badges(project.platform)}</div>
               </div>
             </div>
+            <p class="mt-xs print-content">${project.description}</p>
           </li>
         `;
       })

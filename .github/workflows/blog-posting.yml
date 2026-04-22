@@ -175,6 +175,7 @@ jobs:
                   lang: data.lang ?? '',
                   author: ensureArray(data.author),
                   pinned: data.pinned ?? false,
+                  description: data.description ?? '',
                   content,
                 };
 
@@ -211,6 +212,7 @@ jobs:
                   skills: ensureArray(data.skills),
                   platform: ensureArray(data.platform),
                   pinned: data.pinned ?? false,
+                  description: data.description ?? '',
                   content,
                 };
 
@@ -313,6 +315,7 @@ jobs:
               lang: post.lang,
               author: post.author,
               pinned: post.pinned,
+              description: post.description,
               url: getPostUrl(post.slug),
             }));
             fs.writeFileSync(
@@ -335,6 +338,7 @@ jobs:
               skills: project.skills,
               platform: project.platform,
               pinned: project.pinned,
+              description: project.description,
               projectUrl: `${BASE_URL}/projects?p=${encodeURIComponent(project.slug)}`,
             }));
             fs.writeFileSync(
