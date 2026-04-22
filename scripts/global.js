@@ -297,8 +297,8 @@ const toggleTheme = (targetTheme) => {
   const newTheme = targetTheme || (currentTheme === "dark" ? "light" : "dark");
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
-  loadPosts();
-  loadProjects();
+  if (window.__POSTS__) renderPosts();
+  if (window.__PROJECTS__) renderProjects();
 };
 
 const sentinel = document.querySelector(".sentinel");
