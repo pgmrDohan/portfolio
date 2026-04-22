@@ -1,4 +1,12 @@
 @media print {
+  @page {
+    size: A4 portrait;
+    margin-top: 3cm;
+    margin-bottom: 1.5cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
+  }
+
   body {
     margin: 0 !important;
   }
@@ -55,7 +63,7 @@
     font-weight: 700 !important;
   }
 
-  section#posts {
-    display: none !important;
+  .tag {
+    border-color: black !important;
   }
 }

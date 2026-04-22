@@ -67,7 +67,7 @@ async function loadPosts() {
                     <h3>${post.title}</h3>
                     <small>@${post.author.join(", ")}</small>
                 </a>
-                <p>${displayDate}${isEdited ? ` (${window.__LANG__?.[langFilter]?.posts.edited})` : ""}</p>
+                <p>${displayDate}${isEdited ? ` (${window.__LANG__?.[langFilter] ? window.__LANG__?.[langFilter].posts.edited : "edited"})` : ""}</p>
                 <div>${post.tags
                   .map(
                     (tag) =>
@@ -176,6 +176,7 @@ const toggleTheme = (targetTheme) => {
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
   loadPosts();
+  loadProjects();
 };
 
 const sentinel = document.querySelector(".sentinel");
