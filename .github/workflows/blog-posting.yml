@@ -334,7 +334,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add rss/ posts.json sitemap.xml
+          git add rss/ posts.json sitemap.xml projects.json
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "chore: pre-render rss, posts.json, sitemap [skip ci]"
+          git commit -m "chore: pre-render rss, posts.json, projects.json, sitemap [skip ci]"
           git push
