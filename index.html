@@ -16,8 +16,16 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/colors.css" />
     <link rel="stylesheet" href="styles/spacings.css" />
-    <link rel="preload" href="/fonts/font-face.css" as="style" />
-    <link rel="stylesheet" href="/fonts/font-face.css" />
+    <link
+      rel="preload"
+      href="/fonts/font-face.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="/fonts/font-face.css" /></noscript>
     <link rel="stylesheet" href="styles/typo.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/print.css" media="print" />
