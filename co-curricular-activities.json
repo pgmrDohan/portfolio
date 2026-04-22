@@ -1,0 +1,22 @@
+[
+  {
+    "title": "",
+    "type": "course|completion|award|participation",
+    "year": "YYYY",
+    "organization": ["", ""],
+    "achievement": ["", ""],
+    "links": [
+      {
+        "type": "github|figma|article",
+        "URL": ""
+      },
+      {
+        "type": "github|figma|article",
+        "URL": ""
+      }
+    ],
+    "country": "",
+    "pinned": true,
+    "lang": ""
+  }
+]

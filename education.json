@@ -1,0 +1,10 @@
+[
+  {
+    "period": ["(start)YYYY-MM-DD", "(end)YYYY-MM-DD"],
+    "title": "",
+    "major": "",
+    "status": "enrolled|graduated",
+    "gpa": "",
+    "lang": ""
+  }
+]

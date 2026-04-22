@@ -41,6 +41,26 @@ window.__LANG__ = {
       header: "프로젝트",
       error: "프로젝트 로드에 실패하였습니다.",
     },
+    activities: {
+      header: "대외활동 및 수상",
+      error: "대외활동 및 수상 데이터 로드에 실패하였습니다.",
+    },
+    certifications: {
+      header: "자격 및 면허증",
+      error: "자격 및 면허증 데이터 로드에 실패하였습니다.",
+    },
+    education: {
+      header: "학력",
+      error: "학력 로드에 실패하였습니다.",
+    },
+    experience: {
+      header: "경력",
+      error: "경력 로드에 실패하였습니다.",
+    },
+    research: {
+      header: "게재 및 출판",
+      error: "게재 및 출판 데이터 로드에 실패하였습니다.",
+    },
     rss: {
       title: "도한로그",
       description: "Legacy 위에서 Latest를 설계하는 컴퓨터 공학자",
@@ -87,6 +107,26 @@ window.__LANG__ = {
     projects: {
       header: "Projects",
       error: "Failed to load Projects.",
+    },
+    activities: {
+      header: "Co-curricular Activities",
+      error: "Failed to load Co-curricular Activities.",
+    },
+    certifications: {
+      header: "Certifications",
+      error: "Failed to load Co-curricular Certifications.",
+    },
+    education: {
+      header: "Education",
+      error: "Failed to load Education.",
+    },
+    experience: {
+      header: "Experience",
+      error: "Failed to load Experience.",
+    },
+    research: {
+      header: "Research & Publications",
+      error: "Failed to load Research & Publications.",
     },
     rss: {
       title: "dohan.k.log",

@@ -1,0 +1,14 @@
+[
+  {
+    "company": "",
+    "department": "",
+    "position": "",
+    "period": ["(start)YYYY-MM-DD", "(end)YYYY-MM-DD"],
+    "responsibilities": ["", ""],
+    "type": "full|contract|internship|freelance",
+    "status": "employed|resigned",
+    "country": "",
+    "pinned": true,
+    "lang": ""
+  }
+]

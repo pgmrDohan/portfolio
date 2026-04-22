@@ -1,0 +1,25 @@
+[
+  {
+    "type": "research|publication",
+    "title": "",
+    "subtitle": "",
+    "date": "YYYY-MM-DD",
+    "identifiers": [
+      {
+        "title": "",
+        "URL": ""
+      },
+      {
+        "title": "",
+        "isbn": "only number"
+      },
+      {
+        "title": "",
+        "issn": "only number"
+      }
+    ],
+    "country": "",
+    "pinned": true,
+    "lang": ""
+  }
+]
