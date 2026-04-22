@@ -396,7 +396,7 @@ function renderResearchItem(item, langFilter, locale) {
     <h3>${item.title}</h3>
     <hgroup>
       <p>${item.subtitle}</p>
-      <p>${displayDate}${item.country ? ` · ${item.country}` : ""}</p>
+      <small>${displayDate}${item.country ? ` · ${item.country}` : ""}</small>
     </hgroup>
     <div class="mb-sm">${badge(item.type)}</div>
     ${identifiers ? `<small class="wo-print-content">${identifiers}</small><small class="print-content">${identifiersPrint}</small>` : ""}
