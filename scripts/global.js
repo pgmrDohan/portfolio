@@ -48,7 +48,7 @@ async function loadPosts() {
   const locale = window.__LANG__?.[langFilter]?.locale || "en-US";
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { priority: "high" });
     const posts = await response.json();
 
     const filteredPosts = langFilter
@@ -101,7 +101,7 @@ async function loadProjects() {
   const locale = window.__LANG__?.[langFilter]?.locale || "en-US";
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { priority: "high" });
     const projects = await response.json();
 
     const filteredProjects = langFilter
