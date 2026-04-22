@@ -55,7 +55,7 @@
     display: none !important;
   }
 
-  .print-contact {
+  .print-content {
     display: block !important;
   }
 
@@ -65,5 +65,9 @@
 
   .tag {
     border-color: black !important;
+  }
+
+  .wo-print-content {
+    display: none !important;
   }
 }

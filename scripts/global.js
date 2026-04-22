@@ -87,7 +87,7 @@ async function loadPosts() {
   const items = postsList.querySelectorAll("li");
   items.forEach((item, index) => {
     if (index >= showCount) {
-      item.style.display = "none";
+      item.classList.add("print-content");
     }
   });
 }
@@ -164,7 +164,7 @@ async function loadProjects() {
   const items = projectsList.querySelectorAll("li");
   items.forEach((item, index) => {
     if (index >= showCount) {
-      item.style.display = "none";
+      item.classList.add("print-content");
     }
   });
 }
