@@ -6,7 +6,6 @@
     "organization": "한국산업인력공단",
     "description": "합격률 17.8%",
     "country": "대한민국",
-    "pinned": true,
     "lang": "ko"
   },
   {
@@ -16,7 +15,6 @@
     "organization": "경찰청",
     "description": "2종 자동",
     "country": "대한민국",
-    "pinned": true,
     "lang": "ko"
   },
   {
@@ -26,7 +24,6 @@
     "organization": "Human Resources Development Service of Korea",
     "description": "Pass rate 17.8%",
     "country": "Republic of Korea",
-    "pinned": true,
     "lang": "en"
   },
   {
@@ -36,7 +33,6 @@
     "organization": "Korean National Police Agency",
     "description": "Class 2 Automatic",
     "country": "Republic of Korea",
-    "pinned": true,
     "lang": "en"
   }
 ]

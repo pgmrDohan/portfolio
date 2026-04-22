@@ -1,6 +1,6 @@
 [
   {
-    "title": "Google Cloud 기반 인공지능 전문가 양성과정 (2조)",
+    "title": "Google Cloud 기반 인공지능 전문가 양성과정",
     "type": "교육",
     "year": "2025",
     "organization": ["경상북도", "Google Cloud"],
@@ -27,7 +27,7 @@
       }
     ],
     "country": "대한민국",
-    "pinned": true,
+    "pinned": false,
     "lang": "ko"
   },
   {
@@ -267,7 +267,7 @@
     "lang": "ko"
   },
   {
-    "title": "Google Cloud-based AI Expert Training Program (Team 2)",
+    "title": "Google Cloud-based AI Expert Training Program",
     "type": "Course",
     "year": "2025",
     "organization": ["Gyeongsangbuk-do", "Google Cloud"],
@@ -294,7 +294,7 @@
       }
     ],
     "country": "Republic of Korea",
-    "pinned": true,
+    "pinned": false,
     "lang": "en"
   },
   {
