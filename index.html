@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/colors.css" />
     <link rel="stylesheet" href="styles/spacings.css" />
+    <link rel="preload" href="/fonts/font-face.css" as="style" />
+    <link rel="stylesheet" href="/fonts/font-face.css" />
     <link rel="stylesheet" href="styles/typo.css" />
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/print.css" media="print" />
@@ -245,7 +247,11 @@
             <h2 data-i18n="projects.header">프로젝트</h2>
             <h2>💿</h2>
           </div>
-          <a href="/projects">
+          <a
+            href="/projects"
+            data-i18n="section.more@aria-label"
+            aria-label="더 보기"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -265,7 +271,12 @@
         </hgroup>
         <ul class="mt-lg mb-lg" data-show="3" id="projects"></ul>
         <center>
-          <a href="/projects"><p data-i18n="section.more">더 보기</p></a>
+          <a
+            href="/projects"
+            data-i18n="section.more@aria-label"
+            aria-label="더 보기"
+            ><p data-i18n="section.more">더 보기</p></a
+          >
         </center>
       </section>
       <section class="mt-xl" id="posts">
@@ -274,7 +285,11 @@
             <h2 data-i18n="posts.header">게시글</h2>
             <h2>📒</h2>
           </div>
-          <a href="/posts">
+          <a
+            href="/posts"
+            data-i18n="section.more@aria-label"
+            aria-label="더 보기"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -294,7 +309,12 @@
         </hgroup>
         <ul class="mt-lg mb-lg" data-show="5" id="posts"></ul>
         <center>
-          <a href="/posts"><p data-i18n="section.more">더 보기</p></a>
+          <a
+            href="/posts"
+            data-i18n="section.more@aria-label"
+            aria-label="더 보기"
+            ><p data-i18n="section.more">더 보기</p></a
+          >
         </center>
       </section>
       <footer class="mt-xl mb-xl">

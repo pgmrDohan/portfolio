@@ -1,6 +1,7 @@
 window.__LANG__ = {
   ko: {
     locale: "ko-KR",
+    open: "열기",
     head: {
       title: "권도한 :: 컴퓨터 공학자",
     },
@@ -44,6 +45,7 @@ window.__LANG__ = {
   },
   en: {
     locale: "en-US",
+    open: "Open",
     head: {
       title: "Dohan Kwon :: Computer Engineer",
     },

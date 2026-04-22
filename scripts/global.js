@@ -118,10 +118,10 @@ async function loadProjects() {
 
         const links = [
           project.url
-            ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer">${linkIcon}</a>`
+            ? `<a href="${project.url}" target="_blank" rel="noopener noreferrer" aria-label="${window.__LANG__?.[langFilter]?.open}">${linkIcon}</a>`
             : null,
           project.repository
-            ? `<a href="${project.repository}" target="_blank" rel="noopener noreferrer">${repoIcon}</a>`
+            ? `<a href="${project.repository}" target="_blank" rel="noopener noreferrer" aria-label="${window.__LANG__?.[langFilter]?.open}">${repoIcon}</a>`
             : null,
         ]
           .filter(Boolean)

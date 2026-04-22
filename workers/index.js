@@ -22,7 +22,9 @@ export default {
       }
     }
 
-    if (!url.searchParams.has("lang")) {
+    const isContentRequest = !/\.[a-zA-Z0-9]+$/.test(pathname);
+
+    if (!url.searchParams.has("lang") && isContentRequest) {
       const country = request.cf?.country;
       const estimatedLang = COUNTRY_TO_LANG[country] || DEFAULT_LANG;
       url.searchParams.set("lang", estimatedLang);
