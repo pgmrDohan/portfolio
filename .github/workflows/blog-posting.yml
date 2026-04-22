@@ -319,7 +319,7 @@ jobs:
             );
             console.log('Generated projects.json');
 
-            const sitemap = buildSitemap(posts);
+            const sitemap = buildSitemap(posts, projects);
             fs.writeFileSync(path.join(ROOT_DIR, 'sitemap.xml'), sitemap, 'utf8');
             console.log('Generated sitemap.xml');
           }
