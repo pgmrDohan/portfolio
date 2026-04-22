@@ -59,6 +59,10 @@ p {
   font-size: var(--typo-body-size);
   font-weight: var(--typo-body-weight);
   line-height: var(--typo-body-lh);
+  text-justify: inter-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 small {

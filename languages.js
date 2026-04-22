@@ -15,6 +15,7 @@ window.__LANG__ = {
       theme: "테마 변경",
       index: "찾기",
     },
+    section: { more: "더 보기" },
     footer: {
       home: "홈",
       posts: "블로그",
@@ -57,6 +58,7 @@ window.__LANG__ = {
       theme: "Toggle Color Theme",
       index: "Index",
     },
+    section: { more: "More ..." },
     footer: {
       home: "Home",
       posts: "Posts",
