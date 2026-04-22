@@ -5,6 +5,8 @@ edited: "2026-04-20"
 tags: ["첫번째", "초기화"]
 lang: "ko"
 author: ["권도한"]
+pinned: true
+description: "TTTTEEEESSSSSSTTTTT"
 ---
 
 # 안녕, 세상아

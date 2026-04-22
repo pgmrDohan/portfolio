@@ -10,8 +10,8 @@ Says it in your language: multilingual support included.
 
 - [ ] 학력
 - [ ] 출판 및 게재
-- [ ] 프로젝트
+- [x] 프로젝트
 - [ ] 경력
 - [ ] 대외활동
 - [ ] 자격
-- [ ] 블로그
+- [x] 블로그

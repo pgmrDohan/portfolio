@@ -8,7 +8,6 @@ url: "https://cbns.dohan.in/"
 repository: "https://github.com/pgmrDohan/react.ts"
 skills: ["APL", "LISP", "Fortran"]
 platform: ["In My Mind"]
-pinned: true
 description: "TTTTEEEESSSSSSTTTTT"
 ---
 

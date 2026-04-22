@@ -1,10 +1,11 @@
 ---
 title: "안녕, 세상아 5"
 date: "2026-04-19"
-edited: "2026-04-20"
+edited: "2026-04-22"
 tags: ["0번째", "거짓말"]
 lang: "ko"
 author: ["권도한"]
+description: "TTTTEEEESSSSSSTTTTT"
 ---
 
 # 안녕, 세상아 5

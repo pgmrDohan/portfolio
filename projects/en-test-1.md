@@ -1,6 +1,6 @@
 ---
 title: "My Awesome Project"
-date: " 2026-04-20"
+date: " 2026-04-19"
 lang: "en"
 contribution: "Personal"
 cover: "/images/projects/my-awesome-projects.jpg"
