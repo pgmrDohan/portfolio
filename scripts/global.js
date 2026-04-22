@@ -303,7 +303,7 @@ function renderCertificationItem(item, langFilter, locale) {
       <h3>${item.title}</h3>
       <small class="mt-xs">${item.description}</small>
     </hgroup>
-    <small class="mt-sm mb-sm">${item.organization}${item.country ? ` · ${item.country}` : ""}</small>
+    <small class="mt-xs mb-xs">${item.organization}${item.country ? ` · ${item.country}` : ""}</small>
     <div>${badge(item.type)}</div>
   </li>`;
 }
