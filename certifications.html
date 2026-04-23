@@ -35,6 +35,59 @@
     <script src="/scripts/global.js" defer></script>
     <link rel="preload" href="/posts.json" as="fetch" crossorigin />
     <title data-i18n="head.title">권도한 :: 컴퓨터 공학자</title>
+    <meta name="application-name" content="권도한 :: 컴퓨터 공학자" lang="ko" />
+    <meta
+      name="application-name"
+      content="Dohan Kwon :: Computer Engineer"
+      lang="en"
+    />
+    <meta name="author" content="권도한" lang="ko" />
+    <meta name="author" content="Dohan Kwon" lang="en" />
+    <meta name="creator" content="권도한" lang="ko" />
+    <meta name="creator" content="Dohan Kwon" lang="en" />
+    <meta name="publisher" content="권도한" lang="ko" />
+    <meta name="publisher" content="Dohan Kwon" lang="en" />
+    <meta name="color-scheme" content="dark light" />
+    <meta
+      name="description"
+      content="Legacy 위에서 Latest를 설계하는 컴퓨터 공학자"
+      lang="ko"
+    />
+    <meta
+      name="description"
+      content="Computer engineer who designs the 'Latest' atop the 'Legacy'"
+      lang="en"
+    />
+    <meta
+      name="keywords"
+      content="권도한,도한,개발자,공학자,컴퓨터"
+      lang="ko"
+    />
+    <meta
+      name="keywords"
+      content="Dohan Kwon,Dohan,developer,engineer,computer"
+      lang="en"
+    />
+    <meta
+      property="og:title"
+      data-i18n="head.title@content"
+      content="권도한 :: 컴퓨터 공학자"
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:profile:first_name" content="Dohan" />
+    <meta property="og:profile:last_name" content="Kwon" />
+    <meta property="og:profile:username" content="Dohan Kwon" />
+    <meta property="og:url" content="https://www.dohan.in/" />
+    <meta property="og:image" content="https://www.dohan.in/images/cover.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      data-i18n="rss.description@content"
+      property="og:description"
+      content="Legacy 위에서 Latest를 설계하는 컴퓨터 공학자"
+    />
+    <meta property="og:determiner" content="" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale:alternate" content="en_US" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -66,108 +119,109 @@
     />
   </head>
   <body class="noscript">
-    <noscript>
-      <!-- TODO -->
-    </noscript>
+    <nav>
+      <div>
+        <button
+          onclick="window.location.href = '/'"
+          data-i18n="footer.home@title"
+          title="홈"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-house-icon lucide-house"
+          >
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            />
+          </svg>
+        </button>
+        <button
+          onclick="window.location.href = '/posts'"
+          data-i18n="footer.blog@title"
+          title="블로그"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-book-text-icon lucide-book-text"
+          >
+            <path
+              d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
+            />
+            <path d="M8 11h8" />
+            <path d="M8 7h6" />
+          </svg>
+        </button>
+      </div>
+      <div>
+        <button
+          onclick="toggleTheme()"
+          data-i18n="nav.theme@title"
+          title="테마 변경"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-moon-icon lucide-moon"
+          >
+            <path
+              d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
+            />
+          </svg>
+        </button>
+        <button
+          data-i18n="nav.index@title"
+          title="찾기"
+          onclick="window.spotlight.open()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-command-icon lucide-command"
+          >
+            <path
+              d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
     <main>
-      <div class="sentinel"></div>
-      <nav class="mt-xl">
-        <div>
-          <button
-            onclick="window.location.href = '/'"
-            data-i18n="footer.home@title"
-            title="홈"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-house-icon lucide-house"
-            >
-              <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
-              <path
-                d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-              />
-            </svg>
-          </button>
-          <button
-            onclick="window.location.href = '/posts'"
-            data-i18n="footer.blog@title"
-            title="블로그"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-book-text-icon lucide-book-text"
-            >
-              <path
-                d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"
-              />
-              <path d="M8 11h8" />
-              <path d="M8 7h6" />
-            </svg>
-          </button>
-        </div>
-        <div>
-          <button
-            onclick="toggleTheme()"
-            data-i18n="nav.theme@title"
-            title="테마 변경"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-moon-icon lucide-moon"
-            >
-              <path
-                d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"
-              />
-            </svg>
-          </button>
-          <button
-            data-i18n="nav.index@title"
-            title="찾기"
-            onclick="window.spotlight.open()"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-command-icon lucide-command"
-            >
-              <path
-                d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3"
-              />
-            </svg>
-          </button>
-        </div>
-      </nav>
+      <noscript
+        ><center>
+          <h1>JavaScript is disabled<br />Are we living in 1995 with AI?</h1>
+        </center></noscript
+      >
       <section class="mt-xl" id="certifications">
         <h2>
           <h2 data-i18n="certifications.header">자격 및 면허증</h2>

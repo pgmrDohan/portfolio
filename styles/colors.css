@@ -20,7 +20,4 @@ html[data-theme="dark"] {
 html {
   background-color: var(--theme-background);
   color: var(--theme-color);
-  transition:
-    background-color 0.3s,
-    color 0.3s;
 }

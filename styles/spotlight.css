@@ -10,7 +10,6 @@
   --sp-shadow: 0 12px 48px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.1);
   --sp-radius: 16px;
   --sp-sheet-r: 20px 20px 0 0;
-  --sp-bottom-safe: env(safe-area-inset-bottom, 0px);
 }
 
 #sp-overlay {
@@ -53,20 +52,14 @@
 @media (max-width: 64rem) {
   #sp-overlay {
     align-items: flex-end;
-    height: 100dvh;
   }
 
   #sp-modal {
     width: 100%;
-    max-height: 75dvh;
+    max-height: 75vh;
     border-radius: var(--sp-sheet-r);
     border-bottom: none;
     transform: translateY(100%);
-    padding-bottom: var(--sp-bottom-safe);
-  }
-
-  body:has(#sp-input:focus) #sp-modal {
-    padding-bottom: 0;
   }
 
   #sp-overlay.sp-open #sp-modal {

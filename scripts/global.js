@@ -323,7 +323,7 @@ function renderActivityItem(item, langFilter, locale) {
   const links = (item.links || [])
     .map(
       (l) =>
-        `<a href="${l.URL}" target="_blank" rel="noopener noreferrer">
+        `<a href="${l.URL}" target="_blank" rel="noopener noreferrer" title=${l.type}>
           ${linkIcons[l.type] || l.type}
         </a>`,
     )
@@ -420,18 +420,6 @@ const toggleTheme = (targetTheme) => {
   });
 };
 
-const sentinel = document.querySelector(".sentinel");
-const observer = new IntersectionObserver(
-  ([entry]) => {
-    if (!entry.isIntersecting) {
-      document.querySelector("nav").classList.add("is-sticky");
-    } else {
-      document.querySelector("nav").classList.remove("is-sticky");
-    }
-  },
-  { threshold: 0 },
-);
-
 applyLanguage();
 document.body.classList.remove("noscript");
 document.body.style.opacity = "1";
@@ -450,4 +438,3 @@ window.addEventListener("popstate", () => {
 
   updateTagButtons();
 });
-observer.observe(sentinel);
