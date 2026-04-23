@@ -18,8 +18,364 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  check_changes:
+    runs-on: ubuntu-latest
+    outputs:
+      any_added: ${{ steps.changed-files.outputs.any_added }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@9426d40962ed5378910ee2e21d5f8c6fcbf2dd96
+        with:
+          files: |
+            posts/**
+            languages.js
+            **.html
+
+  pre-render:
+    needs: check_changes
+    if: needs.check_changes.outputs.any_added == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install minimal deps
+        run: npm install gray-matter
+
+      - name: Generate RSS, posts.json, projects.json, sitemap.xml
+        run: |
+          node <<'EOF'
+          const fs = require('fs');
+          const vm = require('vm');
+          const path = require('path');
+          const matter = require('gray-matter');
+
+          const BASE_URL = process.env.BASE_URL || 'https://www.dohan.in';
+          const POSTS_DIR = path.join(process.cwd(), 'posts');
+          const PROJECTS_DIR = path.join(process.cwd(), 'projects');
+          const RSS_DIR = path.join(process.cwd(), 'rss');
+          const ROOT_DIR = process.cwd();
+
+          function ensureArray(value) {
+            if (Array.isArray(value)) return value;
+            if (value == null || value === '') return [];
+            return [value];
+          }
+
+          function escapeXml(str = '') {
+            return String(str)
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&apos;');
+          }
+
+          function escapeCdata(str = '') {
+            return String(str).replace(/]]>/g, ']]><![CDATA[>');
+          }
+
+          function toRfc2822(dateStr) {
+            const d = new Date(dateStr);
+            if (Number.isNaN(d.getTime())) return new Date().toUTCString();
+            return d.toUTCString();
+          }
+
+          function toIsoDate(dateStr) {
+            const d = new Date(dateStr);
+            if (Number.isNaN(d.getTime())) {
+              return new Date().toISOString().slice(0, 10);
+            }
+            return d.toISOString().slice(0, 10);
+          }
+
+          async function loadLanguages() {
+            const filePath = path.join(ROOT_DIR, 'languages.js');
+            const code = fs.readFileSync(filePath, 'utf8');
+
+            const sandbox = {
+              window: {},
+              console,
+              URLSearchParams,
+            };
+
+            vm.createContext(sandbox);
+            vm.runInContext(code, sandbox, { filename: 'languages.js' });
+
+            const languages = sandbox.window.__LANG__;
+
+            if (!languages || typeof languages !== 'object') {
+              throw new Error('Cannot load __LANG__');
+            }
+
+            return languages;
+          }
+
+          function getPostUrl(slug) {
+            return `${BASE_URL}/posts?p=${encodeURIComponent(slug)}`;
+          }
+
+          function getAllHtmlFiles(dir, base = '') {
+            const entries = fs.readdirSync(dir, { withFileTypes: true });
+            let results = [];
+
+            for (const entry of entries) {
+              if (entry.isDirectory() && ['.git', 'node_modules'].includes(entry.name)) {
+                continue;
+              }
+            
+              const fullPath = path.join(dir, entry.name);
+              const relativePath = path.join(base, entry.name);
+
+              if (entry.isDirectory()) {
+                results = results.concat(getAllHtmlFiles(fullPath, relativePath));
+              } else if (entry.isFile() && entry.name.endsWith('.html')) {
+                results.push(relativePath);
+              }
+            }
+
+            return results;
+          }
+
+          function toUrlPath(filePath) {
+            const normalized = filePath.replace(/\\/g, '/'); // Windows 대응
+
+            if (normalized === 'index.html') return '';
+
+            if (normalized.endsWith('/index.html')) {
+              return normalized.replace(/index\.html$/, '');
+            }
+
+            return normalized.replace(/\.html$/, '');
+          }
+
+          function readPosts() {
+            if (!fs.existsSync(POSTS_DIR)) return [];
+
+            return fs.readdirSync(POSTS_DIR)
+              .filter(name => name.endsWith('.md'))
+              .sort()
+              .map(filename => {
+                const fullPath = path.join(POSTS_DIR, filename);
+                const raw = fs.readFileSync(fullPath, 'utf8');
+                const { data, content } = matter(raw);
+                const slug = path.basename(filename, '.md');
+
+                const post = {
+                  slug,
+                  title: data.title ?? slug,
+                  date: data.date ?? null,
+                  edited: data.edited ?? data.date ?? null,
+                  tags: ensureArray(data.tags),
+                  lang: data.lang ?? '',
+                  author: ensureArray(data.author),
+                  pinned: data.pinned ?? false,
+                  description: data.description ?? '',
+                  content,
+                };
+
+                if (!post.lang) {
+                  throw new Error(`posts/${filename}: missing 'lang'.`);
+                }
+
+                return post;
+              });
+          }
+
+          function readProjects() {
+            if (!fs.existsSync(PROJECTS_DIR)) return [];
+
+            return fs.readdirSync(PROJECTS_DIR)
+              .filter(name => name.endsWith('.md'))
+              .sort()
+              .map(filename => {
+                const fullPath = path.join(PROJECTS_DIR, filename);
+                const raw = fs.readFileSync(fullPath, 'utf8');
+                const { data, content } = matter(raw);
+                const slug = path.basename(filename, '.md');
+
+                const project = {
+                  slug,
+                  title: data.title ?? slug,
+                  date: data.date ?? null,
+                  edited: data.edited ?? data.date ?? null,
+                  lang: data.lang ?? '',
+                  contribution: data.contribution ?? '',
+                  cover: data.cover ?? '',
+                  url: data.url ?? null,
+                  repository: data.repository ?? null,
+                  skills: ensureArray(data.skills),
+                  platform: ensureArray(data.platform),
+                  pinned: data.pinned ?? false,
+                  description: data.description ?? '',
+                  content,
+                };
+
+                if (!project.lang) {
+                  throw new Error(`projects/${filename}: missing 'lang'.`);
+                }
+
+                return project;
+              });
+          }
+
+          function buildRss(langCode, langConfig, posts) {
+            const now = new Date().toUTCString();
+            const rssTitle = langConfig?.rss?.title ?? `RSS (${langCode})`;
+            const rssDesc = langConfig?.rss?.description ?? '';
+
+            const lines = [];
+            lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+            lines.push('<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">');
+            lines.push('  <channel>');
+            lines.push(`    <title>${escapeXml(rssTitle)}</title>`);
+            lines.push(`    <link>${escapeXml(BASE_URL)}</link>`);
+            lines.push(`    <description>${escapeXml(rssDesc)}</description>`);
+            lines.push(`    <language>${escapeXml(langCode)}</language>`);
+            lines.push(`    <lastBuildDate>${escapeXml(now)}</lastBuildDate>`);
+            lines.push(`    <atom:link href="${escapeXml(`${BASE_URL}/rss/${langCode}.xml`)}" rel="self" type="application/rss+xml"/>`);
+
+            for (const post of posts.filter(p => p.lang === langCode)) {
+              const postUrl = getPostUrl(post.slug);
+              lines.push('    <item>');
+              lines.push(`      <title>${escapeXml(post.title)}</title>`);
+              lines.push(`      <link>${escapeXml(postUrl)}</link>`);
+              lines.push(`      <guid isPermaLink="true">${escapeXml(postUrl)}</guid>`);
+              lines.push(`      <pubDate>${escapeXml(toRfc2822(post.date))}</pubDate>`);
+              lines.push(`      <description><![CDATA[${escapeCdata(post.content)}]]></description>`);
+              lines.push('    </item>');
+            }
+
+            lines.push('  </channel>');
+            lines.push('</rss>');
+            return lines.join('\n');
+          }
+
+          function buildSitemap(posts, projects) {
+            const htmlFiles = getAllHtmlFiles(ROOT_DIR);
+            const lines = [];
+
+            lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+            lines.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">');
+
+            for (const htmlFile of htmlFiles) {
+              const urlPath = toUrlPath(htmlFile);
+              const loc = `${BASE_URL}/${urlPath}`;
+
+              lines.push('  <url>');
+              lines.push(`    <loc>${escapeXml(loc)}</loc>`);
+              lines.push(`    <lastmod>${escapeXml(new Date().toISOString().slice(0, 10))}</lastmod>`);
+              lines.push('  </url>');
+            }
+
+            for (const project of projects) {
+              const projectUrl = `${BASE_URL}/projects?p=${encodeURIComponent(project.slug)}`;
+              lines.push('  <url>');
+              lines.push(`    <loc>${escapeXml(projectUrl)}</loc>`);
+              lines.push(`    <lastmod>${escapeXml(toIsoDate(project.edited || project.date))}</lastmod>`);
+              lines.push('  </url>');
+            }
+
+            for (const post of posts) {
+              const postUrl = getPostUrl(post.slug);
+              lines.push('  <url>');
+              lines.push(`    <loc>${escapeXml(postUrl)}</loc>`);
+              lines.push(`    <lastmod>${escapeXml(toIsoDate(post.edited || post.date))}</lastmod>`);
+              lines.push('  </url>');
+            }
+
+            lines.push('</urlset>');
+            return lines.join('\n');
+          }
+
+          async function main() {
+            const languages = await loadLanguages();
+            const posts = readPosts();
+            const projects = readProjects();
+
+            fs.mkdirSync(RSS_DIR, { recursive: true });
+
+            for (const [langCode, langConfig] of Object.entries(languages)) {
+              const rss = buildRss(langCode, langConfig, posts);
+              fs.writeFileSync(path.join(RSS_DIR, `${langCode}.xml`), rss, 'utf8');
+              console.log(`Generated rss/${langCode}.xml`);
+            }
+
+            const postsJson = posts.map(post => ({
+              slug: post.slug,
+              title: post.title,
+              date: post.date,
+              edited: post.edited,
+              tags: post.tags,
+              lang: post.lang,
+              author: post.author,
+              pinned: post.pinned,
+              description: post.description,
+              url: getPostUrl(post.slug),
+            }));
+            fs.writeFileSync(
+              path.join(ROOT_DIR, 'posts.json'),
+              JSON.stringify(postsJson, null, 2),
+              'utf8'
+            );
+            console.log('Generated posts.json');
+
+            const projectsJson = projects.map(project => ({
+              slug: project.slug,
+              title: project.title,
+              date: project.date,
+              edited: project.edited,
+              lang: project.lang,
+              contribution: project.contribution,
+              cover: project.cover,
+              url: project.url,
+              repository: project.repository,
+              skills: project.skills,
+              platform: project.platform,
+              pinned: project.pinned,
+              description: project.description,
+              projectUrl: `${BASE_URL}/projects?p=${encodeURIComponent(project.slug)}`,
+            }));
+            fs.writeFileSync(
+              path.join(ROOT_DIR, 'projects.json'),
+              JSON.stringify(projectsJson, null, 2),
+              'utf8'
+            );
+            console.log('Generated projects.json');
+
+            const sitemap = buildSitemap(posts, projects);
+            fs.writeFileSync(path.join(ROOT_DIR, 'sitemap.xml'), sitemap, 'utf8');
+            console.log('Generated sitemap.xml');
+          }
+
+          main().catch(err => {
+            console.error(err);
+            process.exit(1);
+          });
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rss/ posts.json sitemap.xml projects.json
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "chore: pre-render rss, posts.json, projects.json, sitemap [skip ci]"
+          git push
+
   deploy:
-    if: github.actor != 'github-actions[bot]'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
