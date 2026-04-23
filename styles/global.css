@@ -400,3 +400,9 @@ ul > li > hgroup > small {
   flex-shrink: 0;
   color: var(--color-neutral-light);
 }
+
+#sp-modal a {
+  background: none;
+  background-image: none;
+  text-decoration: none;
+}

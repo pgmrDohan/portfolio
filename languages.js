@@ -1,5 +1,18 @@
 window.__LANG__ = {
   ko: {
+    spotlight: {
+      placeholder: "검색하거나 계산하세요…",
+      empty: "검색어를 입력하세요",
+      loading: "인덱스 불러오는 중…",
+      noResult: "{q} 검색 결과 없음",
+      resultCount: "결과 {n}개",
+      calcSection: "계산 결과",
+      searchSection: "검색 결과",
+      navMove: "이동",
+      navOpen: "열기",
+      navClose: "닫기",
+      ariaLabel: "검색",
+    },
     locale: "ko-KR",
     open: "열기",
     head: {
@@ -67,6 +80,19 @@ window.__LANG__ = {
     },
   },
   en: {
+    spotlight: {
+      placeholder: "Search or calculate…",
+      empty: "Type to search",
+      loading: "Loading index…",
+      noResult: "No results for {q}",
+      resultCount: "{n} result(s)",
+      calcSection: "Calculation",
+      searchSection: "Results",
+      navMove: "navigate",
+      navOpen: "open",
+      navClose: "close",
+      ariaLabel: "Search",
+    },
     locale: "en-US",
     open: "Open",
     head: {

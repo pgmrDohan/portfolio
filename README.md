@@ -136,3 +136,23 @@ description: "TTTTEEEESSSSSSTTTTT"
 
 ...
 ```
+
+## TODO
+
+global js
+
+- [ ] Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. Learn how to make links accessible. 엑티비티
+
+posts.html projects.html
+
+- [ ] When a button doesn't have an accessible name, screen readers announce it as "button", making it unusable for users who rely on screen readers. Learn how to make buttons more accessible. 뷰어 백버튼
+
+고민
+
+- [ ] Lists do not contain only <li> elements and script supporting elements (<script> and <template>). 태그
+
+\*.html
+
+- [ ] 메타테그
+- [x] 커맨드 버튼
+- [ ] noscript 안내문
