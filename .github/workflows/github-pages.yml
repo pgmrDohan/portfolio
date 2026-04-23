@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -376,6 +376,7 @@ jobs:
           git push
 
   deploy:
+    needs: pre-render
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
