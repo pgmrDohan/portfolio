@@ -5,7 +5,217 @@
     <link>https://www.dohan.in</link>
     <description>Computer engineer who designs the &apos;Latest&apos; atop the &apos;Legacy&apos;</description>
     <language>en</language>
-    <lastBuildDate>Wed, 22 Apr 2026 22:57:17 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 01:37:21 GMT</lastBuildDate>
     <atom:link href="https://www.dohan.in/rss/en.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Summary of Intel x86-64 Architecture Registers</title>
+      <link>https://www.dohan.in/posts?p=en-x86-64-registers</link>
+      <guid isPermaLink="true">https://www.dohan.in/posts?p=en-x86-64-registers</guid>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[
+Depending on the perspective, the number of registers in `x86-64` is described differently each time. Therefore, based on Intel’s official documentation, [`Intel® 64 and IA-32 Architectures Software Developer’s Manual Combined Volumes: 1, 2A, 2B, 2C, 2D, 3A, 3B, 3C, 3D, and 4`](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html), I organized the registers visible in 64-bit mode. From the full 5329-page document, most registers that appear in search results for "register" have been summarized.
+
+## General Purpose Registers (Vol.1 p.3-13)
+
+| Name     | Description                                                                                                                                                 |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| RAX      | Used as an accumulator for operands and results in arithmetic operations                                                                                    |
+| RBX      | Points to the address of data within a segment (Offset; related to 8086 Real Mode memory management: Segment (default DS, override possible) + Offset (BX)) |
+| RCX      | Stores the repeat count (used by REP instructions until CX becomes 0)                                                                                       |
+| RDX      | Stores I/O port numbers                                                                                                                                     |
+| RDI      | Points to data within a segment, especially used as the destination address in string operations (Segment: ES, cannot be overridden + Offset (DI))          |
+| RSI      | Points to data within a segment, especially used as the source address in string operations (Segment: default DS, override possible + Offset (SI))          |
+| RBP      | Points to the base of the current stack frame within the stack segment (SS)                                                                                 |
+| RSP      | Points to the top of the current stack frame within the stack segment (SS)                                                                                  |
+| R8 - R15 | Additional general-purpose registers introduced in x86-64, usable for various purposes and sizes                                                            |
+
+## Segment Registers (Vol.1 p.3-15)
+
+| Name | Description                                                                                                     |
+| ---- | --------------------------------------------------------------------------------------------------------------- |
+| CS   | Points to the current code segment (cannot be changed with MOV; only via JMP or interrupt-related instructions) |
+| DS   | Points to the data segment (default for string operations; override possible)                                   |
+| SS   | Points to the stack segment                                                                                     |
+| ES   | Points to the destination data segment for string operations (cannot be overridden)                             |
+| FS   | Additional data segment register; usage varies depending on OS design in 64-bit mode                            |
+| GS   | Additional data segment register; usage varies depending on OS design in 64-bit mode                            |
+
+## FLAGS Register (Vol.1 p.3-18)
+
+| Name   | Description                                                                                          |
+| ------ | ---------------------------------------------------------------------------------------------------- |
+| RFLAGS | Extension of EFLAGS with +32 bits in protected mode; only lower 32 bits are used (upper 32 reserved) |
+
+## Instruction Pointer Register (Vol.1 p.3-18)
+
+| Name | Description                                |
+| ---- | ------------------------------------------ |
+| RIP  | Stores the address of the next instruction |
+
+## Control Registers (Vol.3A p.2-13 / Vol.3A p.2-22)
+
+| Name | Description                                                                                         |
+| ---- | --------------------------------------------------------------------------------------------------- |
+| CR0  | Controls operating modes                                                                            |
+| CR1  | Reserved                                                                                            |
+| CR2  | Stores the linear address that caused a page fault                                                  |
+| CR3  | Stores the physical address of the page directory and includes paging cache flags                   |
+| CR4  | Controls various processor-supported extensions                                                     |
+| CR8  | Accessible only in 64-bit mode; controls APIC TPR (Task Priority Register)                          |
+| XCR0 | Specifies memory range for state restoration during context switch (CPU restores state based on it) |
+
+## Descriptor Table Registers (Vol.3A p.2-12)
+
+| Name               | Description                                                                                                      |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| GDTR               | Holds the address of the Global Descriptor Table (defines segment properties and permissions)                    |
+| LDTR               | Holds the address of the Local Descriptor Table (task-specific segment descriptors)                              |
+| IDTR               | Holds the address of the Interrupt Descriptor Table (handler addresses and attributes for interrupts/exceptions) |
+| TR (Task Register) | Holds the address of the Task State Segment (used for transitions between user/kernel memory spaces)             |
+
+## Debug Registers (Vol.3B p.20-4 / Vol.3B p.20-42)
+
+| Name      | Description                    |
+| --------- | ------------------------------ |
+| DR0 - DR3 | Store breakpoint addresses     |
+| DR4 - DR5 | Reserved                       |
+| DR6       | Indicates current debug status |
+| DR7       | Stores debug configuration     |
+| DR7       | Stores debug configuration     |
+
+## MSR Registers Model-Specific Registers (Vol.4 p.2-4)
+
+| Name                                      | Description                                                                                     |
+| ----------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| IA32_EFER                                 | Enables extended features: 64-bit mode activation, SYSCALL/SYSRET support, NX bit configuration |
+| IA32_STAR                                 | Defines target address and segment info for SYSCALL in 32-bit compatibility mode                |
+| IA32_LSTAR                                | Stores target RIP for SYSCALL in 64-bit mode                                                    |
+| IA32_FMASK                                | Specifies which RFLAGS bits are masked during system call entry                                 |
+| IA32_FS_BASE                              | Stores FS segment base address (commonly used for thread-local storage)                         |
+| IA32_GS_BASE                              | Stores GS segment base address                                                                  |
+| IA32_KERNEL_GS_BASE                       | Stores kernel GS base for swapping during user/kernel transitions                               |
+| IA32_SYSENTER_CS / ESP / EIP              | Defines kernel CS, stack, and instruction pointer for SYSENTER/SYSEXIT in 32-bit environments   |
+| IA32_MCU_OPT_CTRL                         | Controls microcode update options and mitigations                                               |
+| IA32_FLUSH_CMD                            | Controls cache flushing (e.g., L1 cache invalidation for side-channel defense)                  |
+| IA32_TSX_CTRL                             | Controls Intel TSX functionality and mitigations                                                |
+| IA32_MCU_ROLLBACK_MIN_ID                  | Stores minimum allowed microcode revision to prevent rollback attacks                           |
+| IA32_PERF_STATUS                          | Reports current processor performance state (P-state)                                           |
+| IA32_PERF_CTL                             | Controls OS-requested performance state transitions                                             |
+| IA32_HWP_REQUEST                          | Provides hints for hardware P-state control (Speed Shift)                                       |
+| IA32_THERM_STATUS                         | Reports temperature sensor data and thermal status                                              |
+| IA32_THERM_INTERRUPT                      | Configures thermal threshold interrupts                                                         |
+| IA32_OVERCLOCKING_STATUS                  | Indicates overclocking and undervolting protection status                                       |
+| IA32_MCG_CAP                              | Provides Machine Check capability info                                                          |
+| IA32_MCG_STATUS                           | Indicates Machine Check status                                                                  |
+| IA32_MCi_CTL / STATUS / ADDR / MISC       | Stores hardware error information per unit                                                      |
+| IA32_PERFEVTSELx                          | Selects performance monitoring events                                                           |
+| IA32_PMC_FXx_CTR                          | Fixed-function counters (instructions, cycles, etc.)                                            |
+| IA32_PMC_GPx_CTR                          | General-purpose performance counters                                                            |
+| IA32_PEBS_BASE / INDEX                    | Controls PEBS sampling buffer location                                                          |
+| IA32_X2APIC_APICID                        | Provides logical core APIC ID                                                                   |
+| IA32_X2APIC_EOI                           | Signals end of interrupt                                                                        |
+| IA32_X2APIC_ICR                           | Controls inter-processor interrupts (IPI)                                                       |
+| IA32_X2APIC_LVT_TIMER / LINT / THERMAL 등 | Configures local APIC interrupt vectors                                                         |
+
+## PIC Registers (p.4)
+
+Not included in the Intel architecture manual; referenced from legacy datasheets.
+
+| Name | Description                         |
+| ---- | ----------------------------------- |
+| IRR  | Records incoming interrupt requests |
+| ISR  | Records interrupts being serviced   |
+| IMR  | Masks (blocks) selected interrupts  |
+
+## Local APIC Registers (Vol.3A p.13-6)
+
+| Name                                         | Description                                         |
+| -------------------------------------------- | --------------------------------------------------- |
+| Local APIC ID Register                       | ID                                                  |
+| Local APIC Version Register                  | Version                                             |
+| TPR                                          | Sets minimum interrupt priority threshold           |
+| APR                                          | Determines core selection in multi-core arbitration |
+| PPR                                          | max(TPR, ISR)                                       |
+| EOI                                          | Signals end of interrupt                            |
+| RRD                                          | Stores remote read results                          |
+| Logical Destination Register                 | Specifies logical interrupt destinations            |
+| Destination Format Register                  | Configures logical addressing format                |
+| Spurious Interrupt Vector Register           | Controls spurious interrupts and APIC enable        |
+| ISR                                          | Tracks in-service interrupts                        |
+| TMR                                          | Indicates trigger mode (edge/level)                 |
+| IRR                                          | Stores pending interrupts                           |
+| Error Status Register                        | Records APIC errors                                 |
+| LVT CMCI Register                            | Configures corrected machine check interrupts       |
+| ICR                                          | Sends inter-processor interrupts                    |
+| LVT Timer Register                           | Configures APIC timer interrupts                    |
+| LVT Thermal Sensor Register                  | Configures thermal interrupts                       |
+| LVT Performance Monitoring Counters Register | Configures performance counter interrupts           |
+| LVT LINT0 - 1 Register                       | Configures external interrupt pins                  |
+| LVT Error Register                           | Configures error interrupts                         |
+| Initial Count Register                       | Sets timer initial count                            |
+| Current Count Register                       | Holds current timer count                           |
+| Divide Configuration Register                | Sets timer clock divisor                            |
+
+## Floating Point / SIMD Registers
+
+| Name         | Description                               |
+| ------------ | ----------------------------------------- |
+| ST0 - ST7    | x87 80-bit floating-point stack registers |
+| Control Word | Controls FPU behavior                     |
+| Status Word  | Stores FPU state and flags                |
+| Tag Word     | Indicates state of each ST register       |
+| FIP          | Last executed instruction pointer         |
+| FDP          | Last operand memory address               |
+| FCS / FDS    | Legacy segment info                       |
+| FOP          | Last executed opcode                      |
+| MM0 - MM7    | 64-bit integer SIMD (reuse x87 registers) |
+| XMM0 - XMM15 | 128-bit SIMD (SSE)                        |
+| YMM0 - YMM15 | 256-bit SIMD (AVX)                        |
+| ZMM0 - ZMM31 | 512-bit SIMD (AVX-512)                    |
+| K0 - K7      | AVX-512 mask registers                    |
+| MXCSR        | SIMD floating-point control/status        |
+
+## MSI Registers (Vol.3A p.13-35)
+
+| Name                     | Description                                  |
+| ------------------------ | -------------------------------------------- |
+| Message Address Register | Specifies APIC destination                   |
+| Message Data Register    | Specifies interrupt vector and delivery mode |
+
+## MPX Bounds Registers
+
+| Name                   | Description                        |
+| ---------------------- | ---------------------------------- |
+| BND0 - BND3            | Define memory bounds (upper/lower) |
+| BNDCFGU / IA32_BNDCFGS | Configure bounds checking          |
+| BNDSTATUS              | Stores bounds violation status     |
+
+## Timer Registers
+
+| Name                               | Description                        |
+| ---------------------------------- | ---------------------------------- |
+| TSC                                | 64-bit counter based on CPU cycles |
+| RDTSCP                             | Reads TSC with CPU ID atomically   |
+| IA32_TSC_AUX                       | Auxiliary ID returned by RDTSCP    |
+| Counter 0                          | PIT timer (system timer)           |
+| Counter 1                          | PIT timer (DRAM refresh)           |
+| Counter 2                          | PIT timer (PC speaker)             |
+| Control Word Register              | PIT configuration                  |
+| General Capabilities and ID        | HPET capabilities                  |
+| General Configuration              | HPET global config                 |
+| General Interrupt Status           | HPET interrupt status              |
+| Main Counter Value                 | HPET main counter                  |
+| Timer N Configuration/Capabilities | HPET timer configuration           |
+| Timer N Comparator Value           | HPET comparator                    |
+| Timer N FSB Interrupt Route        | Direct CPU interrupt via FSB       |
+
+## Protection-Key Rights Register (Vol.3A p.2-23)
+
+| Name      | Description                                                   |
+| --------- | ------------------------------------------------------------- |
+| PKRU      | Controls user-mode memory access rights using protection keys |
+| IA32_PKRS | Supervisor-mode equivalent of PKRU                            |
+]]></description>
+    </item>
   </channel>
 </rss>

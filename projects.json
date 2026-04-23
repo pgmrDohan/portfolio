@@ -1,1 +1,54 @@
-[]
+[
+  {
+    "slug": "en-portfolio",
+    "title": "Portfolio",
+    "date": "2026-04-23",
+    "edited": "2026-04-23",
+    "lang": "en",
+    "contribution": "Personal",
+    "cover": "/images/projects/portfolio.jpg",
+    "url": "https://www.dohan.in/",
+    "repository": "https://github.com/pgmrDohan/portfolio",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JS",
+      "Github Actions",
+      "Cloudflare Worker",
+      "Github Pages"
+    ],
+    "platform": [
+      "Web",
+      "Cross-platform"
+    ],
+    "pinned": false,
+    "description": "A personal portfolio website and CMS, built as a serverless static site using vanilla technologies",
+    "projectUrl": "https://www.dohan.in/projects?p=en-portfolio"
+  },
+  {
+    "slug": "ko-portfolio",
+    "title": "포트폴리오",
+    "date": " 2026-04-23",
+    "edited": " 2026-04-23",
+    "lang": "ko",
+    "contribution": "개인",
+    "cover": "/images/projects/portfolio.jpg",
+    "url": "https://www.dohan.in/",
+    "repository": "https://github.com/pgmrDohan/portfolio",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JS",
+      "Github Actions",
+      "Cloudflare Worker",
+      "Github Pages"
+    ],
+    "platform": [
+      "웹",
+      "크로스플랫폼"
+    ],
+    "pinned": false,
+    "description": "개인 포트폴리오 웹 사이트 겸 CMS, 그런데 서버가 필요 없는 바닐라로 만들어진 정적 웹",
+    "projectUrl": "https://www.dohan.in/projects?p=ko-portfolio"
+  }
+]

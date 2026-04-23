@@ -1,19 +1,39 @@
 [
   {
-    "slug": "ko-test-0",
-    "title": "마크다운 렌더링 테스트",
-    "date": "2026-04-23",
-    "edited": "2026-04-23",
+    "slug": "en-x86-64-registers",
+    "title": "Summary of Intel x86-64 Architecture Registers",
+    "date": "2026-03-25",
+    "edited": "2026-03-25",
     "tags": [
-      "테스트",
-      "거의 끝"
+      "Summary",
+      "x86-64",
+      "Intel"
+    ],
+    "lang": "en",
+    "author": [
+      "Dohan Kwon"
+    ],
+    "pinned": false,
+    "description": "Registers visible in 64-bit mode based on Intel official documentation",
+    "url": "https://www.dohan.in/posts?p=en-x86-64-registers"
+  },
+  {
+    "slug": "ko-x86-64-registers",
+    "title": "Intel x86-64 아키텍쳐 레지스터 정보 정리",
+    "date": "2026-03-25",
+    "edited": "2026-03-25",
+    "tags": [
+      "정리",
+      "번역",
+      "x86-64",
+      "Intel"
     ],
     "lang": "ko",
     "author": [
       "권도한"
     ],
     "pinned": false,
-    "description": "TTTTEEEESSSSSSTTTTT",
-    "url": "https://www.dohan.in/posts?p=ko-test-0"
+    "description": "Intel 공식 문서를 기반으로 4비트 모드(64-bit mode)에서 볼 수 있는 레지스터를 번역하여 정리",
+    "url": "https://www.dohan.in/posts?p=ko-x86-64-registers"
   }
 ]
