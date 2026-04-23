@@ -5,7 +5,7 @@
     <link>https://www.dohan.in</link>
     <description>Legacy 위에서 Latest를 설계하는 컴퓨터 공학자</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 23 Apr 2026 01:50:34 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2026 03:10:17 GMT</lastBuildDate>
     <atom:link href="https://www.dohan.in/rss/ko.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Intel x86-64 아키텍쳐 레지스터 정보 정리</title>
@@ -210,10 +210,10 @@
 
 ## Protection-Key Rights Register (Vol.3A p.2-23)
 
-| 이름      | 용도                                                                                                                                                                           |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| PKRU      | 유저모드에서 페이지에 대한 접근 권한 제어, 각 페이지에 할당된 4비트 Protection Key(0-15)를 기반으로 데이터 접근(AD) 및 쓰기(WD) 권한을 비트 단위로 설정                        |
-| IA32_PKRS | [MSR](#msr-%EB%A0%88%EC%A7%80%EC%8A%A4%ED%84%B0-model-specific-registers-vol4-p2-4) 레지스터 내에 있으며, Supervisor-mode에서 페이지에 대한 접근 권한 제어, PKRU와 동일한 구조 |
+| 이름      | 용도                                                                                                                                                    |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| PKRU      | 유저모드에서 페이지에 대한 접근 권한 제어, 각 페이지에 할당된 4비트 Protection Key(0-15)를 기반으로 데이터 접근(AD) 및 쓰기(WD) 권한을 비트 단위로 설정 |
+| IA32_PKRS | [MSR](#msr-레지스터-model-specific-registers-vol-4-p-2-4) 레지스터 내에 있으며, Supervisor-mode에서 페이지에 대한 접근 권한 제어, PKRU와 동일한 구조    |
 ]]></description>
     </item>
   </channel>
