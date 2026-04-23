@@ -309,7 +309,7 @@ function renderCertificationItem(item, langFilter, locale) {
       <h3>${item.title}</h3>
       <small class="mt-xs">${item.description}</small>
     </hgroup>
-    <small class="mt-xs mb-xs">${item.organization}${item.country ? ` · ${item.country}` : ""}</small>
+    <p class="mb-xs">${item.organization}${item.country ? ` · ${item.country}` : ""}</p>
     <div>${badge(item.type)}</div>
   </li>`;
 }
@@ -336,7 +336,7 @@ function renderActivityItem(item, langFilter, locale) {
       <h3>${item.title}</h3>
       <small>${(item.achievement || []).join(" · ")}</small>
     </hgroup>
-    <p class="mt-xs mb-xs">${(item.organization || []).join(", ")}${item.country ? ` - ${item.country}` : ""}</p>
+    <p class="">${(item.organization || []).join(", ")}${item.country ? ` - ${item.country}` : ""}</p>
     <hgroup>
       <div>${badge(item.type)}</div>
       ${links ? `<div class="icons">${links}</div>` : ""}
@@ -404,8 +404,11 @@ function renderResearchItem(item, langFilter, locale) {
       <p>${item.subtitle}</p>
       <small>${displayDate}${item.country ? ` · ${item.country}` : ""}</small>
     </hgroup>
-    <div class="mb-sm">${badge(item.type)}</div>
-    ${identifiers ? `<small class="wo-print-content">${identifiers}</small><small class="print-content">${identifiersPrint}</small>` : ""}
+    <div>
+      <div class="mb-sm">${badge(item.type)}</div>
+      ${identifiers ? `<small class="wo-print-content">${identifiers}</small>` : ""}
+    </div>
+    <small class="print-content">${identifiersPrint}</small>
   </li>`;
 }
 

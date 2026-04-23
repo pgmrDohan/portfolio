@@ -408,11 +408,17 @@ ul > li > hgroup {
   align-items: flex-end;
 }
 
-ul#research > li > small > a {
+ul#research > li > div > small > a {
   display: inline-block;
 }
 
-ul > li > small {
+ul#research > li > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul > li > div > small {
   line-height: 2.4;
 }
 
