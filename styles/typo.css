@@ -5,6 +5,13 @@
     "Malgun Gothic", "Fluent Emoji Color", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 
+  --font-family-serif:
+    "KoPubWorldBatang", "Noto Serif KR", "AppleMyungjo", "Malgun Myeongjo",
+    "Batang", "Georgia", "Times New Roman", "Fluent Emoji Color",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", serif;
+
+  --font-family-monospace: "JetBrainsMono";
+
   --typo-h1-size: 2.5rem;
   --typo-h1-weight: 700;
   --typo-h1-lh: 1.4;

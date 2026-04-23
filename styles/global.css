@@ -256,7 +256,7 @@ p {
 
 p strong {
   color: var(--theme-color);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .tag {

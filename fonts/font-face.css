@@ -52,6 +52,25 @@
     url(KoPubWorld/KoPubWorld\ Batang_Pro\ Light.woff2) format("woff2");
 }
 
+@font-face {
+  font-family: JetBrainsMono;
+  font-weight: 500;
+  font-display: swap;
+  src:
+    local("JetBrains Mono"),
+    url(JetBrainsMono/JetBrainsMono-Medium.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: JetBrainsMono;
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+  src:
+    local("JetBrains Mono"),
+    url(JetBrainsMono/JetBrainsMono-MediumItalic.woff2) format("woff2");
+}
+
 /* [128] */
 @font-face {
   font-family: "Fluent Emoji Color";

@@ -13,6 +13,12 @@
       </style>
       `);
     </script>
+    <link rel="stylesheet" href="/styles/prism.css" />
+    <link rel="stylesheet" href="/styles/katex-swap.min.css" />
+    <script src="/scripts/marked.umd.js"></script>
+    <script src="/scripts/prism.js"></script>
+    <script src="/scripts/katex.min.js"></script>
+    <script src="/scripts/katex-auto-render.min.js"></script>
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/colors.css" />
     <link rel="stylesheet" href="/styles/spacings.css" />
@@ -61,6 +67,8 @@
       href="/images/profile.avif"
       type="image/avif"
     />
+    <script src="/scripts/markdown-renderer.js"></script>
+    <link rel="stylesheet" href="/styles/reader.css" />
   </head>
   <body class="noscript">
     <noscript>
@@ -161,7 +169,32 @@
           </button>
         </div>
       </nav>
-      <section class="mt-xl" id="projects">
+      <article id="markdown-view" style="display: none" class="mt-xl">
+        <hgroup class="mb-lg">
+          <h1 id="markdown-title"></h1>
+          <button id="back-btn" onclick="closeRenderer()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-undo2-icon lucide-undo-2"
+            >
+              <path d="M9 14 4 9l5-5" />
+              <path
+                d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"
+              />
+            </svg>
+          </button>
+        </hgroup>
+        <div id="markdown-content" class="markdown-body"></div>
+      </article>
+      <section class="mt-xl" id="posts">
         <h2>
           <h2 data-i18n="projects.header">프로젝트</h2>
           <h2>💿</h2>
