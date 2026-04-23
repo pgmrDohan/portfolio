@@ -13,7 +13,7 @@ window.__LANG__ = {
       navClose: "닫기",
       ariaLabel: "검색",
     },
-    locale: "ko_KR",
+    locale: "ko-KR",
     open: "열기",
     head: {
       title: "권도한 :: 컴퓨터 공학자",
