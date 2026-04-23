@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - "workers/**"
+      - "languages.js"
   workflow_dispatch:
 
 jobs:
@@ -14,6 +15,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Inject Language Data
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = require('path');
+
+          const langFilePath = path.join(process.cwd(), 'languages.js');
+          let langData = fs.readFileSync(langFilePath, 'utf8');
+
+          langData = langData.replace(/window\.__LANG__\s*=/g, 'const __LANG__ =');
+
+          const workerPath = path.join(process.cwd(), 'workers/index.js');
+          let workerContent = fs.readFileSync(workerPath, 'utf8');
+
+          const placeholder = 'const __LANG__ = {};';
+          if (workerContent.includes(placeholder)) {
+            workerContent = workerContent.replace(placeholder, langData);
+          } else {
+            workerContent = langData + '\n' + workerContent;
+          }
+
+          fs.writeFileSync(workerPath, workerContent);
+          console.log('Successfully injected language data into workers/index.js');
+          "
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3

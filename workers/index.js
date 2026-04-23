@@ -1,12 +1,56 @@
+const __LANG__ = {};
+
 const SUPPORTED_LANGS = ["ko", "en"];
 const DEFAULT_LANG = "ko";
-
 const COUNTRY_TO_LANG = {
   US: "en",
   GB: "en",
   CA: "en",
   AU: "en",
 };
+
+function resolvePath(translations, key) {
+  const keys = key.split(".");
+  let value = translations;
+  for (const k of keys) {
+    value = value?.[k];
+    if (value === undefined) break;
+  }
+  return typeof value === "string" ? value : null;
+}
+
+class I18nRewriter {
+  constructor(translations) {
+    this.translations = translations;
+  }
+
+  element(element) {
+    const raw = element.getAttribute("data-i18n");
+    if (!raw) return;
+
+    const directives = raw.split(",");
+    for (const directive of directives) {
+      const [key, attr] = directive.trim().split("@");
+      const text = resolvePath(this.translations, key);
+      if (!text) continue;
+
+      if (attr) {
+        element.setAttribute(attr, text);
+      } else {
+        element.setInnerContent(text, { html: true });
+      }
+    }
+  }
+}
+
+class HtmlLangRewriter {
+  constructor(lang) {
+    this.lang = lang;
+  }
+  element(element) {
+    element.setAttribute("lang", this.lang);
+  }
+}
 
 export default {
   async fetch(request, env) {
@@ -23,7 +67,6 @@ export default {
     }
 
     const isContentRequest = !/\.[a-zA-Z0-9]+$/.test(pathname);
-
     if (!url.searchParams.has("lang") && isContentRequest) {
       const country = request.cf?.country;
       const estimatedLang = COUNTRY_TO_LANG[country] || DEFAULT_LANG;
@@ -31,7 +74,21 @@ export default {
       return Response.redirect(url.toString(), 302);
     }
 
-    return fetch(request);
+    const response = await fetch(request);
+
+    const contentType = response.headers.get("Content-Type") || "";
+    if (!contentType.includes("text/html")) {
+      return response;
+    }
+
+    const lang = url.searchParams.get("lang") || DEFAULT_LANG;
+    const translations =
+      __LANG__[SUPPORTED_LANGS.includes(lang) ? lang : DEFAULT_LANG];
+
+    return new HTMLRewriter()
+      .on("html", new HtmlLangRewriter(lang))
+      .on("[data-i18n]", new I18nRewriter(translations))
+      .transform(response);
   },
 };
 
