@@ -286,7 +286,7 @@ function renderProjectItem(project, langFilter, locale) {
         </a>
         <div class="mt-xs">
           <p>${displayDate}</p>
-          <div class="icons">${links}</div>
+          <div class="icons wo-print-content">${links}</div>
         </div>
         <div>${badges(project.skills)}${badges(project.platform)}</div>
       </div>
