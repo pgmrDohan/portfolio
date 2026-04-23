@@ -214,6 +214,12 @@ async function loadData(listId) {
     .querySelector("#all")
     ?.addEventListener("click", () => setActiveTag("all"));
 
+  if (window[source.key]?.length) {
+    loadTags(listId);
+    renderList(listId);
+    return;
+  }
+
   try {
     const res = await fetch(source.file, { priority: "high" });
     window[source.key] = await res.json();
