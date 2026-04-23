@@ -269,10 +269,15 @@ p strong {
   display: inline-block;
 }
 
+#tags {
+  flex-wrap: wrap;
+}
+
 div:has(> .tag) {
   display: flex;
   gap: var(--space-sm);
   margin-top: var(--space-xs);
+  flex-wrap: wrap;
 }
 
 ul#posts li a {
