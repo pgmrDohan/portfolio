@@ -7,7 +7,12 @@ cover: "/images/projects/portfolio.jpg"
 url: "https://www.dohan.in/"
 repository: "https://github.com/pgmrDohan/portfolio"
 skills:
-  ["HTML", "CSS", "JS", "Github Actions", "Cloudflare Worker", "Github Pages"]
+  - "HTML"
+  - "CSS"
+  - "JS"
+  - "Github Actions"
+  - "Cloudflare Worker"
+  - "Github Pages"
 platform: ["웹", "크로스플랫폼"]
 description: "개인 포트폴리오 웹 사이트 겸 CMS, 그런데 서버가 필요 없는 바닐라로 만들어진 정적 웹"
 ---

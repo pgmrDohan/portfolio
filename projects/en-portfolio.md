@@ -7,7 +7,12 @@ cover: "/images/projects/portfolio.jpg"
 url: "https://www.dohan.in/"
 repository: "https://github.com/pgmrDohan/portfolio"
 skills:
-["HTML", "CSS", "JS", "Github Actions", "Cloudflare Worker", "Github Pages"]
+  - "HTML"
+  - "CSS"
+  - "JS"
+  - "Github Actions"
+  - "Cloudflare Worker"
+  - "Github Pages"
 platform: ["Web", "Cross-platform"]
 description: "A personal portfolio website and CMS, built as a serverless static site using vanilla technologies"
 ---
