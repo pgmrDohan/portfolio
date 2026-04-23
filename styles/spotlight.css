@@ -1,26 +1,18 @@
-/* spotlight.css
- * 사이트 공통 변수 활용:
- *   --font-family-primary, --space-xs/sm/md/lg/xl
- *   --theme-color, --theme-background
- * 공통 유틸 클래스: mt-sm, mb-xs 등 사용
- */
-
-/* ─── 테마 변수 ────────────────────────────────────────────── */
 :root {
-  --sp-bg:      var(--theme-background, #fff);
-  --sp-fg:      var(--theme-color, #111);
-  --sp-fg2:     color-mix(in srgb, var(--sp-fg) 50%, transparent);
-  --sp-hover:   color-mix(in srgb, var(--sp-fg) 7%,  transparent);
-  --sp-active:  color-mix(in srgb, var(--sp-fg) 13%, transparent);
-  --sp-border:  color-mix(in srgb, var(--sp-fg) 15%, transparent);
-  --sp-hl-bg:   var(--theme-color, #0070f3);
-  --sp-hl-fg:   var(--theme-background, #fff);
-  --sp-shadow:  0 12px 48px rgba(0, 0, 0, .22), 0 2px 8px rgba(0, 0, 0, .1);
-  --sp-radius:  16px;
+  --sp-bg: var(--theme-background, #fff);
+  --sp-fg: var(--theme-color, #111);
+  --sp-fg2: color-mix(in srgb, var(--sp-fg) 50%, transparent);
+  --sp-hover: color-mix(in srgb, var(--sp-fg) 7%, transparent);
+  --sp-active: color-mix(in srgb, var(--sp-fg) 13%, transparent);
+  --sp-border: color-mix(in srgb, var(--sp-fg) 15%, transparent);
+  --sp-hl-bg: var(--theme-color, #0070f3);
+  --sp-hl-fg: var(--theme-background, #fff);
+  --sp-shadow: 0 12px 48px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.1);
+  --sp-radius: 16px;
   --sp-sheet-r: 20px 20px 0 0;
+  --sp-bottom-safe: env(safe-area-inset-bottom, 0px);
 }
 
-/* ─── 오버레이 ──────────────────────────────────────────────── */
 #sp-overlay {
   position: fixed;
   inset: 0;
@@ -28,10 +20,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0, 0, 0, .4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   opacity: 0;
-  transition: opacity .14s ease;
+  transition: opacity 0.14s ease;
   pointer-events: none;
 }
 
@@ -40,7 +32,6 @@
   pointer-events: all;
 }
 
-/* ─── 모달 ──────────────────────────────────────────────────── */
 #sp-modal {
   width: min(600px, 92vw);
   max-height: min(520px, 78vh);
@@ -51,57 +42,66 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transform: scale(.96) translateY(-8px);
-  transition: transform .14s ease;
+  transform: scale(0.96) translateY(-8px);
+  transition: transform 0.14s ease;
 }
 
 #sp-overlay.sp-open #sp-modal {
   transform: scale(1) translateY(0);
 }
 
-/* 모바일 바텀시트 */
-@media (max-width: 640px) {
-  #sp-overlay { align-items: flex-end; }
+@media (max-width: 64rem) {
+  #sp-overlay {
+    align-items: flex-end;
+    height: 100dvh;
+  }
 
   #sp-modal {
     width: 100%;
-    max-height: 75vh;
+    max-height: 75dvh;
     border-radius: var(--sp-sheet-r);
     border-bottom: none;
     transform: translateY(100%);
+    padding-bottom: var(--sp-bottom-safe);
   }
 
-  #sp-overlay.sp-open #sp-modal { transform: translateY(0); }
+  body:has(#sp-input:focus) #sp-modal {
+    padding-bottom: 0;
+  }
+
+  #sp-overlay.sp-open #sp-modal {
+    transform: translateY(0);
+  }
 }
 
-/* ─── 드래그 핸들 (모바일) ──────────────────────────────────── */
 #sp-handle {
   display: none;
   width: 36px;
   height: 4px;
   border-radius: 2px;
   background: var(--sp-border);
-  /* mt-sm 대응: margin-top: var(--space-sm) */
-  margin: var(--space-sm, .8rem) auto 0;
+  margin: var(--space-sm, 0.8rem) auto 0;
   flex-shrink: 0;
 }
 
-@media (max-width: 640px) { #sp-handle { display: block; } }
+@media (max-width: 64rem) {
+  #sp-handle {
+    display: block;
+  }
+}
 
-/* ─── 입력 영역 ─────────────────────────────────────────────── */
 #sp-input-row {
   display: flex;
   align-items: center;
-  gap: var(--space-sm, .8rem);
-  /* pt-sm pb-sm 대응 */
-  padding: var(--space-sm, .8rem) var(--space-md, 1.6rem);
+  gap: var(--space-sm, 0.8rem);
+  padding: var(--space-sm, 0.8rem) var(--space-md, 1.6rem);
   border-bottom: 1px solid var(--sp-border);
   flex-shrink: 0;
 }
 
 #sp-input-row svg {
   flex-shrink: 0;
-  opacity: .45;
+  opacity: 0.45;
   color: var(--sp-fg);
 }
 
@@ -111,18 +111,19 @@
   border: none;
   outline: none;
   font-family: var(--font-family-primary, sans-serif);
-  /* typo-body 대응: 1.4rem / 62.5% base → 실제 14px. 팔레트 body보다 약간 크게 */
   font-size: 1.6rem;
   color: var(--sp-fg);
   caret-color: var(--sp-hl-bg);
 }
 
-#sp-input::placeholder { color: var(--sp-fg2); }
+#sp-input::placeholder {
+  color: var(--sp-fg2);
+}
 
 #sp-esc-btn {
   font-family: var(--font-family-primary, sans-serif);
   font-size: var(--typo-small-size, 1rem);
-  padding: 2px var(--space-xs, .4rem);
+  padding: 2px var(--space-xs, 0.4rem);
   border: 1px solid var(--sp-border);
   border-radius: 5px;
   color: var(--sp-fg2);
@@ -131,39 +132,42 @@
   flex-shrink: 0;
 }
 
-/* ─── 결과 목록 ─────────────────────────────────────────────── */
 #sp-results {
   overflow-y: auto;
   flex: 1;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sp-sect {
   font-family: var(--font-family-primary, sans-serif);
   font-size: var(--typo-small-size, 1rem);
-  letter-spacing: .07em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--sp-fg2);
-  /* pt-sm 대응 */
-  padding: var(--space-sm, .8rem) var(--space-md, 1.6rem) var(--space-xs, .4rem);
+  padding: var(--space-sm, 0.8rem) var(--space-md, 1.6rem)
+    var(--space-xs, 0.4rem);
   user-select: none;
 }
 
 .sp-item {
   display: flex;
   align-items: center;
-  gap: var(--space-sm, .8rem);
-  padding: var(--space-xs, .4rem) var(--space-md, 1.6rem);
+  gap: var(--space-sm, 0.8rem);
+  padding: var(--space-xs, 0.4rem) var(--space-md, 1.6rem);
   cursor: pointer;
   text-decoration: none;
   color: var(--sp-fg);
-  transition: background .07s;
+  transition: background 0.07s;
 }
 
 .sp-item:hover,
-.sp-item.sp-active { background: var(--sp-hover); }
-.sp-item.sp-active  { background: var(--sp-active); }
+.sp-item.sp-active {
+  background: var(--sp-hover);
+}
+.sp-item.sp-active {
+  background: var(--sp-active);
+}
 
-/* 타입 아이콘 */
 .sp-icon {
   width: 30px;
   height: 30px;
@@ -178,7 +182,10 @@
   color: var(--sp-hl-bg);
 }
 
-.sp-body    { flex: 1; min-width: 0; }
+.sp-body {
+  flex: 1;
+  min-width: 0;
+}
 
 .sp-title {
   font-family: var(--font-family-primary, sans-serif);
@@ -197,21 +204,19 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* mt-xs 대응 */
-  margin-top: var(--space-xs, .4rem);
+  margin-top: var(--space-xs, 0.4rem);
 }
 
 .sp-badge {
   font-family: var(--font-family-primary, sans-serif);
   font-size: var(--typo-small-size, 1rem);
-  padding: 2px var(--space-xs, .4rem);
+  padding: 2px var(--space-xs, 0.4rem);
   border-radius: 99px;
   border: 1px solid var(--sp-border);
   color: var(--sp-fg2);
   flex-shrink: 0;
 }
 
-/* 검색어 하이라이트 */
 .sp-hl {
   background: var(--sp-hl-bg);
   color: var(--sp-hl-fg);
@@ -219,13 +224,11 @@
   padding: 0 1px;
 }
 
-/* ─── 계산 결과 ─────────────────────────────────────────────── */
 .sp-math {
   display: flex;
   align-items: baseline;
-  gap: var(--space-sm, .8rem);
-  /* pt-sm pb-sm 대응 */
-  padding: var(--space-sm, .8rem) var(--space-md, 1.6rem);
+  gap: var(--space-sm, 0.8rem);
+  padding: var(--space-sm, 0.8rem) var(--space-md, 1.6rem);
   border-bottom: 1px solid var(--sp-border);
   flex-shrink: 0;
 }
@@ -244,24 +247,20 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* ─── 빈 상태 / 로딩 ────────────────────────────────────────── */
 .sp-empty,
 .sp-loading {
   font-family: var(--font-family-primary, sans-serif);
   font-size: var(--typo-body-size, 1.4rem);
   color: var(--sp-fg2);
   text-align: center;
-  /* mt-lg mb-lg 대응 */
   padding: var(--space-lg, 2rem) var(--space-md, 1.6rem);
 }
 
-/* ─── 하단 힌트 ─────────────────────────────────────────────── */
 #sp-footer {
   border-top: 1px solid var(--sp-border);
-  /* pt-sm pb-sm 대응 */
-  padding: var(--space-xs, .4rem) var(--space-sm, .8rem);
+  padding: var(--space-xs, 0.4rem) var(--space-sm, 0.8rem);
   display: flex;
-  gap: var(--space-sm, .8rem);
+  gap: var(--space-sm, 0.8rem);
   font-family: var(--font-family-primary, sans-serif);
   font-size: var(--typo-small-size, 1rem);
   color: var(--sp-fg2);
@@ -278,7 +277,7 @@
 .sp-kh kbd {
   font-family: var(--font-family-primary, sans-serif);
   font-size: var(--typo-small-size, 1rem);
-  padding: 1px var(--space-xs, .4rem);
+  padding: 1px var(--space-xs, 0.4rem);
   border: 1px solid var(--sp-border);
   border-radius: 4px;
   background: color-mix(in srgb, var(--sp-fg) 5%, transparent);

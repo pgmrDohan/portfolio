@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
 * {
   text-justify: inter-word;
   -webkit-hyphens: auto;

@@ -156,3 +156,4 @@ posts.html projects.html
 - [ ] 메타테그
 - [x] 커맨드 버튼
 - [ ] noscript 안내문
+- [ ] 커맨드 버튼 스타일링
