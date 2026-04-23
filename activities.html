@@ -40,6 +40,9 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Dohan Kwon" />
+    <link rel="stylesheet" href="/styles/spotlight.css" />
+    <script src="/scripts/math.min.js"></script>
+    <script src="/scripts/spotlight.js" defer></script>
     <link rel="manifest" href="/site.webmanifest" />
     <link
       rel="alternate"
@@ -141,7 +144,11 @@
               />
             </svg>
           </button>
-          <button data-i18n="nav.index@title" title="찾기">
+          <button
+            data-i18n="nav.index@title"
+            title="찾기"
+            onclick="window.spotlight.open()"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
