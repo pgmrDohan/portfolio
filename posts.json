@@ -1,5 +1,42 @@
 [
   {
+    "slug": "en-little-prince-and-emergency-rations",
+    "title": "The Little Prince and the Emergency Rations",
+    "date": "2024-05-18",
+    "edited": "2024-05-18",
+    "tags": [
+      "PS",
+      "Algorithm",
+      "C++"
+    ],
+    "lang": "en",
+    "author": [
+      "Dohan Kwon"
+    ],
+    "pinned": false,
+    "description": "An original algorithm problem and its solution.",
+    "url": "https://www.dohan.in/posts?p=en-little-prince-and-emergency-rations"
+  },
+  {
+    "slug": "en-signal-lossy-compression",
+    "title": "Lossy Compression of Signals and Image Compression",
+    "date": "2025-07-06",
+    "edited": "2025-07-06",
+    "tags": [
+      "Python",
+      "Fourier Transform",
+      "Discrete Wavelet Transform",
+      "Haar Transform"
+    ],
+    "lang": "en",
+    "author": [
+      "Dohan Kwon"
+    ],
+    "pinned": false,
+    "description": "Understanding the Fourier Transform and Discrete Wavelet Transform, and the principles of image compression",
+    "url": "https://www.dohan.in/posts?p=en-signal-lossy-compression"
+  },
+  {
     "slug": "en-x86-64-registers",
     "title": "Summary of Intel x86-64 Architecture Registers",
     "date": "2026-03-25",
@@ -18,10 +55,47 @@
     "url": "https://www.dohan.in/posts?p=en-x86-64-registers"
   },
   {
+    "slug": "ko-little-prince-and-emergency-rations",
+    "title": "어린왕자와 비상식량",
+    "date": "2024-05-18",
+    "edited": "2024-05-18",
+    "tags": [
+      "PS",
+      "알고리즘",
+      "C++"
+    ],
+    "lang": "ko",
+    "author": [
+      "권도한"
+    ],
+    "pinned": false,
+    "description": "직접 만든 알고리즘 문제와 그 풀이",
+    "url": "https://www.dohan.in/posts?p=ko-little-prince-and-emergency-rations"
+  },
+  {
+    "slug": "ko-signal-lossy-compression",
+    "title": "신호 손실 압축과 영상 압축",
+    "date": "2025-07-06",
+    "edited": "2025-07-06",
+    "tags": [
+      "Python",
+      "푸리에 변환",
+      "이산 웨이블릿 변환",
+      "Haar 변환"
+    ],
+    "lang": "ko",
+    "author": [
+      "권도한"
+    ],
+    "pinned": false,
+    "description": "푸리에 변환과 이산 웨이블릿 변환에 대한 이해 그리고 영상 압축의 원리",
+    "url": "https://www.dohan.in/posts?p=ko-signal-lossy-compression"
+  },
+  {
     "slug": "ko-x86-64-registers",
     "title": "Intel x86-64 아키텍쳐 레지스터 정보 정리",
     "date": "2026-03-25",
-    "edited": "2026-04-23",
+    "edited": "2026-03-25",
     "tags": [
       "정리",
       "번역",
