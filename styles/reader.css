@@ -233,7 +233,7 @@
 
 .markdown-body img {
   border-style: none;
-  max-width: 40%;
+
   box-sizing: content-box;
 }
 
@@ -243,10 +243,6 @@
 .markdown-body samp {
   font-family: var(--font-family-monospace);
   font-size: 1em;
-}
-
-.markdown-body figure {
-  margin: 1em 4rem;
 }
 
 .markdown-body hr {
