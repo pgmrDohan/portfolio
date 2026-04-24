@@ -1,7 +1,6 @@
 ---
 title: "Intel x86-64 아키텍쳐 레지스터 정보 정리"
 date: "2026-03-25"
-edited: "2026-04-23"
 tags: ["정리", "번역", "x86-64", "Intel"]
 lang: "ko"
 author: ["권도한"]
