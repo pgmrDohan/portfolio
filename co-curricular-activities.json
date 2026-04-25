@@ -1,5 +1,27 @@
 [
   {
+    "title": "멋쟁이사자처럼 14기 연세미래 1기 - 백엔드 트랙 운영진",
+    "type": "진행 중",
+    "year": "2026",
+    "organization": ["멋쟁이사자처럼"],
+    "achievement": ["Django 기반 백엔드 강의 진행"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
+    "title": "IAMROOT 23기 - A팀 스터디 서기",
+    "type": "진행 중",
+    "year": "2026",
+    "organization": ["IAMROOT"],
+    "achievement": ["리눅스 커널 분석"],
+    "links": [],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
     "title": "Google Cloud 기반 인공지능 전문가 양성과정",
     "type": "교육",
     "year": "2025",
@@ -7,7 +29,7 @@
     "achievement": ["조장", "수료"],
     "links": [],
     "country": "대한민국",
-    "pinned": true,
+    "pinned": false,
     "lang": "ko"
   },
   {
@@ -27,7 +49,7 @@
       }
     ],
     "country": "대한민국",
-    "pinned": false,
+    "pinned": true,
     "lang": "ko"
   },
   {
@@ -219,7 +241,7 @@
     "achievement": ["최우수상 (1등)"],
     "links": [],
     "country": "대한민국",
-    "pinned": false,
+    "pinned": true,
     "lang": "ko"
   },
   {
@@ -267,6 +289,28 @@
     "lang": "ko"
   },
   {
+    "title": "LIKE LION 14th (Yonsei Mirae 1st Gen) - Backend Track Organizer",
+    "type": "ongoing",
+    "year": "2026",
+    "organization": ["LIKE LION"],
+    "achievement": ["Lecturing Django-based backend development"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
+    "title": "IAMROOT 23rd - Team A Study Scribe",
+    "type": "ongoing",
+    "year": "2026",
+    "organization": ["IAMROOT"],
+    "achievement": ["Linux kernel analysis"],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
     "title": "Google Cloud-based AI Expert Training Program",
     "type": "Course",
     "year": "2025",
@@ -274,7 +318,7 @@
     "achievement": ["Team Leader", "Completion"],
     "links": [],
     "country": "Republic of Korea",
-    "pinned": true,
+    "pinned": false,
     "lang": "en"
   },
   {
@@ -294,7 +338,7 @@
       }
     ],
     "country": "Republic of Korea",
-    "pinned": false,
+    "pinned": true,
     "lang": "en"
   },
   {
