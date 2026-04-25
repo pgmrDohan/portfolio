@@ -423,7 +423,7 @@ axs[1].axis("off")
 plt.show()
 ```
 
-![Image compression based on Fourier Transform](/images/projects/fft.png)
+![Image compression based on Fourier Transform](/images/posts/fft.png)
 
 ## Discrete Wavelet (Haar) Transform
 
@@ -654,7 +654,7 @@ axs[1].axis("off")
 plt.show()
 ```
 
-![Image compression based on Haar transform](/images/projects/haar.png)
+![Image compression based on Haar transform](/images/posts/haar.png)
 
 ---
 

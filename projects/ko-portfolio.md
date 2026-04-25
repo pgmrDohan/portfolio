@@ -1,6 +1,6 @@
 ---
 title: "포트폴리오"
-date: " 2026-04-23"
+date: "2026-04-23"
 lang: "ko"
 contribution: "개인"
 cover: "/images/projects/portfolio.jpg"

@@ -418,7 +418,7 @@ axs[1].axis("off")
 plt.show()
 ```
 
-![푸리에 변환 기반 영상 압축](/images/projects/fft.png)
+![푸리에 변환 기반 영상 압축](/images/posts/fft.png)
 
 ## 이산 웨이블릿(Haar) 변환
 
@@ -632,7 +632,7 @@ axs[1].axis("off")
 plt.show()
 ```
 
-![Haar 변환 기반 영상 압축](/images/projects/haar.png)
+![Haar 변환 기반 영상 압축](/images/posts/haar.png)
 
 ---
 
