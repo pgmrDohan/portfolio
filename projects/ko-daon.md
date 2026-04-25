@@ -2,7 +2,7 @@
 title: "다온"
 date: "2024-11-16"
 lang: "ko"
-contribution: "@대한민국 고등학생 소프트웨어 개발 공모전"
+contribution: "대한민국 고등학생 소프트웨어 개발 공모전"
 cover: "/images/projects/daon.jpg"
 skills:
   - "React"

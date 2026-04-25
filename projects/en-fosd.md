@@ -2,7 +2,7 @@
 title: "FOSD (Framework of Operating System Development)"
 date: "2024-08-26"
 lang: "en"
-contribution: "@Open SW Developer Contest"
+contribution: "Open SW Developer Contest"
 cover: "/images/projects/fosd.jpg"
 skills:
   - "C++"

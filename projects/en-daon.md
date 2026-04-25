@@ -2,7 +2,7 @@
 title: "Daon"
 date: "2024-11-16"
 lang: "en"
-contribution: "@Korea High School Software Development Contest"
+contribution: "Korea High School Software Development Contest"
 cover: "/images/projects/daon.jpg"
 skills:
   - "React"

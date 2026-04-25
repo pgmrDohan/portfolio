@@ -2,7 +2,7 @@
 title: "FOSD (Framework of Operating System Development)"
 date: "2024-08-26"
 lang: "ko"
-contribution: "@공개 SW 개발자 대회"
+contribution: "공개 SW 개발자 대회"
 cover: "/images/projects/fosd.jpg"
 skills:
   - "C++"

@@ -2,7 +2,7 @@
 title: "Boogie"
 date: "2026-12-31"
 lang: "en"
-contribution: "@BOX-er"
+contribution: "BOX-er"
 cover: "/images/projects/boogie.jpg"
 skills:
   - "React Native"
