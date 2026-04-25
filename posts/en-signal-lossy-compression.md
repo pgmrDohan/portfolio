@@ -116,7 +116,7 @@ def quantize(signals, step):
 This shows "how much it was reduced (%)" through compression, calculated as follows:
 
 $$
-\mathrm{Reduction\ Percentage} = \frac{\text{Original non-zero} - \text{Compressed non-zero}}{\text{Original non-zero}} \times 100%
+\frac{\text{Original non-zero} - \text{Compressed non-zero}}{\text{Original non-zero}} \times 100%
 $$
 
 The reduction percentage is calculated based on the number of non-zero values.
