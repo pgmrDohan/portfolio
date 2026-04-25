@@ -1232,3 +1232,7 @@
 .markdown-body .highlight pre:has(+ .zeroclipboard-container) {
   min-height: 5.2rem;
 }
+
+span.katex {
+  top: 0.1rem;
+}
