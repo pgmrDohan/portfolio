@@ -10,7 +10,7 @@ skills:
   - "MongoDB"
   - "Google AdMob"
 platform: ["iOS", "Android"]
-description: "An AI-powered writing-based social platform helping people explore their inner selves and form authentic connections—enabling sincere communication without losing one's identity."
+description: "An AI-powered writing-based social platform helping people explore their inner selves and form authentic connections, enabling sincere communication without losing one's identity."
 ---
 
 Ongoing.
