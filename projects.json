@@ -1,5 +1,77 @@
 [
   {
+    "slug": "en-boogie",
+    "title": "Boogie",
+    "date": "2026-12-31",
+    "edited": "2026-12-31",
+    "lang": "en",
+    "contribution": "@BOX-er",
+    "cover": "/images/projects/boogie.jpg",
+    "url": null,
+    "repository": null,
+    "skills": [
+      "React Native",
+      "Nest.JS",
+      "MongoDB",
+      "Google AdMob"
+    ],
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "pinned": false,
+    "description": "An AI-powered writing-based social platform helping people explore their inner selves and form authentic connections—enabling sincere communication without losing one's identity.",
+    "projectUrl": "https://www.dohan.in/projects?p=en-boogie"
+  },
+  {
+    "slug": "en-daon",
+    "title": "Daon",
+    "date": "2024-11-16",
+    "edited": "2024-11-16",
+    "lang": "en",
+    "contribution": "@Korea High School Software Development Contest",
+    "cover": "/images/projects/daon.jpg",
+    "url": null,
+    "repository": null,
+    "skills": [
+      "React",
+      "TypeScript",
+      "React Native"
+    ],
+    "platform": [
+      "iOS",
+      "Android",
+      "Web"
+    ],
+    "pinned": false,
+    "description": "A youth growth diary platform. Participated in the entire process of development and operation.",
+    "projectUrl": "https://www.dohan.in/projects?p=en-daon"
+  },
+  {
+    "slug": "en-fosd",
+    "title": "FOSD (Framework of Operating System Development)",
+    "date": "2024-08-26",
+    "edited": "2024-08-26",
+    "lang": "en",
+    "contribution": "@Open SW Developer Contest",
+    "cover": "/images/projects/fosd.jpg",
+    "url": null,
+    "repository": "https://github.com/fosd-project/FOSD",
+    "skills": [
+      "C++",
+      "C",
+      "Assembly",
+      "GNU Make"
+    ],
+    "platform": [
+      "Framework",
+      "C-like Lang"
+    ],
+    "pinned": false,
+    "description": "An experimental framework for operating system development",
+    "projectUrl": "https://www.dohan.in/projects?p=en-fosd"
+  },
+  {
     "slug": "en-portfolio",
     "title": "Portfolio",
     "date": "2026-04-23",
@@ -26,10 +98,82 @@
     "projectUrl": "https://www.dohan.in/projects?p=en-portfolio"
   },
   {
+    "slug": "ko-boogie",
+    "title": "Boogie",
+    "date": "2026-12-31",
+    "edited": "2026-12-31",
+    "lang": "ko",
+    "contribution": "@BOX-er",
+    "cover": "/images/projects/boogie.jpg",
+    "url": null,
+    "repository": null,
+    "skills": [
+      "React Native",
+      "Nest.JS",
+      "MongoDB",
+      "Google AdMob"
+    ],
+    "platform": [
+      "iOS",
+      "Android"
+    ],
+    "pinned": false,
+    "description": "사람들의 자아 탐색과 진솔한 연결을 돕는 AI 기반 글쓰기 SNS, '나'를 잃지 않는 진솔한 소통",
+    "projectUrl": "https://www.dohan.in/projects?p=ko-boogie"
+  },
+  {
+    "slug": "ko-daon",
+    "title": "다온",
+    "date": "2024-11-16",
+    "edited": "2024-11-16",
+    "lang": "ko",
+    "contribution": "@대한민국 고등학생 소프트웨어 개발 공모전",
+    "cover": "/images/projects/daon.jpg",
+    "url": null,
+    "repository": null,
+    "skills": [
+      "React",
+      "TypeScript",
+      "React Native"
+    ],
+    "platform": [
+      "iOS",
+      "Android",
+      "웹"
+    ],
+    "pinned": false,
+    "description": "청소년 성장 일기 플랫폼. 개발 및 운영 전 과정에 참가.",
+    "projectUrl": "https://www.dohan.in/projects?p=ko-daon"
+  },
+  {
+    "slug": "ko-fosd",
+    "title": "FOSD (Framework of Operating System Development)",
+    "date": "2024-08-26",
+    "edited": "2024-08-26",
+    "lang": "ko",
+    "contribution": "@공개 SW 개발자 대회",
+    "cover": "/images/projects/fosd.jpg",
+    "url": null,
+    "repository": "https://github.com/fosd-project/FOSD",
+    "skills": [
+      "C++",
+      "C",
+      "Assembly",
+      "GNU Make"
+    ],
+    "platform": [
+      "Framework",
+      "C-like Lang"
+    ],
+    "pinned": false,
+    "description": "운영체제 개발을 위한 실험적 프레임워크",
+    "projectUrl": "https://www.dohan.in/projects?p=ko-fosd"
+  },
+  {
     "slug": "ko-portfolio",
     "title": "포트폴리오",
-    "date": " 2026-04-23",
-    "edited": " 2026-04-23",
+    "date": "2026-04-23",
+    "edited": "2026-04-23",
     "lang": "ko",
     "contribution": "개인",
     "cover": "/images/projects/portfolio.jpg",

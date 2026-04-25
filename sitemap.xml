@@ -2,43 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dohan.in/404</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/activities</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/certifications</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/education</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/experience</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/posts/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/projects/</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/research</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/projects?p=en-boogie</loc>
+    <lastmod>2026-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/projects?p=en-daon</loc>
+    <lastmod>2024-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/projects?p=en-fosd</loc>
+    <lastmod>2024-08-26</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/projects?p=en-portfolio</loc>
     <lastmod>2026-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/projects?p=ko-boogie</loc>
+    <lastmod>2026-12-31</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/projects?p=ko-daon</loc>
+    <lastmod>2024-11-16</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/projects?p=ko-fosd</loc>
+    <lastmod>2024-08-26</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/projects?p=ko-portfolio</loc>

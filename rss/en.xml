@@ -5,7 +5,7 @@
     <link>https://www.dohan.in</link>
     <description>Computer engineer who designs the &apos;Latest&apos; atop the &apos;Legacy&apos;</description>
     <language>en</language>
-    <lastBuildDate>Fri, 24 Apr 2026 09:28:37 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Apr 2026 23:54:35 GMT</lastBuildDate>
     <atom:link href="https://www.dohan.in/rss/en.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>The Little Prince and the Emergency Rations</title>
@@ -235,7 +235,7 @@ def quantize(signals, step):
 This shows "how much it was reduced (%)" through compression, calculated as follows:
 
 $$
-\mathrm{Reduction\ Percentage} = \frac{\text{Original non-zero} - \text{Compressed non-zero}}{\text{Original non-zero}} \times 100%
+\frac{\text{Original non-zero} - \text{Compressed non-zero}}{\text{Original non-zero}} \times 100%
 $$
 
 The reduction percentage is calculated based on the number of non-zero values.
@@ -542,7 +542,7 @@ axs[1].axis("off")
 plt.show()
 ```
 
-![Image compression based on Fourier Transform](/images/projects/fft.png)
+![Image compression based on Fourier Transform](/images/posts/fft.png)
 
 ## Discrete Wavelet (Haar) Transform
 
@@ -773,7 +773,7 @@ axs[1].axis("off")
 plt.show()
 ```
 
-![Image compression based on Haar transform](/images/projects/haar.png)
+![Image compression based on Haar transform](/images/posts/haar.png)
 
 ---
 
