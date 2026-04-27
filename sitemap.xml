@@ -2,39 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dohan.in/404</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/activities</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/certifications</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/education</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/experience</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/posts/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/projects/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/research</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-27</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/projects?p=en-boogie</loc>
@@ -69,6 +69,10 @@
     <lastmod>2026-04-23</lastmod>
   </url>
   <url>
+    <loc>https://www.dohan.in/posts?p=en-iamroot-0</loc>
+    <lastmod>2026-04-18</lastmod>
+  </url>
+  <url>
     <loc>https://www.dohan.in/posts?p=en-little-prince-and-emergency-rations</loc>
     <lastmod>2024-05-18</lastmod>
   </url>
@@ -79,6 +83,10 @@
   <url>
     <loc>https://www.dohan.in/posts?p=en-x86-64-registers</loc>
     <lastmod>2026-03-25</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dohan.in/posts?p=ko-iamroot-0</loc>
+    <lastmod>2026-04-18</lastmod>
   </url>
   <url>
     <loc>https://www.dohan.in/posts?p=ko-little-prince-and-emergency-rations</loc>

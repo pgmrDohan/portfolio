@@ -1,5 +1,21 @@
 [
   {
+    "slug": "en-iamroot-0",
+    "title": "IAMROOT Study Rules #Orientation",
+    "date": "2026-04-18",
+    "edited": "2026-04-18",
+    "tags": [
+      "IAMROOT 23rd"
+    ],
+    "lang": "en",
+    "author": [
+      "Dohan Kwon"
+    ],
+    "pinned": false,
+    "description": "IAMROOT 23rd orientation - the long-running study secret found in the study rules",
+    "url": "https://www.dohan.in/posts?p=en-iamroot-0"
+  },
+  {
     "slug": "en-little-prince-and-emergency-rations",
     "title": "The Little Prince and the Emergency Rations",
     "date": "2024-05-18",
@@ -53,6 +69,22 @@
     "pinned": false,
     "description": "Registers visible in 64-bit mode based on Intel official documentation",
     "url": "https://www.dohan.in/posts?p=en-x86-64-registers"
+  },
+  {
+    "slug": "ko-iamroot-0",
+    "title": "IAMROOT 스터디 규칙 이모저모 #오리엔테이션",
+    "date": "2026-04-18",
+    "edited": "2026-04-18",
+    "tags": [
+      "IAMROOT 23기"
+    ],
+    "lang": "ko",
+    "author": [
+      "권도한"
+    ],
+    "pinned": false,
+    "description": "IAMROOT 23기 오리엔테이션 - 스터디 규칙에서 찾은 롱런하는 스터디 비결",
+    "url": "https://www.dohan.in/posts?p=ko-iamroot-0"
   },
   {
     "slug": "ko-little-prince-and-emergency-rations",
