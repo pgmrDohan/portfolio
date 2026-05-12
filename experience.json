@@ -43,6 +43,18 @@
     "lang": "ko"
   },
   {
+    "company": "움직임",
+    "department": "CEO",
+    "position": "",
+    "period": ["2020-12", "2023-11"],
+    "responsibilities": ["342-23-01182", "정보통신업"],
+    "type": "창업",
+    "status": "폐업",
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
     "company": "BOX-er",
     "department": "Development",
     "position": "Developer",
@@ -83,6 +95,21 @@
     "status": "Resigned",
     "country": "Republic of Korea",
     "pinned": false,
+    "lang": "en"
+  },
+  {
+    "company": "UmJikIm (Movement)",
+    "department": "CEO",
+    "position": "",
+    "period": ["2020-12", "2023-11"],
+    "responsibilities": [
+      "Business Registration: 342-23-01182",
+      "Information and Communications Industry"
+    ],
+    "type": "Founder",
+    "status": "Closed",
+    "country": "Republic of Korea",
+    "pinned": true,
     "lang": "en"
   }
 ]
