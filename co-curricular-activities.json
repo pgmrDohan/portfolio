@@ -1,5 +1,21 @@
 [
   {
+    "title": "포용 성장 R&D 챌린지",
+    "type": "진행 중",
+    "year": "2026",
+    "organization": ["국가과학기술인력개발원", "고용노동부"],
+    "achievement": ["국가 R&D 연구 기획", "연구책임자"],
+    "links": [
+      {
+        "type": "article",
+        "URL": "https://www.kird.re.kr/notificationSpace/notice/aacdfecb-29d7-4149-a588-6be1c3ef851f"
+      }
+    ],
+    "country": "대한민국",
+    "pinned": true,
+    "lang": "ko"
+  },
+  {
     "title": "멋쟁이사자처럼 14기 연세미래 1기 - 백엔드 트랙 운영진",
     "type": "진행 중",
     "year": "2026",
@@ -300,6 +316,23 @@
     "lang": "ko"
   },
   {
+    "title": "Disability Inclusion R&D Challenge",
+    "type": "ongoing",
+    "year": "2026",
+    "organization": [
+      "KIRD(Korea Institute of Human Resources Development in Science and Technology)",
+      "MOEL(Ministry of Employment and Labor)"
+    ],
+    "achievement": [
+      "National R&D Project Planning",
+      "Principal Investigator (PI)"
+    ],
+    "links": [],
+    "country": "Republic of Korea",
+    "pinned": true,
+    "lang": "en"
+  },
+  {
     "title": "LIKE LION 14th (Yonsei Mirae 1st Gen) - Backend Track Organizer",
     "type": "ongoing",
     "year": "2026",
@@ -314,7 +347,10 @@
     "title": "Advisory Member - SW AI Student Talent Training Project Gyeongsangbuk-do Office of Education",
     "type": "ongoing",
     "year": "2026",
-    "organization": ["Gyeongsangbuk-do Office of Education", "Andong High School"],
+    "organization": [
+      "Gyeongsangbuk-do Office of Education",
+      "Andong High School"
+    ],
     "achievement": [""],
     "links": [],
     "country": "Republic of Korea",
