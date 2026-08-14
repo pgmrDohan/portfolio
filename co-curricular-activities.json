@@ -38,11 +38,11 @@
     "lang": "ko"
   },
   {
-    "title": "IAMROOT 23기 - A팀 스터디 서기",
+    "title": "Apple Developer Academy @POSTECH 6기",
     "type": "진행 중",
     "year": "2026",
-    "organization": ["IAMROOT"],
-    "achievement": ["리눅스 커널 분석"],
+    "organization": ["Apple", "POSTECH"],
+    "achievement": ["iOS"],
     "links": [],
     "country": "대한민국",
     "pinned": true,
@@ -358,11 +358,11 @@
     "lang": "en"
   },
   {
-    "title": "IAMROOT 23rd - Team A Study Scribe",
+    "title": "Apple Developer Academy @POSTECH 6st Gen",
     "type": "ongoing",
     "year": "2026",
-    "organization": ["IAMROOT"],
-    "achievement": ["Linux kernel analysis"],
+    "organization": ["Apple", "POSTECH"],
+    "achievement": ["iOS"],
     "links": [],
     "country": "Republic of Korea",
     "pinned": true,
